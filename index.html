@@ -781,5 +781,684 @@
     observer.observe(document.getElementById('statsSection'));
     setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-100) el.classList.add('visible'); }), 200);
 </script>
+    <!-- Add this right before the closing </body> tag in your HTML -->
+<style>
+    /* Premium Chatbot Styles - Ultra Luxurious */
+    @keyframes floatIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -200% center;
+        }
+        100% {
+            background-position: 200% center;
+        }
+    }
+
+    @keyframes ripple {
+        0% {
+            transform: scale(0);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    @keyframes pulseGlow {
+        0%, 100% {
+            box-shadow: 0 0 5px rgba(102, 252, 241, 0.3), 0 0 10px rgba(102, 252, 241, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 20px rgba(102, 252, 241, 0.6), 0 0 30px rgba(102, 252, 241, 0.4);
+        }
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes gradientShift {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    /* Chat Button - Luxurious Design */
+    .luxury-chat-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, rgba(102, 252, 241, 0.95), rgba(195, 7, 63, 0.95));
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(102, 252, 241, 0.4), 0 0 0 0 rgba(102, 252, 241, 0.7);
+        animation: pulseGlow 2s infinite, floatIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+    }
+
+    .luxury-chat-button::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(102,252,241,0.8), rgba(195,7,63,0.8));
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .luxury-chat-button:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 15px 40px rgba(102, 252, 241, 0.6);
+    }
+
+    .luxury-chat-button:active::before {
+        animation: ripple 0.6s ease-out;
+    }
+
+    .luxury-chat-button svg {
+        width: 32px;
+        height: 32px;
+        fill: white;
+        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        z-index: 1;
+    }
+
+    /* Chat Panel - Premium Glassmorphism */
+    .luxury-chat-panel {
+        position: fixed;
+        bottom: 120px;
+        right: 30px;
+        width: 420px;
+        height: 600px;
+        background: rgba(10, 25, 47, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 28px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(102, 252, 241, 0.2);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0.9);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        pointer-events: none;
+        font-family: 'Space Grotesk', 'Poppins', sans-serif;
+    }
+
+    .luxury-chat-panel.open {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        animation: slideInRight 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+
+    /* Chat Header with Animated Gradient */
+    .luxury-chat-header {
+        background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(195, 7, 63, 0.2));
+        padding: 20px 24px;
+        border-radius: 28px 28px 0 0;
+        border-bottom: 1px solid rgba(102, 252, 241, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .luxury-chat-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(102, 252, 241, 0.1), transparent);
+        animation: shimmer 3s infinite;
+    }
+
+    .luxury-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .luxury-title-section h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, #66FCF1, #C3073F);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 4px;
+    }
+
+    .luxury-status {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #66FCF1;
+    }
+
+    .luxury-status-dot {
+        width: 8px;
+        height: 8px;
+        background: #66FCF1;
+        border-radius: 50%;
+        animation: pulseGlow 1.5s infinite;
+    }
+
+    .luxury-close-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .luxury-close-btn:hover {
+        background: rgba(195, 7, 63, 0.5);
+        transform: rotate(90deg);
+    }
+
+    /* Chat Messages Area */
+    .luxury-chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        scroll-behavior: smooth;
+    }
+
+    .luxury-chat-messages::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .luxury-chat-messages::-webkit-scrollbar-track {
+        background: rgba(102, 252, 241, 0.1);
+        border-radius: 10px;
+    }
+
+    .luxury-chat-messages::-webkit-scrollbar-thumb {
+        background: #66FCF1;
+        border-radius: 10px;
+    }
+
+    /* Message Styles */
+    .luxury-message {
+        display: flex;
+        animation: slideInLeft 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+
+    .luxury-message.user {
+        justify-content: flex-end;
+    }
+
+    .luxury-message.bot {
+        justify-content: flex-start;
+    }
+
+    .luxury-message-bubble {
+        max-width: 85%;
+        padding: 12px 18px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        position: relative;
+        backdrop-filter: blur(10px);
+    }
+
+    .luxury-message.user .luxury-message-bubble {
+        background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(195, 7, 63, 0.2));
+        border: 1px solid rgba(102, 252, 241, 0.5);
+        color: white;
+        border-bottom-right-radius: 4px;
+    }
+
+    .luxury-message.bot .luxury-message-bubble {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(102, 252, 241, 0.3);
+        color: #eef4ff;
+        border-bottom-left-radius: 4px;
+    }
+
+    /* Quick Replies */
+    .luxury-quick-replies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+    }
+
+    .luxury-quick-btn {
+        background: rgba(102, 252, 241, 0.1);
+        border: 1px solid rgba(102, 252, 241, 0.3);
+        padding: 8px 16px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 0.8rem;
+        color: #66FCF1;
+        transition: all 0.3s;
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .luxury-quick-btn:hover {
+        background: rgba(102, 252, 241, 0.2);
+        transform: translateY(-2px);
+        border-color: #66FCF1;
+        box-shadow: 0 4px 12px rgba(102, 252, 241, 0.2);
+    }
+
+    /* Typing Indicator */
+    .luxury-typing {
+        display: flex;
+        gap: 6px;
+        padding: 12px 18px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        width: fit-content;
+        border: 1px solid rgba(102, 252, 241, 0.3);
+    }
+
+    .luxury-typing-dot {
+        width: 6px;
+        height: 6px;
+        background: #66FCF1;
+        border-radius: 50%;
+        animation: typingWave 1.4s infinite;
+    }
+
+    .luxury-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .luxury-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes typingWave {
+        0%, 60%, 100% {
+            transform: translateY(0);
+            opacity: 0.4;
+        }
+        30% {
+            transform: translateY(-8px);
+            opacity: 1;
+        }
+    }
+
+    /* Input Area */
+    .luxury-input-area {
+        padding: 20px;
+        border-top: 1px solid rgba(102, 252, 241, 0.2);
+        background: rgba(10, 25, 47, 0.8);
+        border-radius: 0 0 28px 28px;
+    }
+
+    .luxury-input-wrapper {
+        display: flex;
+        gap: 12px;
+        align-items: flex-end;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        padding: 4px;
+        border: 1px solid rgba(102, 252, 241, 0.3);
+        transition: all 0.3s;
+    }
+
+    .luxury-input-wrapper:focus-within {
+        border-color: #66FCF1;
+        box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+    }
+
+    .luxury-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        padding: 12px 16px;
+        color: white;
+        font-size: 0.9rem;
+        font-family: 'Space Grotesk', sans-serif;
+        resize: none;
+        outline: none;
+    }
+
+    .luxury-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .luxury-send-btn {
+        background: linear-gradient(135deg, #66FCF1, #C3073F);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+    }
+
+    .luxury-send-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
+    }
+
+    .luxury-send-btn svg {
+        width: 20px;
+        height: 20px;
+        fill: white;
+    }
+
+    /* Overlay */
+    .luxury-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+
+    .luxury-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+        .luxury-chat-panel {
+            width: calc(100vw - 40px);
+            right: 20px;
+            bottom: 100px;
+            height: 550px;
+        }
+    }
+</style>
+
+<!-- Chat HTML -->
+<div class="luxury-overlay" id="luxuryOverlay"></div>
+
+<button class="luxury-chat-button" id="luxuryChatButton">
+    <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+    </svg>
+</button>
+
+<div class="luxury-chat-panel" id="luxuryChatPanel">
+    <div class="luxury-chat-header">
+        <div class="luxury-header-content">
+            <div class="luxury-title-section">
+                <h3>SARR Assistant</h3>
+                <div class="luxury-status">
+                    <span class="luxury-status-dot"></span>
+                    <span>Ready to assist</span>
+                </div>
+            </div>
+            <button class="luxury-close-btn" id="luxuryCloseChat">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="luxury-chat-messages" id="luxuryChatMessages">
+        <div class="luxury-message bot">
+            <div class="luxury-message-bubble">
+                Welcome to SARR Institute of Technology.<br><br>
+                I'm your dedicated assistant. I can help you with:<br>
+                • 📚 Course information<br>
+                • 📝 Admissions process<br>
+                • 💰 Fee structure<br>
+                • 🌍 Global partnerships<br>
+                • 💼 Career support<br><br>
+                How may I assist you today?
+            </div>
+            <div class="luxury-quick-replies" id="luxuryQuickReplies"></div>
+        </div>
+    </div>
+
+    <div class="luxury-input-area">
+        <div class="luxury-input-wrapper">
+            <textarea class="luxury-input" id="luxuryChatInput" placeholder="Type your question..." rows="1"></textarea>
+            <button class="luxury-send-btn" id="luxurySendMessage">
+                <svg viewBox="0 0 24 24">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // FAQ Database
+    const luxuryFAQDatabase = [
+        { keywords: ["what is sarr", "about sarr", "sarr institute"], response: "SARR Institute of Technology is a premier technology education institution offering cutting-edge courses in AI, Web Development, Cybersecurity, Design, and Emerging Technologies. We are globally recognized and collaborate with Horizon Growth Institute, Canadian Institute of Technology, and International Institute of Technology." },
+        { keywords: ["established", "founded", "when started"], response: "SARR Institute of Technology was established in 2015, and since then we've been empowering innovators and transforming futures through quality tech education." },
+        { keywords: ["location", "where", "address"], response: "Our main campus is located at Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, Azad Jammu and Kashmir, Pakistan." },
+        { keywords: ["courses", "programs", "what courses", "offer"], response: "We offer comprehensive programs across 5 categories:\n\n💻 Development: Web, App, Game, AI\n🎨 Design: Graphics, 2D/3D Animation\n🔒 Security: Cybersecurity, Ethical Hacking\n🚀 Emerging: AI/ML, Freelancing\n💼 Soft Skills: Leadership, Entrepreneurship" },
+        { keywords: ["web development", "web dev"], response: "Our Full Stack Web Development course is 6 months long, covering MERN stack, Next.js, and cloud deployment with hands-on projects." },
+        { keywords: ["apply", "admission", "enroll"], response: "You can apply online through our enrollment portal. Limited seats available for Fall 2025 intake. Visit our Enroll Now page to start your application." },
+        { keywords: ["fee", "fees", "cost", "price"], response: "Course fees vary by program duration and category. We offer flexible installment plans. Contact our admissions team for detailed fee structure." },
+        { keywords: ["scholarship", "financial aid"], response: "Yes! We offer merit-based scholarships for outstanding students. Contact our admissions office for eligibility criteria and application process." },
+        { keywords: ["placement", "job", "career"], response: "Our placement rate is 92%! We provide comprehensive career support including resume building, interview preparation, job placement assistance, and freelancing guidance." },
+        { keywords: ["partners", "collaborations", "global"], response: "We are proudly partnered with Horizon Growth Institute (UK), Canadian Institute of Technology (Toronto), and International Institute of Technology (Singapore) for joint certifications and exchange programs." },
+        { keywords: ["contact", "email", "phone"], response: "📧 Email: sarr.edu.pk@gmail.com\n📞 Phone: +92 320 5702273\n📍 Address: Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, AJK" },
+        { keywords: ["duration", "how long"], response: "Course durations vary: Foundation programs (2-3 months), Professional programs (4-6 months), Advanced programs (5-7 months). Contact us for specific course duration." },
+        { keywords: ["online", "virtual", "remote"], response: "Yes! We offer both online and physical class options for most programs. You can choose your preferred mode during application." }
+    ];
+
+    const luxuryQuickReplies = [
+        "Available courses",
+        "Admission process",
+        "Fee & scholarships",
+        "Placement support",
+        "Contact details"
+    ];
+
+    let luxuryIsTyping = false;
+
+    // Auto-resize textarea
+    const luxuryTextarea = document.getElementById('luxuryChatInput');
+    luxuryTextarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+    });
+
+    // Load quick replies
+    function loadLuxuryQuickReplies() {
+        const container = document.getElementById('luxuryQuickReplies');
+        if (!container) return;
+        container.innerHTML = '';
+        luxuryQuickReplies.forEach(reply => {
+            const btn = document.createElement('button');
+            btn.className = 'luxury-quick-btn';
+            btn.textContent = reply;
+            btn.onclick = () => {
+                document.getElementById('luxuryChatInput').value = reply;
+                sendLuxuryMessage();
+            };
+            container.appendChild(btn);
+        });
+    }
+
+    // Find best match
+    function findLuxuryBestMatch(message) {
+        const userMessage = message.toLowerCase();
+        let bestMatch = null;
+        let highestScore = 0;
+
+        for (const faq of luxuryFAQDatabase) {
+            for (const keyword of faq.keywords) {
+                if (userMessage.includes(keyword.toLowerCase())) {
+                    const score = keyword.length;
+                    if (score > highestScore) {
+                        highestScore = score;
+                        bestMatch = faq;
+                    }
+                }
+            }
+        }
+
+        if (!bestMatch || highestScore < 3) {
+            return {
+                response: "I'll connect you with our support team for detailed assistance. Meanwhile, you can reach us at sarr.edu.pk@gmail.com or call +92 320 5702273."
+            };
+        }
+
+        return bestMatch;
+    }
+
+    // Add message
+    function addLuxuryMessage(text, sender) {
+        const messagesDiv = document.getElementById('luxuryChatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `luxury-message ${sender}`;
+        
+        const bubble = document.createElement('div');
+        bubble.className = 'luxury-message-bubble';
+        bubble.style.whiteSpace = 'pre-line';
+        bubble.textContent = text;
+        
+        messageDiv.appendChild(bubble);
+        messagesDiv.appendChild(messageDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Show typing indicator
+    function showLuxuryTyping() {
+        const messagesDiv = document.getElementById('luxuryChatMessages');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'luxury-message bot';
+        typingDiv.id = 'luxury-typing';
+        
+        const indicator = document.createElement('div');
+        indicator.className = 'luxury-typing';
+        indicator.innerHTML = '<span class="luxury-typing-dot"></span><span class="luxury-typing-dot"></span><span class="luxury-typing-dot"></span>';
+        
+        typingDiv.appendChild(indicator);
+        messagesDiv.appendChild(typingDiv);
+        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    // Hide typing indicator
+    function hideLuxuryTyping() {
+        const typing = document.getElementById('luxury-typing');
+        if (typing) typing.remove();
+    }
+
+    // Send message
+    async function sendLuxuryMessage() {
+        const input = document.getElementById('luxuryChatInput');
+        const message = input.value.trim();
+        if (!message || luxuryIsTyping) return;
+
+        addLuxuryMessage(message, 'user');
+        input.value = '';
+        input.style.height = 'auto';
+
+        luxuryIsTyping = true;
+        showLuxuryTyping();
+
+        setTimeout(() => {
+            const match = findLuxuryBestMatch(message);
+            hideLuxuryTyping();
+            addLuxuryMessage(match.response, 'bot');
+            luxuryIsTyping = false;
+        }, 800);
+    }
+
+    // Open chat
+    function openLuxuryChat() {
+        const panel = document.getElementById('luxuryChatPanel');
+        const overlay = document.getElementById('luxuryOverlay');
+        panel.classList.add('open');
+        overlay.classList.add('active');
+        
+        // Add ripple effect
+        const btn = document.getElementById('luxuryChatButton');
+        btn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            btn.style.transform = '';
+        }, 200);
+    }
+
+    // Close chat
+    function closeLuxuryChat() {
+        const panel = document.getElementById('luxuryChatPanel');
+        const overlay = document.getElementById('luxuryOverlay');
+        panel.classList.remove('open');
+        overlay.classList.remove('active');
+    }
+
+    // Event listeners
+    document.getElementById('luxuryChatButton').addEventListener('click', openLuxuryChat);
+    document.getElementById('luxuryCloseChat').addEventListener('click', closeLuxuryChat);
+    document.getElementById('luxuryOverlay').addEventListener('click', closeLuxuryChat);
+    document.getElementById('luxurySendMessage').addEventListener('click', sendLuxuryMessage);
+    
+    document.getElementById('luxuryChatInput').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendLuxuryMessage();
+        }
+    });
+
+    // Initialize
+    loadLuxuryQuickReplies();
+</script>
 </body>
 </html>
