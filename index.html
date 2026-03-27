@@ -1460,5 +1460,574 @@
     // Initialize
     loadLuxuryQuickReplies();
 </script>
+    <!-- Add this with your chatbot styles and HTML -->
+<style>
+    /* WhatsApp Group Button - Premium Design */
+    @keyframes whatsappPulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+
+    @keyframes groupPulse {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes whatsappGlow {
+        0%, 100% {
+            filter: drop-shadow(0 0 5px rgba(37, 211, 102, 0.5));
+        }
+        50% {
+            filter: drop-shadow(0 0 20px rgba(37, 211, 102, 0.8));
+        }
+    }
+
+    /* WhatsApp Group Button */
+    .whatsapp-group-button {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1001;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        animation: whatsappPulse 2s infinite, floatIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        text-decoration: none;
+    }
+
+    .whatsapp-group-button::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(37,211,102,0.8), rgba(18,140,126,0.8));
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .whatsapp-group-button:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+        animation: whatsappGlow 0.5s ease;
+    }
+
+    .whatsapp-group-button:active::before {
+        animation: ripple 0.6s ease-out;
+    }
+
+    .whatsapp-group-button svg {
+        width: 36px;
+        height: 36px;
+        fill: white;
+        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+        z-index: 1;
+    }
+
+    /* Group Icon Indicator */
+    .group-indicator {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background: #C3073F;
+        color: white;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+        border: 2px solid white;
+        animation: groupPulse 1.5s infinite;
+        z-index: 2;
+    }
+
+    /* Tooltip */
+    .whatsapp-group-tooltip {
+        position: absolute;
+        left: 80px;
+        background: rgba(10, 25, 47, 0.95);
+        backdrop-filter: blur(10px);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        white-space: nowrap;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: all 0.3s;
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .whatsapp-group-button:hover .whatsapp-group-tooltip {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* WhatsApp Group Panel */
+    .whatsapp-group-panel {
+        position: fixed;
+        bottom: 120px;
+        left: 30px;
+        width: 420px;
+        height: auto;
+        max-height: 550px;
+        background: rgba(10, 25, 47, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 28px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(37, 211, 102, 0.3);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0.9);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        pointer-events: none;
+        font-family: 'Space Grotesk', 'Poppins', sans-serif;
+    }
+
+    .whatsapp-group-panel.open {
+        transform: scale(1);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        animation: slideInLeft 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+    }
+
+    .whatsapp-group-header {
+        background: linear-gradient(135deg, rgba(37, 211, 102, 0.2), rgba(18, 140, 126, 0.2));
+        padding: 20px 24px;
+        border-radius: 28px 28px 0 0;
+        border-bottom: 1px solid rgba(37, 211, 102, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .whatsapp-group-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(37, 211, 102, 0.1), transparent);
+        animation: shimmer 3s infinite;
+    }
+
+    .whatsapp-group-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .whatsapp-group-title-section {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .whatsapp-group-icon {
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: groupPulse 2s infinite;
+    }
+
+    .whatsapp-group-icon svg {
+        width: 26px;
+        height: 26px;
+        fill: white;
+    }
+
+    .whatsapp-group-title-section h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 4px;
+    }
+
+    .whatsapp-group-status {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        color: #25D366;
+    }
+
+    .whatsapp-group-close-btn {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        width: 32px;
+        height: 32px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .whatsapp-group-close-btn:hover {
+        background: rgba(37, 211, 102, 0.5);
+        transform: rotate(90deg);
+    }
+
+    .whatsapp-group-content {
+        flex: 1;
+        overflow-y: auto;
+        padding: 24px;
+    }
+
+    .group-info-card {
+        background: rgba(37, 211, 102, 0.08);
+        border: 1px solid rgba(37, 211, 102, 0.3);
+        border-radius: 24px;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .group-icon-large {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        animation: groupPulse 2s infinite;
+    }
+
+    .group-icon-large svg {
+        width: 48px;
+        height: 48px;
+        fill: white;
+    }
+
+    .group-name {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    .group-description {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+
+    .group-meta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 16px 0;
+        font-size: 0.85rem;
+        color: #25D366;
+    }
+
+    .group-meta span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .join-group-btn {
+        background: linear-gradient(135deg, #25D366, #128C7E);
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 1rem;
+        margin-top: 16px;
+        transition: all 0.3s;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .join-group-btn:hover {
+        transform: scale(1.02);
+        box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .feature-list {
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 16px;
+    }
+
+    .feature-list h4 {
+        color: #25D366;
+        margin-bottom: 12px;
+        font-size: 0.9rem;
+    }
+
+    .feature-list ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .feature-list li {
+        padding: 8px 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .feature-list li::before {
+        content: "✓";
+        color: #25D366;
+        font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+        .whatsapp-group-button {
+            bottom: 30px;
+            left: 20px;
+            width: 55px;
+            height: 55px;
+        }
+        
+        .whatsapp-group-button svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .whatsapp-group-panel {
+            width: calc(100vw - 40px);
+            left: 20px;
+            bottom: 100px;
+            max-height: 80vh;
+        }
+        
+        .whatsapp-group-tooltip {
+            display: none;
+        }
+        
+        .group-name {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+<!-- WhatsApp Group Button HTML -->
+<div class="whatsapp-group-button" id="whatsappGroupButton">
+    <svg viewBox="0 0 24 24">
+        <path d="M12.032 0C5.384 0 0 5.384 0 12.032c0 2.128.56 4.216 1.632 6.048L0 24l6.048-1.584c1.776.96 3.808 1.472 5.856 1.472 6.648 0 12.032-5.384 12.032-12.032S18.68 0 12.032 0zm0 22.112c-1.824 0-3.616-.496-5.184-1.424l-.368-.224-3.584.944.944-3.52-.24-.384c-1.008-1.616-1.536-3.472-1.536-5.392 0-5.52 4.496-10.016 10.016-10.016 5.52 0 10.016 4.496 10.016 10.016 0 5.52-4.496 10.016-10.016 10.016z"/>
+    </svg>
+    <div class="group-indicator">
+        <i class="fas fa-users"></i>
+    </div>
+    <div class="whatsapp-group-tooltip">Join WhatsApp Group</div>
+</div>
+
+<!-- WhatsApp Group Panel -->
+<div class="whatsapp-group-panel" id="whatsappGroupPanel">
+    <div class="whatsapp-group-header">
+        <div class="whatsapp-group-header-content">
+            <div class="whatsapp-group-title-section">
+                <div class="whatsapp-group-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12.032 0C5.384 0 0 5.384 0 12.032c0 2.128.56 4.216 1.632 6.048L0 24l6.048-1.584c1.776.96 3.808 1.472 5.856 1.472 6.648 0 12.032-5.384 12.032-12.032S18.68 0 12.032 0z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h3>SARR Community</h3>
+                    <div class="whatsapp-group-status">
+                        <span class="luxury-status-dot"></span>
+                        <span>Active Group • 150+ Members</span>
+                    </div>
+                </div>
+            </div>
+            <button class="whatsapp-group-close-btn" id="closeWhatsAppGroup">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="whatsapp-group-content">
+        <div class="group-info-card">
+            <div class="group-icon-large">
+                <svg viewBox="0 0 24 24">
+                    <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm8 6h-8v-2c0-2.76-2.24-5-5-5s-5 2.24-5 5v2H0v2c0 2.21 1.79 4 4 4h16c2.21 0 4-1.79 4-4v-2zm-11.5-5.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5z"/>
+                </svg>
+            </div>
+            <div class="group-name">SARR Institute Official Group</div>
+            <div class="group-description">
+                Join our official WhatsApp community to get updates about courses, events, scholarships, and connect with fellow students and alumni.
+            </div>
+            <div class="group-meta">
+                <span><i class="fas fa-users"></i> 150+ Members</span>
+                <span><i class="fas fa-comment"></i> Active Daily</span>
+                <span><i class="fas fa-shield-alt"></i> Verified Group</span>
+            </div>
+            <button class="join-group-btn" id="joinWhatsAppGroup">
+                <i class="fab fa-whatsapp"></i>
+                Join WhatsApp Group
+            </button>
+        </div>
+
+        <div class="feature-list">
+            <h4>What you'll get:</h4>
+            <ul>
+                <li>Latest course updates and announcements</li>
+                <li>Scholarship opportunities alerts</li>
+                <li>Industry events and webinar invites</li>
+                <li>Connect with mentors and alumni</li>
+                <li>Career opportunities and freelancing tips</li>
+                <li>Community support and networking</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    // WhatsApp Group Link - Replace with your actual WhatsApp group invite link
+    const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/your-group-invite-code";
+    // Example: "https://chat.whatsapp.com/ABC123def456GHI789"
+    
+    // If you don't have a group link yet, you can use this format:
+    // "https://chat.whatsapp.com/your-group-invite-id"
+    
+    // You can also use the WhatsApp group invite code directly:
+    // const GROUP_INVITE_CODE = "your-group-invite-code";
+    // const WHATSAPP_GROUP_LINK = `https://chat.whatsapp.com/${GROUP_INVITE_CODE}`;
+    
+    // Panel elements
+    const groupPanel = document.getElementById('whatsappGroupPanel');
+    const groupButton = document.getElementById('whatsappGroupButton');
+    const closeGroupBtn = document.getElementById('closeWhatsAppGroup');
+    const joinGroupBtn = document.getElementById('joinWhatsAppGroup');
+    const overlay = document.getElementById('luxuryOverlay');
+    
+    // Function to open WhatsApp Group
+    window.openWhatsAppGroup = function() {
+        if (WHATSAPP_GROUP_LINK && WHATSAPP_GROUP_LINK !== "https://chat.whatsapp.com/your-group-invite-code") {
+            window.open(WHATSAPP_GROUP_LINK, '_blank', 'noopener,noreferrer');
+            closeGroupPanel();
+        } else {
+            // Show a message if group link is not configured
+            alert('WhatsApp group link will be added soon. Please check back later or contact our support team.');
+        }
+    };
+    
+    // Open Panel
+    function openGroupPanel() {
+        if (groupPanel) {
+            groupPanel.classList.add('open');
+            if (overlay) overlay.classList.add('active');
+        }
+    }
+    
+    // Close Panel
+    function closeGroupPanel() {
+        if (groupPanel) {
+            groupPanel.classList.remove('open');
+            if (overlay && !document.getElementById('luxuryChatPanel')?.classList.contains('open')) {
+                overlay.classList.remove('active');
+            }
+        }
+    }
+    
+    // Event listeners
+    if (groupButton) {
+        groupButton.onclick = function(e) {
+            e.preventDefault();
+            openGroupPanel();
+        };
+    }
+    
+    if (closeGroupBtn) {
+        closeGroupBtn.addEventListener('click', closeGroupPanel);
+    }
+    
+    if (joinGroupBtn) {
+        joinGroupBtn.addEventListener('click', window.openWhatsAppGroup);
+    }
+    
+    // Close when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            if (groupPanel?.classList.contains('open')) {
+                closeGroupPanel();
+            }
+        });
+    }
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (groupPanel?.classList.contains('open')) {
+                closeGroupPanel();
+            }
+        }
+    });
+    
+    // Hover animation for tooltip
+    if (groupButton) {
+        groupButton.addEventListener('mouseenter', function() {
+            const tooltip = this.querySelector('.whatsapp-group-tooltip');
+            if (tooltip) {
+                tooltip.style.opacity = '1';
+                tooltip.style.transform = 'translateX(0)';
+            }
+        });
+        
+        groupButton.addEventListener('mouseleave', function() {
+            const tooltip = this.querySelector('.whatsapp-group-tooltip');
+            if (tooltip) {
+                tooltip.style.opacity = '0';
+                tooltip.style.transform = 'translateX(-20px)';
+            }
+        });
+    }
+</script>
 </body>
 </html>
