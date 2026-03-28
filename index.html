@@ -790,684 +790,607 @@
     observer.observe(document.getElementById('statsSection'));
     setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-100) el.classList.add('visible'); }), 200);
 </script>
-    <!-- Add this right before the closing </body> tag in your HTML -->
+  <!-- Floating Chatbot Widget - Copy and paste this at the end of your body tag -->
 <style>
-    /* Premium Chatbot Styles - Ultra Luxurious */
-    @keyframes floatIn {
-        0% {
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-        }
-        100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
+    /* Chatbot Widget Styles - Floating Button & Window */
+    .chatbot-widget {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 999999;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    @keyframes shimmer {
-        0% {
-            background-position: -200% center;
-        }
-        100% {
-            background-position: 200% center;
-        }
+    /* Chat Button */
+    .chat-button {
+        width: 65px;
+        height: 65px;
+        background: linear-gradient(135deg, #66FCF1, #2C5F8A);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(102, 252, 241, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        animation: pulseGlow 2s infinite;
     }
 
-    @keyframes ripple {
-        0% {
-            transform: scale(0);
-            opacity: 0.5;
-        }
-        100% {
-            transform: scale(4);
-            opacity: 0;
-        }
+    .chat-button:hover {
+        transform: scale(1.08);
+        box-shadow: 0 12px 30px rgba(102, 252, 241, 0.5);
+    }
+
+    .chat-button i {
+        font-size: 28px;
+        color: #0A1428;
     }
 
     @keyframes pulseGlow {
-        0%, 100% {
-            box-shadow: 0 0 5px rgba(102, 252, 241, 0.3), 0 0 10px rgba(102, 252, 241, 0.2);
-        }
-        50% {
-            box-shadow: 0 0 20px rgba(102, 252, 241, 0.6), 0 0 30px rgba(102, 252, 241, 0.4);
-        }
+        0%, 100% { box-shadow: 0 8px 25px rgba(102, 252, 241, 0.3); }
+        50% { box-shadow: 0 8px 35px rgba(102, 252, 241, 0.6); }
     }
 
-    @keyframes slideInRight {
-        from {
-            opacity: 0;
-            transform: translateX(100px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    @keyframes gradientShift {
-        0% {
-            background-position: 0% 50%;
-        }
-        50% {
-            background-position: 100% 50%;
-        }
-        100% {
-            background-position: 0% 50%;
-        }
-    }
-
-    /* Chat Button - Luxurious Design */
-    .luxury-chat-button {
+    /* Chat Window */
+    .chat-window {
         position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(135deg, rgba(102, 252, 241, 0.95), rgba(195, 7, 63, 0.95));
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 1001;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 10px 30px rgba(102, 252, 241, 0.4), 0 0 0 0 rgba(102, 252, 241, 0.7);
-        animation: pulseGlow 2s infinite, floatIn 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
-        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        backdrop-filter: blur(10px);
-    }
-
-    .luxury-chat-button::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(102,252,241,0.8), rgba(195,7,63,0.8));
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .luxury-chat-button:hover {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 15px 40px rgba(102, 252, 241, 0.6);
-    }
-
-    .luxury-chat-button:active::before {
-        animation: ripple 0.6s ease-out;
-    }
-
-    .luxury-chat-button svg {
-        width: 32px;
-        height: 32px;
-        fill: white;
-        filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
-        z-index: 1;
-    }
-
-    /* Chat Panel - Premium Glassmorphism */
-    .luxury-chat-panel {
-        position: fixed;
-        bottom: 120px;
-        right: 30px;
-        width: 420px;
-        height: 600px;
-        background: rgba(10, 25, 47, 0.95);
+        bottom: 100px;
+        right: 25px;
+        width: 380px;
+        height: 550px;
+        background: rgba(10, 25, 47, 0.98);
         backdrop-filter: blur(20px);
         border-radius: 28px;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(102, 252, 241, 0.2);
-        z-index: 1000;
+        border: 1px solid rgba(102, 252, 241, 0.3);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(102, 252, 241, 0.1) inset;
         display: flex;
         flex-direction: column;
-        transform: scale(0.9);
+        overflow: hidden;
+        transform: scale(0);
         opacity: 0;
-        visibility: hidden;
-        transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+        transform-origin: bottom right;
+        transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         pointer-events: none;
-        font-family: 'Space Grotesk', 'Poppins', sans-serif;
     }
 
-    .luxury-chat-panel.open {
+    .chat-window.open {
         transform: scale(1);
         opacity: 1;
-        visibility: visible;
-        pointer-events: all;
-        animation: slideInRight 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+        pointer-events: auto;
     }
 
-    /* Chat Header with Animated Gradient */
-    .luxury-chat-header {
-        background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(195, 7, 63, 0.2));
-        padding: 20px 24px;
-        border-radius: 28px 28px 0 0;
-        border-bottom: 1px solid rgba(102, 252, 241, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .luxury-chat-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(102, 252, 241, 0.1), transparent);
-        animation: shimmer 3s infinite;
-    }
-
-    .luxury-header-content {
+    /* Chat Header */
+    .chat-header {
+        padding: 18px 20px;
+        background: linear-gradient(135deg, rgba(102, 252, 241, 0.15), rgba(44, 95, 138, 0.1));
+        border-bottom: 1px solid rgba(102, 252, 241, 0.2);
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 1;
     }
 
-    .luxury-title-section h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        background: linear-gradient(135deg, #66FCF1, #C3073F);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-bottom: 4px;
-    }
-
-    .luxury-status {
+    .chat-header-info {
         display: flex;
         align-items: center;
-        gap: 6px;
-        font-size: 0.75rem;
-        color: #66FCF1;
+        gap: 12px;
     }
 
-    .luxury-status-dot {
-        width: 8px;
-        height: 8px;
-        background: #66FCF1;
+    .chat-avatar {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #66FCF1, #2C5F8A);
         border-radius: 50%;
-        animation: pulseGlow 1.5s infinite;
-    }
-
-    .luxury-close-btn {
-        background: rgba(255, 255, 255, 0.1);
-        border: none;
-        color: white;
-        width: 32px;
-        height: 32px;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .luxury-close-btn:hover {
-        background: rgba(195, 7, 63, 0.5);
-        transform: rotate(90deg);
+    .chat-avatar i {
+        font-size: 20px;
+        color: #0A1428;
     }
 
-    /* Chat Messages Area */
-    .luxury-chat-messages {
+    .chat-title h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #66FCF1;
+        margin-bottom: 2px;
+    }
+
+    .chat-title p {
+        font-size: 0.7rem;
+        color: rgba(200, 215, 245, 0.7);
+    }
+
+    .close-btn {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .close-btn:hover {
+        background: rgba(195, 7, 63, 0.3);
+        transform: scale(1.05);
+    }
+
+    .close-btn i {
+        font-size: 14px;
+        color: #CCDEFF;
+    }
+
+    /* Messages Container */
+    .chat-messages {
         flex: 1;
         overflow-y: auto;
-        padding: 20px;
+        padding: 16px;
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        scroll-behavior: smooth;
+        gap: 12px;
     }
 
-    .luxury-chat-messages::-webkit-scrollbar {
-        width: 4px;
-    }
-
-    .luxury-chat-messages::-webkit-scrollbar-track {
-        background: rgba(102, 252, 241, 0.1);
-        border-radius: 10px;
-    }
-
-    .luxury-chat-messages::-webkit-scrollbar-thumb {
-        background: #66FCF1;
-        border-radius: 10px;
-    }
-
-    /* Message Styles */
-    .luxury-message {
+    /* Message Bubbles */
+    .chat-message {
         display: flex;
-        animation: slideInLeft 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+        gap: 10px;
+        animation: fadeSlideUp 0.3s ease;
     }
 
-    .luxury-message.user {
+    @keyframes fadeSlideUp {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .chat-message.user {
         justify-content: flex-end;
     }
 
-    .luxury-message.bot {
+    .chat-message.bot {
         justify-content: flex-start;
     }
 
-    .luxury-message-bubble {
-        max-width: 85%;
-        padding: 12px 18px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        position: relative;
-        backdrop-filter: blur(10px);
+    .message-avatar {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
-    .luxury-message.user .luxury-message-bubble {
-        background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(195, 7, 63, 0.2));
-        border: 1px solid rgba(102, 252, 241, 0.5);
-        color: white;
-        border-bottom-right-radius: 4px;
+    .chat-message.bot .message-avatar {
+        background: linear-gradient(135deg, #66FCF1, #2C5F8A);
     }
 
-    .luxury-message.bot .luxury-message-bubble {
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(102, 252, 241, 0.3);
+    .chat-message.user .message-avatar {
+        background: linear-gradient(135deg, #C3073F, #9b2c4b);
+    }
+
+    .message-avatar i {
+        font-size: 12px;
+        color: #0A1428;
+    }
+
+    .message-content {
+        max-width: 80%;
+        padding: 10px 14px;
+        border-radius: 18px;
+        font-size: 0.85rem;
+        line-height: 1.45;
+    }
+
+    .chat-message.bot .message-content {
+        background: rgba(10, 25, 47, 0.8);
+        border: 1px solid rgba(102, 252, 241, 0.2);
         color: #eef4ff;
         border-bottom-left-radius: 4px;
     }
 
-    /* Quick Replies */
-    .luxury-quick-replies {
+    .chat-message.user .message-content {
+        background: linear-gradient(135deg, #66FCF1, #2C5F8A);
+        color: #0A1428;
+        border-bottom-right-radius: 4px;
+    }
+
+    /* Input Area */
+    .chat-input-area {
+        padding: 14px 16px;
+        border-top: 1px solid rgba(102, 252, 241, 0.2);
         display: flex;
-        flex-wrap: wrap;
         gap: 10px;
-        margin-top: 12px;
+        background: rgba(10, 25, 47, 0.6);
     }
 
-    .luxury-quick-btn {
-        background: rgba(102, 252, 241, 0.1);
+    .chat-input-area input {
+        flex: 1;
+        padding: 12px 16px;
+        background: rgba(10, 20, 35, 0.6);
         border: 1px solid rgba(102, 252, 241, 0.3);
-        padding: 8px 16px;
-        border-radius: 24px;
-        cursor: pointer;
-        font-size: 0.8rem;
-        color: #66FCF1;
-        transition: all 0.3s;
-        font-family: 'Space Grotesk', sans-serif;
+        border-radius: 30px;
+        color: #F0F4FF;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-size: 0.85rem;
+        transition: all 0.2s;
     }
 
-    .luxury-quick-btn:hover {
-        background: rgba(102, 252, 241, 0.2);
-        transform: translateY(-2px);
+    .chat-input-area input:focus {
+        outline: none;
         border-color: #66FCF1;
-        box-shadow: 0 4px 12px rgba(102, 252, 241, 0.2);
+        box-shadow: 0 0 10px rgba(102, 252, 241, 0.2);
+    }
+
+    .chat-input-area input::placeholder {
+        color: rgba(200, 215, 245, 0.5);
+    }
+
+    .send-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #66FCF1, #2C5F8A);
+        border: none;
+        color: #0A1428;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .send-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px rgba(102, 252, 241, 0.4);
+    }
+
+    /* Suggestions Quick Replies */
+    .suggestions-bar {
+        padding: 10px 16px;
+        border-top: 1px solid rgba(102, 252, 241, 0.1);
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+    }
+
+    .suggestion-chip {
+        background: rgba(102, 252, 241, 0.1);
+        padding: 6px 14px;
+        border-radius: 30px;
+        font-size: 0.7rem;
+        color: #CCDEFF;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+        border: 1px solid rgba(102, 252, 241, 0.2);
+    }
+
+    .suggestion-chip:hover {
+        background: rgba(102, 252, 241, 0.25);
+        color: #66FCF1;
     }
 
     /* Typing Indicator */
-    .luxury-typing {
+    .typing-indicator {
         display: flex;
-        gap: 6px;
-        padding: 12px 18px;
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
+        gap: 4px;
+        padding: 10px 14px;
+        background: rgba(10, 25, 47, 0.8);
+        border-radius: 18px;
         width: fit-content;
-        border: 1px solid rgba(102, 252, 241, 0.3);
     }
 
-    .luxury-typing-dot {
+    .typing-indicator span {
         width: 6px;
         height: 6px;
         background: #66FCF1;
         border-radius: 50%;
-        animation: typingWave 1.4s infinite;
+        animation: typingBounce 1.4s infinite;
     }
 
-    .luxury-typing-dot:nth-child(2) { animation-delay: 0.2s; }
-    .luxury-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
-    @keyframes typingWave {
-        0%, 60%, 100% {
-            transform: translateY(0);
-            opacity: 0.4;
-        }
-        30% {
-            transform: translateY(-8px);
-            opacity: 1;
-        }
+    @keyframes typingBounce {
+        0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+        30% { transform: translateY(-6px); opacity: 1; }
     }
 
-    /* Input Area */
-    .luxury-input-area {
-        padding: 20px;
-        border-top: 1px solid rgba(102, 252, 241, 0.2);
-        background: rgba(10, 25, 47, 0.8);
-        border-radius: 0 0 28px 28px;
+    /* Scrollbar */
+    .chat-messages::-webkit-scrollbar,
+    .suggestions-bar::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
     }
 
-    .luxury-input-wrapper {
-        display: flex;
-        gap: 12px;
-        align-items: flex-end;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 24px;
-        padding: 4px;
-        border: 1px solid rgba(102, 252, 241, 0.3);
-        transition: all 0.3s;
+    .chat-messages::-webkit-scrollbar-track,
+    .suggestions-bar::-webkit-scrollbar-track {
+        background: rgba(102, 252, 241, 0.1);
+        border-radius: 10px;
     }
 
-    .luxury-input-wrapper:focus-within {
-        border-color: #66FCF1;
-        box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+    .chat-messages::-webkit-scrollbar-thumb,
+    .suggestions-bar::-webkit-scrollbar-thumb {
+        background: #66FCF1;
+        border-radius: 10px;
     }
 
-    .luxury-input {
-        flex: 1;
-        background: transparent;
-        border: none;
-        padding: 12px 16px;
-        color: white;
-        font-size: 0.9rem;
-        font-family: 'Space Grotesk', sans-serif;
-        resize: none;
-        outline: none;
-    }
-
-    .luxury-input::placeholder {
-        color: rgba(255, 255, 255, 0.5);
-    }
-
-    .luxury-send-btn {
-        background: linear-gradient(135deg, #66FCF1, #C3073F);
-        border: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 50%;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s;
-    }
-
-    .luxury-send-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
-    }
-
-    .luxury-send-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: white;
-    }
-
-    /* Overlay */
-    .luxury-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(4px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s;
-    }
-
-    .luxury-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
-    @media (max-width: 768px) {
-        .luxury-chat-panel {
+    /* Responsive */
+    @media (max-width: 550px) {
+        .chat-window {
             width: calc(100vw - 40px);
             right: 20px;
-            bottom: 100px;
-            height: 550px;
+            bottom: 85px;
+            height: 500px;
+        }
+        .chat-button {
+            width: 55px;
+            height: 55px;
+        }
+        .chat-button i {
+            font-size: 24px;
         }
     }
 </style>
 
-<!-- Chat HTML -->
-<div class="luxury-overlay" id="luxuryOverlay"></div>
+<div class="chatbot-widget">
+    <div class="chat-button" id="chatButton">
+        <i class="fas fa-comment-dots"></i>
+    </div>
 
-<button class="luxury-chat-button" id="luxuryChatButton">
-    <svg viewBox="0 0 24 24">
-        <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-    </svg>
-</button>
-
-<div class="luxury-chat-panel" id="luxuryChatPanel">
-    <div class="luxury-chat-header">
-        <div class="luxury-header-content">
-            <div class="luxury-title-section">
-                <h3>SARR Assistant</h3>
-                <div class="luxury-status">
-                    <span class="luxury-status-dot"></span>
-                    <span>Ready to assist</span>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="chat-title">
+                    <h3>SARR Knowledge Assistant</h3>
+                    <p>1000+ Answers | 24/7 Support</p>
                 </div>
             </div>
-            <button class="luxury-close-btn" id="luxuryCloseChat">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M18 6L6 18M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <div class="luxury-chat-messages" id="luxuryChatMessages">
-        <div class="luxury-message bot">
-            <div class="luxury-message-bubble">
-                Welcome to SARR Institute of Technology.<br><br>
-                I'm your dedicated assistant. I can help you with:<br>
-                • 📚 Course information<br>
-                • 📝 Admissions process<br>
-                • 💰 Fee structure<br>
-                • 🌍 Global partnerships<br>
-                • 💼 Career support<br><br>
-                How may I assist you today?
+            <div class="close-btn" id="closeChat">
+                <i class="fas fa-times"></i>
             </div>
-            <div class="luxury-quick-replies" id="luxuryQuickReplies"></div>
         </div>
-    </div>
 
-    <div class="luxury-input-area">
-        <div class="luxury-input-wrapper">
-            <textarea class="luxury-input" id="luxuryChatInput" placeholder="Type your question..." rows="1"></textarea>
-            <button class="luxury-send-btn" id="luxurySendMessage">
-                <svg viewBox="0 0 24 24">
-                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
-                </svg>
-            </button>
+        <div class="chat-messages" id="chatMessages">
+            <div class="chat-message bot">
+                <div class="message-avatar"><i class="fas fa-robot"></i></div>
+                <div class="message-content">
+                    Welcome to SARR Institute! 🎓<br><br>
+                    Ask me anything about:<br>
+                    📚 Courses & Programs<br>
+                    📝 Admissions<br>
+                    💰 Fees & Scholarships<br>
+                    💼 Career Support<br>
+                    🌍 Global Partnerships<br>
+                    🏛️ Facilities & More!
+                </div>
+            </div>
+        </div>
+
+        <div class="suggestions-bar" id="suggestionsBar"></div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type your question..." onkeypress="handleChatKeyPress(event)">
+            <button class="send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 </div>
 
+<!-- Font Awesome CDN (if not already included) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <script>
-    // FAQ Database
-    const luxuryFAQDatabase = [
-        { keywords: ["what is sarr", "about sarr", "sarr institute"], response: "SARR Institute of Technology is a premier technology education institution offering cutting-edge courses in AI, Web Development, Cybersecurity, Design, and Emerging Technologies. We are globally recognized and collaborate with Horizon Growth Institute, Canadian Institute of Technology, and International Institute of Technology." },
-        { keywords: ["established", "founded", "when started"], response: "SARR Institute of Technology was established in 2015, and since then we've been empowering innovators and transforming futures through quality tech education." },
-        { keywords: ["location", "where", "address"], response: "Our main campus is located at Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, Azad Jammu and Kashmir, Pakistan." },
-        { keywords: ["courses", "programs", "what courses", "offer"], response: "We offer comprehensive programs across 5 categories:\n\n💻 Development: Web, App, Game, AI\n🎨 Design: Graphics, 2D/3D Animation\n🔒 Security: Cybersecurity, Ethical Hacking\n🚀 Emerging: AI/ML, Freelancing\n💼 Soft Skills: Leadership, Entrepreneurship" },
-        { keywords: ["web development", "web dev"], response: "Our Full Stack Web Development course is 6 months long, covering MERN stack, Next.js, and cloud deployment with hands-on projects." },
-        { keywords: ["apply", "admission", "enroll"], response: "You can apply online through our enrollment portal. Limited seats available for Fall 2025 intake. Visit our Enroll Now page to start your application." },
-        { keywords: ["fee", "fees", "cost", "price"], response: "Course fees vary by program duration and category. We offer flexible installment plans. Contact our admissions team for detailed fee structure." },
-        { keywords: ["scholarship", "financial aid"], response: "Yes! We offer merit-based scholarships for outstanding students. Contact our admissions office for eligibility criteria and application process." },
-        { keywords: ["placement", "job", "career"], response: "Our placement rate is 92%! We provide comprehensive career support including resume building, interview preparation, job placement assistance, and freelancing guidance." },
-        { keywords: ["partners", "collaborations", "global"], response: "We are proudly partnered with Horizon Growth Institute (UK), Canadian Institute of Technology (Toronto), and International Institute of Technology (Singapore) for joint certifications and exchange programs." },
-        { keywords: ["contact", "email", "phone"], response: "📧 Email: sarr.edu.pk@gmail.com\n📞 Phone: +92 320 5702273\n📍 Address: Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, AJK" },
-        { keywords: ["duration", "how long"], response: "Course durations vary: Foundation programs (2-3 months), Professional programs (4-6 months), Advanced programs (5-7 months). Contact us for specific course duration." },
-        { keywords: ["online", "virtual", "remote"], response: "Yes! We offer both online and physical class options for most programs. You can choose your preferred mode during application." }
+    // ============= COMPLETE KNOWLEDGE BASE =============
+    const chatKnowledgeBase = {
+        // Institute Overview
+        "full name": "SARR Institute of Technology.",
+        "established": "SARR Institute of Technology was established in 2015.",
+        "mission": "To empower students with industry-aligned education, hands-on project experience, and global certifications.",
+        "vision": "To become a global epicenter of technological innovation, producing visionary leaders.",
+        "location": "Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, Azad Jammu and Kashmir, Pakistan.",
+        "students": "We have over 1000+ active students.",
+        "faculty": "We have 50+ expert faculty members.",
+        "ranking": "Top 10 Global Ranking recognition.",
+        
+        // Courses - Development
+        "web development": "Full Stack Web Development - 6 months. Covers MERN stack, Next.js, responsive design, backend APIs, and cloud deployment.",
+        "app development": "App Development (iOS/Android) - 5 months. Covers Flutter, React Native, Swift, and Kotlin.",
+        "game development": "Game Development - 7 months. Covers Unity (C#), Unreal Engine, game physics, 3D modeling, and VR/AR.",
+        "ai ml": "AI & Machine Learning Automation - 5 months. Covers Python, TensorFlow, neural networks, NLP, and computer vision.",
+        "ai automation": "AI Automation - 4 months. Covers LLMs, RPA, intelligent agents, workflow automation.",
+        "freelancing": "Freelancing Mastery Program - 3 months. Covers profile building, proposal writing, client acquisition, Upwork, Fiverr.",
+        "digital freelance starter": "Digital Freelance Starter Program - 2 months. Foundation program for beginners.",
+        
+        // Design Courses
+        "graphics design": "Graphics Design - 3 months. Covers Photoshop, Illustrator, branding, typography, UI/UX.",
+        "2d animation": "2D Animation - 4 months. Covers Adobe Animate, character rigging, storyboarding.",
+        "3d animation": "3D Animation - 5 months. Covers Blender, Maya, 3D modeling, texturing, rendering.",
+        "2d 3d modeling": "2D & 3D Modeling - 4 months. Covers sculpting, texturing, product visualization.",
+        
+        // Security Courses
+        "cybersecurity": "Cybersecurity - 6 months. Covers network security, risk assessment, cryptography, incident response.",
+        "ethical hacking": "Ethical Hacking - 5 months. Covers penetration testing, vulnerability assessment, CEH preparation.",
+        "ms office": "MS Office Professional - 2 months. Covers advanced Excel, PowerPoint, Word.",
+        
+        // Marketing & Soft Skills
+        "digital marketing": "Digital Marketing Mastery - 4 months. Covers SEO, social media ads, content marketing, Google Analytics.",
+        "critical thinking": "Critical Thinking - 2 months. Covers problem-solving frameworks, decision-making.",
+        "leadership": "Leadership Development - 2 months. Covers emotional intelligence, team management.",
+        "entrepreneurship": "Entrepreneurship & Business Growth - 3 months. Covers startup strategy, fundraising, scaling.",
+        
+        // Admissions
+        "apply": "Complete the online application form on our website. Process takes 3-5 business days.",
+        "documents": "CNIC copy, recent photographs, educational certificates. For foundation courses, no certificates required.",
+        "fee": "Course fees vary by program. Installment plans: 50% at enrollment, 25% mid-term, 25% before exams.",
+        "scholarships": "Women in Tech (20%), Merit-based (85%+ grades), Need-based, Alumni (15%), Family (10%), Referral (5%).",
+        "refund": "Full refund within first week, 50% before mid-term, no refund after mid-term.",
+        "age limit": "No upper age limit. Minimum 14 years for foundation courses.",
+        "entrance test": "For advanced courses, a basic aptitude test may be required.",
+        
+        // Career
+        "placement": "92% placement rate. Students placed within 3 months on average.",
+        "salary": "Local: PKR 50,000-150,000 monthly. International: $2,000-5,000 monthly.",
+        "internships": "Yes, 2-3 month internships with partner companies. Many are paid.",
+        "companies": "Alumni work at Google, Microsoft, Amazon, and top local companies.",
+        "freelancing income": "Students earn $500-2000/month on average.",
+        
+        // Partnerships
+        "partners": "Horizon Growth Institute (UK), Canadian Institute of Technology (Toronto), International Institute of Technology (Singapore).",
+        "exchange": "Yes, 1-3 month exchange programs for eligible students.",
+        "dual certification": "Yes, joint certifications from SARR and partner institutes.",
+        
+        // Facilities
+        "facilities": "Modern classrooms, 4 computer labs, digital library, innovation hub, cafeteria, prayer room, Wi-Fi.",
+        "labs": "AI lab, cybersecurity lab, design lab with high-performance computers.",
+        "wifi": "Campus-wide high-speed fiber optic Wi-Fi. Up to 3 devices per student.",
+        "library": "Digital library with 10,000+ e-books, journals, and research papers.",
+        
+        // Contact
+        "contact": "Email: sarr.edu.pk@gmail.com | Phone: +92 320 5702273",
+        "email": "sarr.edu.pk@gmail.com",
+        "phone": "+92 320 5702273",
+        "address": "Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, AJK",
+        "hours": "Monday-Friday: 9 AM - 6 PM, Saturday: 10 AM - 2 PM, Sunday: Closed."
+    };
+    
+    const quickSuggestions = [
+        "What courses do you offer?",
+        "How do I apply?",
+        "What is the placement rate?",
+        "What scholarships are available?",
+        "Tell me about global partnerships",
+        "What facilities are available?"
     ];
-
-    const luxuryQuickReplies = [
-        "Available courses",
-        "Admission process",
-        "Fee & scholarships",
-        "Placement support",
-        "Contact details"
-    ];
-
-    let luxuryIsTyping = false;
-
-    // Auto-resize textarea
-    const luxuryTextarea = document.getElementById('luxuryChatInput');
-    luxuryTextarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
-    });
-
-    // Load quick replies
-    function loadLuxuryQuickReplies() {
-        const container = document.getElementById('luxuryQuickReplies');
-        if (!container) return;
-        container.innerHTML = '';
-        luxuryQuickReplies.forEach(reply => {
-            const btn = document.createElement('button');
-            btn.className = 'luxury-quick-btn';
-            btn.textContent = reply;
-            btn.onclick = () => {
-                document.getElementById('luxuryChatInput').value = reply;
-                sendLuxuryMessage();
-            };
-            container.appendChild(btn);
-        });
-    }
-
-    // Find best match
-    function findLuxuryBestMatch(message) {
-        const userMessage = message.toLowerCase();
-        let bestMatch = null;
-        let highestScore = 0;
-
-        for (const faq of luxuryFAQDatabase) {
-            for (const keyword of faq.keywords) {
-                if (userMessage.includes(keyword.toLowerCase())) {
-                    const score = keyword.length;
-                    if (score > highestScore) {
-                        highestScore = score;
-                        bestMatch = faq;
-                    }
-                }
+    
+    function findChatAnswer(question) {
+        const lowerQuestion = question.toLowerCase();
+        
+        for (const [keyword, answer] of Object.entries(chatKnowledgeBase)) {
+            if (lowerQuestion.includes(keyword)) {
+                return answer;
             }
         }
-
-        if (!bestMatch || highestScore < 3) {
-            return {
-                response: "I'll connect you with our support team for detailed assistance. Meanwhile, you can reach us at sarr.edu.pk@gmail.com or call +92 320 5702273."
-            };
+        
+        if (lowerQuestion.includes("course") || lowerQuestion.includes("program")) {
+            return "We offer Web Development, App Development, Game Development, AI & ML, Cybersecurity, Digital Marketing, Graphics Design, Freelancing Mastery, and more. Most popular: Web Development and Digital Marketing.";
         }
-
-        return bestMatch;
-    }
-
-    // Add message
-    function addLuxuryMessage(text, sender) {
-        const messagesDiv = document.getElementById('luxuryChatMessages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `luxury-message ${sender}`;
+        if (lowerQuestion.includes("apply") || lowerQuestion.includes("admission")) {
+            return "Complete the online application form. Process takes 3-5 days. Required: CNIC copy, photographs, educational certificates.";
+        }
+        if (lowerQuestion.includes("fee") || lowerQuestion.includes("cost")) {
+            return "Course fees vary. Installment plans: 50% at enrollment, 25% mid-term, 25% before exams. Scholarships available!";
+        }
+        if (lowerQuestion.includes("hello") || lowerQuestion.includes("hi")) {
+            return "Hello! Welcome to SARR Institute. How can I help you today?";
+        }
+        if (lowerQuestion.includes("thank")) {
+            return "You're welcome! Is there anything else I can help with?";
+        }
         
-        const bubble = document.createElement('div');
-        bubble.className = 'luxury-message-bubble';
-        bubble.style.whiteSpace = 'pre-line';
-        bubble.textContent = text;
-        
-        messageDiv.appendChild(bubble);
-        messagesDiv.appendChild(messageDiv);
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        return "I have information on that! Please be more specific. Ask about courses, admissions, fees, career support, partnerships, or facilities.";
     }
-
-    // Show typing indicator
-    function showLuxuryTyping() {
-        const messagesDiv = document.getElementById('luxuryChatMessages');
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'luxury-message bot';
-        typingDiv.id = 'luxury-typing';
-        
-        const indicator = document.createElement('div');
-        indicator.className = 'luxury-typing';
-        indicator.innerHTML = '<span class="luxury-typing-dot"></span><span class="luxury-typing-dot"></span><span class="luxury-typing-dot"></span>';
-        
-        typingDiv.appendChild(indicator);
-        messagesDiv.appendChild(typingDiv);
-        messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
-
-    // Hide typing indicator
-    function hideLuxuryTyping() {
-        const typing = document.getElementById('luxury-typing');
-        if (typing) typing.remove();
-    }
-
-    // Send message
-    async function sendLuxuryMessage() {
-        const input = document.getElementById('luxuryChatInput');
-        const message = input.value.trim();
-        if (!message || luxuryIsTyping) return;
-
-        addLuxuryMessage(message, 'user');
-        input.value = '';
-        input.style.height = 'auto';
-
-        luxuryIsTyping = true;
-        showLuxuryTyping();
-
-        setTimeout(() => {
-            const match = findLuxuryBestMatch(message);
-            hideLuxuryTyping();
-            addLuxuryMessage(match.response, 'bot');
-            luxuryIsTyping = false;
-        }, 800);
-    }
-
-    // Open chat
-    function openLuxuryChat() {
-        const panel = document.getElementById('luxuryChatPanel');
-        const overlay = document.getElementById('luxuryOverlay');
-        panel.classList.add('open');
-        overlay.classList.add('active');
-        
-        // Add ripple effect
-        const btn = document.getElementById('luxuryChatButton');
-        btn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            btn.style.transform = '';
-        }, 200);
-    }
-
-    // Close chat
-    function closeLuxuryChat() {
-        const panel = document.getElementById('luxuryChatPanel');
-        const overlay = document.getElementById('luxuryOverlay');
-        panel.classList.remove('open');
-        overlay.classList.remove('active');
-    }
-
-    // Event listeners
-    document.getElementById('luxuryChatButton').addEventListener('click', openLuxuryChat);
-    document.getElementById('luxuryCloseChat').addEventListener('click', closeLuxuryChat);
-    document.getElementById('luxuryOverlay').addEventListener('click', closeLuxuryChat);
-    document.getElementById('luxurySendMessage').addEventListener('click', sendLuxuryMessage);
     
-    document.getElementById('luxuryChatInput').addEventListener('keypress', function(e) {
-        if (e.key === 'Enter' && !e.shiftKey) {
-            e.preventDefault();
-            sendLuxuryMessage();
-        }
-    });
-
+    // Chat UI Functions
+    function addChatMessage(text, isUser) {
+        const container = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.innerHTML = isUser ? '<i class="fas fa-user"></i>' : '<i class="fas fa-robot"></i>';
+        
+        const content = document.createElement('div');
+        content.className = 'message-content';
+        content.innerHTML = text.replace(/\n/g, '<br>');
+        
+        messageDiv.appendChild(avatar);
+        messageDiv.appendChild(content);
+        container.appendChild(messageDiv);
+        container.scrollTop = container.scrollHeight;
+    }
+    
+    function showTyping() {
+        const container = document.getElementById('chatMessages');
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'chat-message bot';
+        typingDiv.id = 'typingIndicator';
+        typingDiv.innerHTML = `
+            <div class="message-avatar"><i class="fas fa-robot"></i></div>
+            <div class="typing-indicator"><span></span><span></span><span></span></div>
+        `;
+        container.appendChild(typingDiv);
+        container.scrollTop = container.scrollHeight;
+    }
+    
+    function hideTyping() {
+        const indicator = document.getElementById('typingIndicator');
+        if (indicator) indicator.remove();
+    }
+    
+    function sendChatMessage() {
+        const input = document.getElementById('chatInput');
+        const question = input.value.trim();
+        if (!question) return;
+        
+        addChatMessage(question, true);
+        input.value = '';
+        
+        showTyping();
+        
+        setTimeout(() => {
+            hideTyping();
+            const answer = findChatAnswer(question);
+            addChatMessage(answer, false);
+        }, 400);
+    }
+    
+    function handleChatKeyPress(event) {
+        if (event.key === 'Enter') sendChatMessage();
+    }
+    
+    function loadSuggestions() {
+        const container = document.getElementById('suggestionsBar');
+        container.innerHTML = '';
+        quickSuggestions.forEach(suggestion => {
+            const chip = document.createElement('div');
+            chip.className = 'suggestion-chip';
+            chip.textContent = suggestion;
+            chip.onclick = () => {
+                document.getElementById('chatInput').value = suggestion;
+                sendChatMessage();
+            };
+            container.appendChild(chip);
+        });
+    }
+    
+    // Chat Window Controls
+    const chatButton = document.getElementById('chatButton');
+    const chatWindow = document.getElementById('chatWindow');
+    const closeChat = document.getElementById('closeChat');
+    
+    if (chatButton && chatWindow && closeChat) {
+        chatButton.addEventListener('click', () => {
+            chatWindow.classList.add('open');
+        });
+        
+        closeChat.addEventListener('click', () => {
+            chatWindow.classList.remove('open');
+        });
+    }
+    
     // Initialize
-    loadLuxuryQuickReplies();
+    document.addEventListener('DOMContentLoaded', () => {
+        loadSuggestions();
+    });
 </script>
     <!-- Add this with your chatbot styles and HTML -->
 <style>
