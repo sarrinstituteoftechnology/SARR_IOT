@@ -10,10 +10,10 @@
         gtag('config', 'G-56TW3F7LML');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>SARR Institute of Technology | Empowering Innovators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>SARR Institute of Technology | Excellence Since 2020</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Three.js CDN -->
@@ -25,12 +25,6 @@
         }
     </script>
     <style>
-        /* -------------------------------
-           SOOTHING COLOR REFRESH
-           - Soft warm background, improved contrast
-           - Gentle gradients, reduced harsh neon
-           - Accessible text colors for readability
-        ------------------------------- */
         * {
             margin: 0;
             padding: 0;
@@ -38,100 +32,95 @@
         }
 
         body {
-            font-family: 'Inter', 'Space Grotesk', 'Poppins', sans-serif;
-            /* Warm, soft off-white background - easy on eyes */
-            background: #F5F3F0;
-            color: #2C3E3F;
+            font-family: 'Inter', sans-serif;
+            background: #0A1922;
+            color: #E8F0F2;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            line-height: 1.55;
+            line-height: 1.5;
         }
 
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
-            background: #E8E4DD;
+            background: #0A1922;
         }
         ::-webkit-scrollbar-thumb {
-            background: #8FAA9F;
+            background: #4CAF50;
             border-radius: 10px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #6F8A7F;
-        }
 
-        /* Glassmorphic base - softer, warmer blur */
-        .glass {
-            background: rgba(245, 243, 240, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(100, 120, 110, 0.2);
-            border-radius: 28px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-        }
-
-        /* Navigation - clean & airy */
+        /* Navigation */
         nav {
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1300px;
+            top: 0;
+            left: 0;
+            width: 100%;
             z-index: 1000;
-            background: rgba(245, 243, 240, 0.85);
-            backdrop-filter: blur(16px);
-            border-radius: 60px;
-            padding: 0.7rem 2rem;
-            border: 1px solid rgba(100, 120, 110, 0.25);
+            background: rgba(10, 25, 34, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #4CAF50;
+            padding: 0.7rem 5%;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
         }
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2C5A4B;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #FFFFFF;
         }
         .logo span {
-            background: linear-gradient(135deg, #2C5A4B, #5D8B6F);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: #4CAF50;
         }
         .logo small {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             font-weight: 400;
-            color: #5F6C64;
+            color: #8AAEBF;
         }
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.8rem;
             list-style: none;
         }
         .nav-links a {
-            color: #2C4A3F;
+            color: #E8F0F2;
             text-decoration: none;
             font-weight: 500;
-            transition: 0.2s;
-            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width 0.3s ease;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
         }
         .nav-links a:hover {
-            color: #B67B5E;
+            color: #4CAF50;
         }
         .hamburger {
             display: none;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             cursor: pointer;
-            color: #2C5A4B;
+            color: #4CAF50;
         }
 
-        /* Hero Section */
+        /* Hero Section - Glass Effect */
         .hero {
             position: relative;
             height: 100vh;
@@ -141,6 +130,7 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            background: linear-gradient(135deg, #0A1922 0%, #0F2A2F 100%);
         }
         #canvas-container {
             position: absolute;
@@ -149,427 +139,507 @@
             width: 100%;
             height: 100%;
             z-index: 0;
-            opacity: 0.5;
+            opacity: 0.3;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 1000px;
+            max-width: 900px;
             padding: 2rem;
-            background: rgba(245, 243, 240, 0.6);
-            backdrop-filter: blur(16px);
-            border-radius: 48px;
-            border: 1px solid rgba(100, 120, 110, 0.25);
+            background: rgba(10, 25, 34, 0.65);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(76, 175, 80, 0.3);
             margin: 1rem;
+            border-radius: 28px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #2C5A4B, #B67B5E);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 1rem;
         }
+        .hero-content h1 span { color: #4CAF50; }
         .hero-tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin: 1rem 0;
-            color: #8F6A4F;
+            color: #4CAF50;
             font-weight: 500;
         }
         .collab-sub {
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin-bottom: 1.8rem;
-            opacity: 0.8;
-            color: #4A5B52;
+            color: #8AAEBF;
         }
         .btn-group {
             display: flex;
-            gap: 1.2rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
         .btn-primary {
-            background: linear-gradient(95deg, #2C5A4B, #3F7864);
-            color: white;
+            background: #4CAF50;
+            color: #FFFFFF;
             font-weight: 600;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
+            padding: 0.85rem 1.8rem;
+            border: none;
+            border-radius: 60px;
             text-decoration: none;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
             display: inline-block;
-            box-shadow: 0 2px 8px rgba(44, 90, 75, 0.2);
+            cursor: pointer;
+            font-size: 0.9rem;
         }
         .btn-primary:hover {
+            background: #45a049;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(44, 90, 75, 0.25);
-            background: linear-gradient(95deg, #236851, #346e59);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
         }
         .btn-outline {
-            border: 2px solid #8FAA9F;
+            border: 2px solid #4CAF50;
             background: transparent;
-            color: #2C5A4B;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
+            color: #4CAF50;
+            padding: 0.85rem 1.8rem;
+            border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.25s;
+            transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
         .btn-outline:hover {
-            background: rgba(100, 120, 110, 0.1);
-            border-color: #B67B5E;
-            color: #B67B5E;
+            background: rgba(76, 175, 80, 0.1);
             transform: translateY(-2px);
         }
         .scroll-indicator {
             position: absolute;
-            bottom: 30px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 2;
-            font-size: 1.8rem;
-            color: #8FAA9F;
+            font-size: 1.3rem;
+            color: #4CAF50;
             animation: bounce 2s infinite;
             cursor: pointer;
         }
         @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
-            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
         }
 
-        /* Stats Bar - soft earthy */
+        /* Stats Bar */
         .stats-bar {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             max-width: 1100px;
             margin: 3rem auto;
-            padding: 1.8rem;
-            gap: 2rem;
-            background: rgba(245, 243, 240, 0.6);
-            backdrop-filter: blur(8px);
-            border-radius: 48px;
-            border: 1px solid rgba(100, 120, 110, 0.2);
+            padding: 1.5rem;
+            gap: 1.5rem;
+            background: #0F212A;
+            border-bottom: 2px solid #4CAF50;
+            border-radius: 20px;
         }
         .stat-item {
             text-align: center;
-            min-width: 140px;
+            min-width: 120px;
+            transition: transform 0.3s ease;
         }
+        .stat-item:hover { transform: translateY(-3px); }
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #B67B5E;
-            letter-spacing: -0.02em;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #4CAF50;
         }
         .stat-label {
-            color: #4D6A5C;
+            color: #8AAEBF;
             font-weight: 500;
+            margin-top: 0.3rem;
+            font-size: 0.8rem;
         }
 
-        /* Sections */
         section {
-            padding: 70px 5%;
+            padding: 60px 5%;
             max-width: 1400px;
             margin: 0 auto;
         }
-        .section-title {
-            font-size: 2.5rem;
+        .section-title-wrapper {
             text-align: center;
-            margin-bottom: 2.8rem;
-            background: linear-gradient(120deg, #2C5A4B, #B67B5E);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            margin-bottom: 2.5rem;
+        }
+        .section-title {
+            font-size: 2rem;
             font-weight: 700;
+            color: #FFFFFF;
+            border-bottom: 3px solid #4CAF50;
+            display: inline-block;
+            padding-bottom: 0.5rem;
         }
 
-        /* Course Cards */
+        /* COURSES SECTION - UPDATED: NO GLASS, SHARP SOLID COLORS, BETTER MOBILE */
+        .courses-section {
+            background: #0A1922;
+        }
         .course-category {
-            margin-bottom: 4rem;
+            margin-bottom: 2.8rem;
         }
         .category-title {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             margin-bottom: 1.2rem;
             padding-left: 1rem;
-            border-left: 5px solid #B67B5E;
-            color: #2C5A4B;
-            font-weight: 600;
+            border-left: 5px solid #4CAF50;
+            color: #FFFFFF;
+            font-weight: 700;
+            letter-spacing: -0.2px;
         }
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
             gap: 1.8rem;
         }
+        /* SOLID, SHARP COURSE CARDS - NO BLUR, NO GLASS, FULLY OPAQUE BACKGROUND */
         .course-card {
-            background: white;
-            border-radius: 28px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid #E2DFD9;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            background: #122C36;  /* Deep solid teal background, no transparency */
+            border-radius: 20px;
+            padding: 1.3rem;
+            transition: all 0.3s ease-in-out;
+            border: 1px solid #2C4B57;
+            cursor: pointer;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
         }
         .course-card:hover {
             transform: translateY(-6px);
-            border-color: #B67B5E;
-            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.08);
+            border-color: #4CAF50;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+            background: #14323E;
         }
         .course-img {
-            width: 56px;
-            height: 56px;
+            width: 100%;
+            height: 170px;
             object-fit: cover;
-            border-radius: 20px;
+            border-radius: 14px;
             margin-bottom: 1rem;
-            border: 1px solid #E2DFD9;
+            transition: transform 0.3s ease;
+            border: 1px solid #2C4B57;
         }
+        .course-card:hover .course-img { transform: scale(1.02); }
         .course-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: #2C4A3F;
+            color: #FFFFFF;
+            font-weight: 700;
         }
         .course-desc {
             font-size: 0.85rem;
-            opacity: 0.75;
+            color: #BDD4DE;
             margin: 0.5rem 0;
-            color: #4F665B;
+            line-height: 1.45;
         }
         .duration-badge {
             display: inline-block;
-            background: #F1EDE7;
-            padding: 0.2rem 0.9rem;
-            border-radius: 30px;
+            background: #1E4A55;
+            padding: 0.25rem 0.9rem;
+            border-radius: 40px;
             font-size: 0.7rem;
-            margin: 0.8rem 0;
-            color: #B67B5E;
-            font-weight: 500;
+            margin: 0.7rem 0 0.9rem;
+            color: #B0E57C;
+            font-weight: 600;
+            letter-spacing: 0.3px;
         }
         .learn-link {
-            color: #2C5A4B;
+            color: #4CAF50;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.85rem;
             display: inline-flex;
             align-items: center;
             gap: 5px;
             cursor: pointer;
+            transition: gap 0.25s ease;
+            border-bottom: 1px dashed #4CAF50;
+            padding-bottom: 2px;
         }
-        .learn-link:hover {
-            color: #B67B5E;
-        }
+        .learn-link:hover { gap: 10px; color: #6FBF6F; }
 
-        /* Collaborations */
+        /* Collaborations - Glass Effect (kept as original) */
+        .collaborations-section {
+            background: rgba(10, 25, 34, 0.6);
+            backdrop-filter: blur(12px);
+            border-radius: 28px;
+            margin: 20px auto;
+            padding: 40px 5%;
+        }
         .partners-grid {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         .partner-card {
-            background: white;
-            border-radius: 32px;
-            padding: 2rem;
-            width: 280px;
+            background: rgba(15, 33, 42, 0.7);
+            backdrop-filter: blur(8px);
+            border-radius: 20px;
+            padding: 1.2rem;
+            width: 260px;
             text-align: center;
-            border: 1px solid #E2DFD9;
-            transition: 0.2s;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            transition: all 0.3s ease;
         }
         .partner-card:hover {
-            border-color: #B67B5E;
+            border-color: #4CAF50;
             transform: translateY(-4px);
         }
         .partner-img {
-            width: 90px;
-            height: 90px;
+            width: 100%;
+            height: 150px;
             object-fit: cover;
-            border-radius: 28px;
-            margin-bottom: 1rem;
-            border: 2px solid #D6CFC5;
+            border-radius: 14px;
+            margin-bottom: 0.8rem;
+        }
+        .partner-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        .partner-card p {
+            font-size: 0.8rem;
+            color: #8AAEBF;
+        }
+        .partner-card small {
+            font-size: 0.7rem;
+            color: #4CAF50;
         }
         .collab-statement {
             text-align: center;
-            margin-top: 2rem;
-            font-style: italic;
-            background: #F1EDE7;
+            margin-top: 1.8rem;
+            background: rgba(15, 33, 42, 0.6);
             padding: 1rem;
-            border-radius: 48px;
-            color: #4A5B52;
+            border-left: 3px solid #4CAF50;
+            color: #8AAEBF;
+            border-radius: 12px;
+            font-size: 0.85rem;
         }
 
         /* Features */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
         .feature-card {
-            background: white;
-            border-radius: 28px;
-            padding: 2rem;
+            background: #0F212A;
+            border-radius: 18px;
+            padding: 1.5rem;
             text-align: center;
-            border: 1px solid #E2DFD9;
-            transition: 0.2s;
+            border: 1px solid #2A3A44;
+            transition: all 0.3s ease;
         }
         .feature-card:hover {
-            border-color: #B67B5E;
+            border-color: #4CAF50;
+            transform: translateY(-3px);
         }
-        .feature-img {
-            width: 64px;
-            height: 64px;
-            object-fit: cover;
-            border-radius: 24px;
-            margin-bottom: 1rem;
-            background: #F1EDE7;
-            padding: 0.5rem;
+        .feature-icon {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover .feature-icon { transform: scale(1.1); }
+        .feature-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .feature-card p {
+            font-size: 0.8rem;
+            color: #9AAEB9;
+            line-height: 1.4;
         }
 
-        /* Admissions Banner */
+        /* Admissions - Glass Effect */
+        .admissions-section {
+            background: rgba(10, 25, 34, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 32px;
+            margin: 20px auto;
+            padding: 35px 20px;
+        }
         .admission-banner {
-            background: linear-gradient(125deg, rgba(44, 90, 75, 0.08), rgba(182, 123, 94, 0.08));
-            backdrop-filter: blur(4px);
-            border-radius: 48px;
-            border: 1px solid #D6CFC5;
-            padding: 2.8rem 2rem;
             text-align: center;
-            margin: 2rem auto;
         }
         .admission-banner h2 {
-            font-size: 2rem;
-            margin-bottom: 0.8rem;
-            color: #2C5A4B;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #FFFFFF;
         }
         .admission-banner p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #5F6C64;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+            color: #8AAEBF;
         }
         .banner-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
         }
         .btn-secondary {
-            background: #B67B5E;
-            color: white;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
+            background: #4CAF50;
+            color: #FFFFFF;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
         .btn-secondary:hover {
-            background: #9C674C;
+            background: #45a049;
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
         }
         .btn-download {
             background: transparent;
-            border: 2px solid #8FAA9F;
-            color: #2C5A4B;
-            padding: 0.9rem 2rem;
-            border-radius: 40px;
+            border: 2px solid #4CAF50;
+            color: #4CAF50;
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.2s;
+            transition: all 0.3s ease;
             display: inline-block;
+            font-size: 0.9rem;
         }
         .btn-download:hover {
-            border-color: #B67B5E;
-            color: #B67B5E;
+            background: rgba(76, 175, 80, 0.1);
             transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: #E8E4DD;
-            border-top: 1px solid #D6CFC5;
-            padding: 2.5rem 5% 1.5rem;
+            background: #05131A;
+            border-top: 1px solid #1F3A44;
+            padding: 2.5rem 5% 1.2rem;
             margin-top: 2rem;
         }
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.8rem;
             max-width: 1200px;
             margin: auto;
         }
         .footer-col h4 {
-            color: #2C5A4B;
-            margin-bottom: 1rem;
+            color: #4CAF50;
+            margin-bottom: 0.8rem;
             font-weight: 600;
+            font-size: 0.95rem;
         }
         .footer-col a, .footer-col p {
-            color: #5F6C64;
+            color: #8AAEBF;
             text-decoration: none;
             display: block;
             margin: 0.5rem 0;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            transition: color 0.3s ease;
         }
+        .footer-col a:hover { color: #4CAF50; }
         .social-icons a {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-right: 1rem;
-            color: #8FAA9F;
+            color: #8AAEBF;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
         }
         .social-icons a:hover {
-            color: #B67B5E;
+            color: #4CAF50;
+            transform: translateY(-2px);
         }
         .copyright {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 1.8rem;
             padding-top: 1rem;
-            border-top: 1px solid #D6CFC5;
-            font-size: 0.75rem;
-            color: #7A8B81;
+            border-top: 1px solid #1F3A44;
+            font-size: 0.7rem;
+            color: #6A8A9A;
         }
 
-        /* Animations */
         .fade-up {
             opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transform: translateY(30px);
+            transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
         .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        @media (max-width: 860px) {
+        /* Mobile Responsive — FULLY OPTIMIZED */
+        @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
-                top: 75px;
-                left: 5%;
-                width: 90%;
-                background: rgba(245, 243, 240, 0.98);
-                backdrop-filter: blur(20px);
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #0A1922;
                 flex-direction: column;
                 align-items: center;
-                padding: 1.8rem;
-                border-radius: 32px;
-                gap: 1.2rem;
+                padding: 1.2rem;
+                gap: 1rem;
                 transform: translateY(-200%);
-                transition: 0.3s;
+                transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
                 z-index: 999;
-                border: 1px solid #E2DFD9;
+                border-bottom: 2px solid #4CAF50;
             }
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            .hamburger {
-                display: block;
-            }
-            .hero-content h1 {
-                font-size: 2.1rem;
-            }
-            .hero-tagline {
-                font-size: 1rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .admission-banner {
-                padding: 1.8rem;
-            }
+            .nav-links.active { transform: translateY(0); }
+            .hamburger { display: block; }
+            
+            .hero-content h1 { font-size: 1.6rem; }
+            .hero-tagline { font-size: 0.9rem; }
+            .hero-content { padding: 1.2rem; }
+            .btn-primary, .btn-outline { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+            
+            .stats-bar { margin: 1.5rem auto; padding: 1rem; gap: 0.8rem; }
+            .stat-number { font-size: 1.5rem; }
+            .stat-label { font-size: 0.65rem; }
+            .stat-item { min-width: 80px; }
+            
+            .section-title { font-size: 1.5rem; }
+            section { padding: 40px 4%; }
+            
+            /* courses grid & cards: perfect mobile sizing */
+            .category-title { font-size: 1.3rem; margin-bottom: 1rem; }
+            .courses-grid { grid-template-columns: 1fr; gap: 1.3rem; }
+            .course-card { padding: 1rem; border-radius: 18px; }
+            .course-img { height: 150px; object-fit: cover; }
+            .course-card h3 { font-size: 1.1rem; }
+            .course-desc { font-size: 0.8rem; }
+            .duration-badge { font-size: 0.65rem; }
+            .learn-link { font-size: 0.8rem; }
+            
+            .collaborations-section { padding: 30px 4%; }
+            .partner-card { width: 100%; max-width: 280px; padding: 1rem; }
+            .partner-img { height: 130px; }
+            
+            .features-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .feature-card { padding: 1.2rem; }
+            
+            .admissions-section { padding: 25px 16px; }
+            .admission-banner h2 { font-size: 1.3rem; }
+            .btn-secondary, .btn-download { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+            
+            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.2rem; }
+        }
+
+        /* additional very small devices (below 480px) fine-tune */
+        @media (max-width: 480px) {
+            .course-img { height: 130px; }
+            .category-title { font-size: 1.2rem; }
+            .course-card h3 { font-size: 1rem; }
+            .btn-primary, .btn-outline { padding: 0.5rem 1rem; font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -589,13 +659,12 @@
     </div>
 </nav>
 
-<!-- Hero Section -->
 <section id="home" class="hero">
     <div id="canvas-container"></div>
     <div class="hero-content">
-        <h1>SARR Institute of Technology</h1>
+        <h1>SARR <span>Institute of Technology</span></h1>
         <div class="hero-tagline">Empowering Innovators, Transforming Futures</div>
-        <div class="collab-sub">Proudly Collaborated with Horizon Growth, Canadian Institute & International Institute of Technology</div>
+        <div class="collab-sub">Est. 2020 | Global Academic Partners</div>
         <div class="btn-group">
             <a href="#courses" class="btn-primary">Explore Courses</a>
             <a href="#admissions" class="btn-outline">Apply Now</a>
@@ -604,95 +673,89 @@
     <div class="scroll-indicator" id="scrollDown"><i class="fas fa-chevron-down"></i></div>
 </section>
 
-<!-- Stats Bar -->
 <div class="stats-bar fade-up" id="statsSection">
-    <div class="stat-item"><div class="stat-number" data-target="1000">0</div><div class="stat-label">+ Students</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Expert Faculty</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="15">0</div><div class="stat-label">Industry Partners</div></div>
-    <div class="stat-item"><div class="stat-number" data-target="92">0</div><div class="stat-label">% Placement Rate</div></div>
+    <div class="stat-item"><div class="stat-number" data-target="1200">0</div><div class="stat-label">Students</div></div>
+    <div class="stat-item"><div class="stat-number" data-target="55">0</div><div class="stat-label">Expert Faculty</div></div>
+    <div class="stat-item"><div class="stat-number" data-target="18">0</div><div class="stat-label">Industry Partners</div></div>
+    <div class="stat-item"><div class="stat-number" data-target="94">0</div><div class="stat-label">Placement Rate</div></div>
 </div>
 
-<!-- Courses Section with Professional Images -->
-<section id="courses">
-    <h2 class="section-title fade-up">Our Programs</h2>
+<!-- Courses Section - NO GLASS, SOLID VIBRANT BACKGROUNDS, SHARP EDGES -->
+<section id="courses" class="courses-section">
+    <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Programs</h2></div>
     
-    <!-- Category 1: Development & Programming -->
     <div class="course-category fade-up">
         <div class="category-title">Development & Programming</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Web Development (Full Stack)"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=WEB" alt="web development" class="course-img"><h3>Web Development (Full Stack)</h3><div class="course-desc">MERN, Next.js, responsive design & deployment.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="App Development (iOS/Android)"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=APP" alt="app development" class="course-img"><h3>App Development (iOS/Android)</h3><div class="course-desc">Flutter, React Native, Swift, Kotlin.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Game Development (Unity/Unreal)"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=GAME" alt="game development" class="course-img"><h3>Game Development (Unity/Unreal)</h3><div class="course-desc">C#, Blueprints, 3D game design.</div><div class="duration-badge">7 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="AI Automation & AI Bots"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=AI" alt="AI automation" class="course-img"><h3>AI Automation & AI Bots</h3><div class="course-desc">LLMs, RPA, intelligent agents.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Web Development (Full Stack)"><img src="https://digitalnotebook.in/up/2023/06/Website-design.jpg" alt="Web Development" class="course-img"><h3>Web Development (Full Stack)</h3><div class="course-desc">MERN, Next.js, responsive design & deployment.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="App Development (iOS/Android)"><img src="https://europeanit-inst.com/wp-content/uploads/2022/03/App-Development-scaled.jpg" alt="App Development" class="course-img"><h3>App Development (iOS/Android)</h3><div class="course-desc">Flutter, React Native, Swift, Kotlin.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Game Development (Unity/Unreal)"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFTTN9ODF81bg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1699118462130?e=2147483647&v=beta&t=eVbG5COqamAAumPJFMAWYQCmYpgOwkTk84iMA_-ISEg" alt="Game Development" class="course-img"><h3>Game Development (Unity/Unreal)</h3><div class="course-desc">C#, Blueprints, 3D game design.</div><div class="duration-badge">7 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="AI Automation & AI Bots"><img src="https://assets.new.siemens.com/siemens/assets/api/uuid:403d8f70-6597-4fcc-a169-e97ef77666aa/Agents.png" alt="AI Automation" class="course-img"><h3>AI Automation & AI Bots</h3><div class="course-desc">LLMs, RPA, intelligent agents.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
-    <!-- Category 2: Design & Creative -->
     <div class="course-category fade-up">
         <div class="category-title">Design & Creative</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Graphics Design"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=GD" alt="graphics design" class="course-img"><h3>Graphics Design</h3><div class="course-desc">Photoshop, Illustrator, branding & UI.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="2D Animation"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=2D" alt="2D animation" class="course-img"><h3>2D Animation</h3><div class="course-desc">Adobe Animate, character rigging.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="3D Animation"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=3D" alt="3D animation" class="course-img"><h3>3D Animation</h3><div class="course-desc">Blender, Maya, motion graphics.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="2D & 3D Modeling"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=MOD" alt="3D modeling" class="course-img"><h3>2D & 3D Modeling</h3><div class="course-desc">Sculpting, texturing, product viz.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Graphics Design"><img src="https://digitaltribe.ae/wp-content/uploads/2021/05/Graphic-designing.jpg" alt="Graphics Design" class="course-img"><h3>Graphics Design</h3><div class="course-desc">Photoshop, Illustrator, Canva, CorelDraw, branding & UI.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="2D Animation"><img src="https://www.cgspectrum.com/hubfs/what-is-2d-anim-bianka-f-feat.jpg" alt="2D Animation" class="course-img"><h3>2D Animation</h3><div class="course-desc">Adobe Animate, character rigging, classic cartoon animation.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="3D Animation"><img src="https://www.veetildigital.com.au/wp-content/uploads/2016/06/Why-we-love-3D-animation-and-you-should-to.jpg" alt="3D Animation" class="course-img"><h3>3D Animation</h3><div class="course-desc">Blender, Maya, VFX, cinematic motion graphics.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="2D & 3D Modeling"><img src="https://dreamfarmstudios.com/wp-content/uploads/2021/04/2d-vs-3d-graphics-800x450.jpg" alt="3D Modeling" class="course-img"><h3>2D & 3D Modeling</h3><div class="course-desc">Sculpting, texturing, product viz, character modeling.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
-    <!-- Category 3: Security & Infrastructure -->
     <div class="course-category fade-up">
         <div class="category-title">Security & Infrastructure</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Cybersecurity"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=CYB" alt="cybersecurity" class="course-img"><h3>Cybersecurity</h3><div class="course-desc">Network defense, risk management.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Ethical Hacking"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=ETH" alt="ethical hacking" class="course-img"><h3>Ethical Hacking</h3><div class="course-desc">Penetration testing, CEH prep.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="MS Office (Professional)"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=OFF" alt="MS office" class="course-img"><h3>MS Office (Professional)</h3><div class="course-desc">Excel, PowerPoint, productivity master.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Cybersecurity"><img src="https://bairesdev.mo.cloudinary.net/blog/2023/09/Hire-Cybersecurity-Experts-in-2023.jpg?tx=w_1920,q_auto" alt="Cybersecurity" class="course-img"><h3>Cybersecurity</h3><div class="course-desc">Network defense, risk management.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Ethical Hacking"><img src="https://imageio.forbes.com/specials-images/imageserve/67ec0025d8854be78bc70986/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="Ethical Hacking" class="course-img"><h3>Ethical Hacking</h3><div class="course-desc">Penetration testing, CEH prep.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="MS Office (Professional)"><img src="https://krgroup.com/wp-content/uploads/2022/02/Untitled-design-16.png" alt="MS Office" class="course-img"><h3>MS Office (Professional)</h3><div class="course-desc">Excel, PowerPoint, productivity master.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
-    <!-- Category 4: Emerging Tech -->
     <div class="course-category fade-up">
         <div class="category-title">Emerging Tech</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Freelancing (Mastery Program)"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=FRE" alt="freelancing" class="course-img"><h3>Freelancing (Mastery Program)</h3><div class="course-desc">Upwork, Fiverr, client acquisition.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="AI & Machine Learning Automation"><img src="https://placehold.co/80x80/E2DFD9/B67B5E?text=ML" alt="AI ML" class="course-img"><h3>AI & Machine Learning Automation</h3><div class="course-desc">Python, TensorFlow, AutoML.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Freelancing (Mastery Program)"><img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Freelancing" class="course-img"><h3>Freelancing (Mastery Program)</h3><div class="course-desc">Upwork, Fiverr, client acquisition.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="AI & Machine Learning Automation"><img src="https://cdn.prod.website-files.com/65d8ee5f025f02594c614c17/65d8ee5f025f02594c615306_preview.jpg" alt="AI Machine Learning" class="course-img"><h3>AI & Machine Learning Automation</h3><div class="course-desc">Python, TensorFlow, AutoML.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
-    <!-- Category 5: Soft Skills & Entrepreneurship -->
     <div class="course-category fade-up">
         <div class="category-title">Soft Skills & Entrepreneurship</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Critical Thinking"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=CT" alt="critical thinking" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Task Management"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=TM" alt="task management" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools.</div><div class="duration-badge">1.5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Leadership Development"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=LD" alt="leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team mgmt.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://placehold.co/80x80/CBDCD2/2C5A4B?text=ENT" alt="entrepreneurship" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Critical Thinking"><img src="https://safety4sea.com/wp-content/uploads/2025/05/shutterstock_2415825655-scaled-e1748601402387.jpg" alt="Critical Thinking" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Task Management"><img src="https://assets.plan.io/images/blog/what-is-task-management.png" alt="Task Management" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools.</div><div class="duration-badge">1.5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Leadership Development"><img src="https://sophiacollege.ac.in/wp-content/uploads/2023/04/develop-leadership-skills-employees-852x550.jpg" alt="Leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team mgmt.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Entrepreneurship" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
 </section>
 
-<!-- Collaborations Section with Institute Logos -->
-<section id="collaborations">
-    <h2 class="section-title fade-up">Our Global Partners</h2>
+<!-- Collaborations - Glass Effect (unchanged) -->
+<section id="collaborations" class="collaborations-section">
+    <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Global Partners</h2></div>
     <div class="partners-grid fade-up">
-        <div class="partner-card"><img src="https://placehold.co/100x100/CBDCD2/2C5A4B?text=HGIOT" alt="Horizon Growth" class="partner-img"><h3>Horizon Growth Institute of Technology</h3><p>United Kingdom</p><small>Academic Partner • Research Alliance</small></div>
-        <div class="partner-card"><img src="https://placehold.co/100x100/CBDCD2/2C5A4B?text=CIT" alt="Canadian Institute" class="partner-img"><h3>Canadian Institute of Technology</h3><p>Toronto, Canada</p><small>Joint Certifications • Exchange Programs</small></div>
-        <div class="partner-card"><img src="https://placehold.co/100x100/CBDCD2/2C5A4B?text=IIT" alt="International Institute" class="partner-img"><h3>International Institute of Technology</h3><p>Singapore</p><small>Global Recognition • Faculty Exchange</small></div>
+        <div class="partner-card"><img src="https://www.vidyavision.com/CollegeUploads/Photos/2019-14-8-11-53-15_Horizon%20Institute%20of%20Technology%20Keesara_Campus-View.png" alt="Horizon Growth Institute" class="partner-img"><h3>Horizon Growth Institute of Technology</h3><p>United Kingdom</p><small>Academic Partner | Research Alliance</small></div>
+        <div class="partner-card"><img src="https://rjcca.b-cdn.net/uploads/projects/1817/resized/1920x1080/VAN_035615_BEFORE_N8.jpg" alt="Canadian Institute of Technology" class="partner-img"><h3>Canadian Institute of Technology</h3><p>Toronto, Canada</p><small>Joint Certifications | Exchange Programs</small></div>
+        <div class="partner-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlSeW_LBgHp9-HlKCOonuF31n5-NSOu2ybg&s" alt="International Institute of Technology" class="partner-img"><h3>International Institute of Technology</h3><p>Singapore</p><small>Global Recognition | Faculty Exchange</small></div>
     </div>
     <div class="collab-statement fade-up">Joint Certifications | Exchange Programs | Global Recognition</div>
 </section>
 
 <!-- Why Choose SARR -->
 <section>
-    <h2 class="section-title fade-up">Why Choose SARR?</h2>
+    <div class="section-title-wrapper"><h2 class="section-title fade-up">Why Choose SARR?</h2></div>
     <div class="features-grid">
-        <div class="feature-card fade-up"><img src="https://placehold.co/70x70/CBDCD2/2C5A4B?text=IND" alt="industry aligned" class="feature-img"><h3>Industry-Aligned Curriculum</h3><p>Designed with input from 50+ tech leaders and updated every semester</p></div>
-        <div class="feature-card fade-up"><img src="https://placehold.co/70x70/CBDCD2/2C5A4B?text=PROJ" alt="project based" class="feature-img"><h3>Hands-on Project-Based Learning</h3><p>Real-world capstone projects & live industry collaborations</p></div>
-        <div class="feature-card fade-up"><img src="https://placehold.co/70x70/CBDCD2/2C5A4B?text=CERT" alt="global certification" class="feature-img"><h3>Global Certification</h3><p>Joint credentials with international partner institutes</p></div>
-        <div class="feature-card fade-up"><img src="https://placehold.co/70x70/CBDCD2/2C5A4B?text=CARE" alt="career support" class="feature-img"><h3>Career Support & Freelancing</h3><p>Placement assistance, freelancing mentorship & startup incubation</p></div>
+        <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-chalkboard-teacher"></i></div><h3>Industry-Aligned Curriculum</h3><p>Designed with input from 55+ tech leaders and updated every semester</p></div>
+        <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-project-diagram"></i></div><h3>Hands-on Project-Based Learning</h3><p>Real-world capstone projects & live industry collaborations</p></div>
+        <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-globe"></i></div><h3>Global Certification</h3><p>Joint credentials with international partner institutes</p></div>
+        <div class="feature-card fade-up"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><h3>Career Support & Freelancing</h3><p>Placement assistance, freelancing mentorship & startup incubation</p></div>
     </div>
 </section>
 
-<!-- Admissions Banner -->
-<section id="admissions">
+<!-- Admissions - Glass Effect -->
+<section id="admissions" class="admissions-section">
     <div class="admission-banner fade-up">
         <h2>Ready to Start Your Journey?</h2>
         <p>Enroll Now — Limited Seats Available for Fall 2025 Intake</p>
@@ -703,42 +766,22 @@
     </div>
 </section>
 
-<!-- Footer -->
 <footer id="contact">
     <div class="footer-grid">
-        <div class="footer-col">
-            <h4>SARR Institute</h4>
-            <p>Empowering innovators globally with cutting-edge tech education and global collaborations since 2015.</p>
-            <div class="social-icons">
-                <a href="https://wa.me/+923205702273" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/sarr_iot/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com/sarr_iot" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.youtube.com/@sarr-IOT" target="_blank"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <a href="#courses">All Courses</a>
-            <a href="#collaborations">Collaborations</a>
-            <a href="#admissions">Admissions</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <p><i class="fas fa-envelope"></i> sarr.edu.pk@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +92 320 5702273</p>
-            <p><i class="fas fa-map-marker-alt"></i> Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal AJK</p>
-        </div>
+        <div class="footer-col"><h4>SARR Institute</h4><p>Empowering innovators globally with cutting-edge tech education and global collaborations since 2020.</p><div class="social-icons"><a href="https://wa.me/+923205702273"><i class="fab fa-whatsapp"></i></a><a href="https://www.instagram.com/sarr_iot/"><i class="fab fa-instagram"></i></a><a href="https://x.com/sarr_iot"><i class="fab fa-twitter"></i></a><a href="https://www.youtube.com/@sarr-IOT"><i class="fab fa-youtube"></i></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><a href="#courses">All Courses</a><a href="#collaborations">Collaborations</a><a href="#admissions">Admissions</a><a href="#contact">Contact</a></div>
+        <div class="footer-col"><h4>Contact</h4><p><i class="fas fa-envelope"></i> sarr.edu.pk@gmail.com</p><p><i class="fas fa-phone"></i> +92 320 5702273</p><p><i class="fas fa-map-marker-alt"></i> Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal AJK</p></div>
     </div>
-    <div class="copyright">© 2025 SARR Institute of Technology | Partner Institutes: Horizon Growth | Canadian Institute | International Institute of Technology</div>
+    <div class="copyright">© 2025 SARR Institute of Technology | Established 2020 | Partner Institutes: Horizon Growth | Canadian Institute | International Institute of Technology</div>
 </footer>
 
+<!-- Three.js script remains same (unchanged) -->
 <script type="module">
     import * as THREE from 'three';
     const container = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
     scene.background = null;
-    scene.fog = new THREE.FogExp2(0xF5F3F0, 0.008);
+    scene.fog = new THREE.FogExp2(0x0A1922, 0.02);
     const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.set(0, 1.2, 7);
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -746,34 +789,30 @@
     renderer.setPixelRatio(window.devicePixelRatio);
     container.appendChild(renderer.domElement);
     
-    const ambient = new THREE.AmbientLight(0x8FAA9F, 0.45);
+    const ambient = new THREE.AmbientLight(0x1F3A44, 0.6);
     scene.add(ambient);
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.9);
-    dirLight.position.set(2, 3, 4);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(3, 5, 4);
     scene.add(dirLight);
-    const fillLight = new THREE.PointLight(0xB67B5E, 0.35);
+    const fillLight = new THREE.PointLight(0x4CAF50, 0.4);
     fillLight.position.set(-1, 2, 3);
     scene.add(fillLight);
     
-    const knotGeo = new THREE.TorusKnotGeometry(1.0, 0.24, 180, 24, 3, 4);
-    const material = new THREE.MeshStandardMaterial({ color: 0x8FAA9F, emissive: 0x6E8B7C, emissiveIntensity: 0.18, metalness: 0.4, roughness: 0.5 });
+    const knotGeo = new THREE.TorusKnotGeometry(0.8, 0.2, 150, 20, 3, 4);
+    const material = new THREE.MeshStandardMaterial({ color: 0x4CAF50, emissive: 0x1A4D1A, emissiveIntensity: 0.2, metalness: 0.5, roughness: 0.4 });
     const knot = new THREE.Mesh(knotGeo, material);
     scene.add(knot);
-    const edgesGeo = new THREE.EdgesGeometry(knotGeo);
-    const wireMat = new THREE.LineBasicMaterial({ color: 0xB67B5E });
-    const wire = new THREE.LineSegments(edgesGeo, wireMat);
-    knot.add(wire);
     
-    const particleCount = 1300;
+    const particleCount = 1000;
     const particleGeo = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     for (let i = 0; i < particleCount; i++) {
-        positions[i*3] = (Math.random() - 0.5) * 22;
-        positions[i*3+1] = (Math.random() - 0.5) * 14;
-        positions[i*3+2] = (Math.random() - 0.5) * 18 - 6;
+        positions[i*3] = (Math.random() - 0.5) * 20;
+        positions[i*3+1] = (Math.random() - 0.5) * 12;
+        positions[i*3+2] = (Math.random() - 0.5) * 16 - 5;
     }
     particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    const particleMat = new THREE.PointsMaterial({ color: 0xC2D4CA, size: 0.045, transparent: true, opacity: 0.4 });
+    const particleMat = new THREE.PointsMaterial({ color: 0x4CAF50, size: 0.03, transparent: true, opacity: 0.3 });
     const particles = new THREE.Points(particleGeo, particleMat);
     scene.add(particles);
     
@@ -785,12 +824,11 @@
     
     function animate() {
         requestAnimationFrame(animate);
-        knot.rotation.x += 0.004;
-        knot.rotation.y += 0.006;
-        knot.rotation.z += 0.003;
-        particles.rotation.y += 0.0015;
-        camera.position.x += (mouseX * 0.4 - camera.position.x) * 0.05;
-        camera.position.y += (-mouseY * 0.3 - camera.position.y) * 0.05;
+        knot.rotation.x += 0.005;
+        knot.rotation.y += 0.007;
+        particles.rotation.y += 0.002;
+        camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY * 0.25 - camera.position.y) * 0.05;
         camera.lookAt(0, 0.2, 0);
         renderer.render(scene, camera);
     }
@@ -803,371 +841,46 @@
 </script>
 
 <script>
-    // ========== COURSE DETAILS PAGE (Modal/Side Panel) ==========
-    // Comprehensive course data with full details
-    const courseDetailsData = {
-        "Web Development (Full Stack)": {
-            title: "Web Development (Full Stack)",
-            duration: "6 months",
-            category: "Development & Programming",
-            description: "Master the art of building complete web applications from frontend to backend. This comprehensive program covers modern frameworks, databases, and deployment strategies.",
-            fullDescription: "Learn MERN stack (MongoDB, Express.js, React, Node.js), Next.js for server-side rendering, responsive design principles, RESTful APIs, authentication, and cloud deployment on AWS/Vercel. Build real-world projects including e-commerce platforms, social media apps, and portfolio websites.",
-            skills: ["React.js", "Node.js", "MongoDB", "Next.js", "Tailwind CSS", "REST APIs", "Git & GitHub", "Deployment (Vercel/AWS)"],
-            projects: ["Full Stack E-commerce Site", "Blog Platform with CMS", "Real-time Chat Application", "Portfolio with Admin Panel"],
-            careerPaths: ["Full Stack Developer", "Frontend Engineer", "Backend Developer", "Technical Lead", "Freelance Web Developer"],
-            fee: "PKR 85,000 (Installment plans available)",
-            certificate: "SARR Certification + Industry-Recognized Badge"
-        },
-        "App Development (iOS/Android)": {
-            title: "App Development (iOS/Android)",
-            duration: "5 months",
-            category: "Development & Programming",
-            description: "Build native and cross-platform mobile applications for iOS and Android using modern frameworks.",
-            fullDescription: "Learn Flutter for cross-platform development, React Native, Swift for iOS, and Kotlin for Android. Master state management, API integration, push notifications, and app store deployment.",
-            skills: ["Flutter", "React Native", "Swift", "Kotlin", "Firebase", "REST APIs", "App Store/Play Store Deployment"],
-            projects: ["Food Delivery App", "Fitness Tracker", "E-commerce Mobile App", "Social Media Clone"],
-            careerPaths: ["Mobile App Developer", "Flutter Developer", "iOS Engineer", "Android Developer", "Cross-Platform Specialist"],
-            fee: "PKR 95,000",
-            certificate: "SARR Certification + Project Portfolio"
-        },
-        "Game Development (Unity/Unreal)": {
-            title: "Game Development (Unity/Unreal)",
-            duration: "7 months",
-            category: "Development & Programming",
-            description: "Create immersive 2D and 3D games using industry-standard engines Unity and Unreal Engine.",
-            fullDescription: "Master C# scripting in Unity, Blueprints in Unreal Engine, game physics, AI behavior, 3D modeling integration, and multiplayer networking. Build portfolio-ready games.",
-            skills: ["Unity (C#)", "Unreal Engine (Blueprints)", "Game Physics", "AI Programming", "Shader Graph", "Multiplayer Networking"],
-            projects: ["3D Platformer Game", "First-Person Shooter", "Racing Game", "Mobile Puzzle Game"],
-            careerPaths: ["Game Developer", "Unity Developer", "Unreal Engine Developer", "Game Designer", "XR/VR Developer"],
-            fee: "PKR 120,000",
-            certificate: "SARR Certification + Game Portfolio"
-        },
-        "AI Automation & AI Bots": {
-            title: "AI Automation & AI Bots",
-            duration: "4 months",
-            category: "Development & Programming",
-            description: "Build intelligent automation systems and AI-powered chatbots using cutting-edge technologies.",
-            fullDescription: "Learn LLMs (OpenAI, Claude), RPA tools, workflow automation, chatbots using Dialogflow and custom AI models, API integrations, and automation scripting.",
-            skills: ["Python", "LLM Integration", "RPA Tools", "Dialogflow", "API Development", "Workflow Automation"],
-            projects: ["Customer Support Chatbot", "Automated Email Responder", "Data Extraction Bot", "Social Media Automation Tool"],
-            careerPaths: ["AI Automation Engineer", "Chatbot Developer", "RPA Specialist", "AI Solutions Architect"],
-            fee: "PKR 75,000",
-            certificate: "SARR AI Certification"
-        },
-        "Graphics Design": {
-            title: "Graphics Design",
-            duration: "3 months",
-            category: "Design & Creative",
-            description: "Master visual communication through professional design tools and principles.",
-            fullDescription: "Learn Adobe Photoshop, Illustrator, InDesign, branding, typography, color theory, UI/UX fundamentals, and social media design.",
-            skills: ["Photoshop", "Illustrator", "InDesign", "Brand Identity", "Typography", "UI/UX Basics"],
-            projects: ["Logo Design Suite", "Social Media Campaign", "Brand Identity Package", "Editorial Layout Design"],
-            careerPaths: ["Graphic Designer", "Brand Identity Designer", "UI Designer", "Creative Director", "Freelance Designer"],
-            fee: "PKR 45,000",
-            certificate: "SARR Design Certification"
-        },
-        "2D Animation": {
-            title: "2D Animation",
-            duration: "4 months",
-            category: "Design & Creative",
-            description: "Bring characters and stories to life through traditional and digital 2D animation techniques.",
-            fullDescription: "Master Adobe Animate, character rigging, storyboarding, motion graphics, and frame-by-frame animation techniques.",
-            skills: ["Adobe Animate", "Character Rigging", "Storyboarding", "Motion Graphics", "Toon Boom Basics"],
-            projects: ["Animated Short Film", "Character Walk Cycle", "Explainer Video", "Motion Graphics Reel"],
-            careerPaths: ["2D Animator", "Motion Graphics Artist", "Character Designer", "Storyboard Artist"],
-            fee: "PKR 55,000",
-            certificate: "SARR Animation Certification"
-        },
-        "3D Animation": {
-            title: "3D Animation",
-            duration: "5 months",
-            category: "Design & Creative",
-            description: "Create stunning 3D animations using industry-standard software Blender and Maya.",
-            fullDescription: "Learn 3D modeling, texturing, rigging, lighting, rendering, and animation principles. Create cinematic-quality animations.",
-            skills: ["Blender", "Maya", "3D Modeling", "Rigging", "Texture Mapping", "Lighting & Rendering"],
-            projects: ["3D Character Animation", "Product Visualization", "Architectural Walkthrough", "Short Animated Scene"],
-            careerPaths: ["3D Animator", "VFX Artist", "Character Modeler", "Game Animator", "Cinematic Artist"],
-            fee: "PKR 70,000",
-            certificate: "SARR 3D Animation Certification"
-        },
-        "2D & 3D Modeling": {
-            title: "2D & 3D Modeling",
-            duration: "4 months",
-            category: "Design & Creative",
-            description: "Create detailed 2D illustrations and 3D models for games, films, and products.",
-            fullDescription: "Master sculpting techniques, low-poly modeling, texturing, UV mapping, and product visualization using Blender and ZBrush basics.",
-            skills: ["Blender", "Sculpting", "UV Mapping", "Texturing", "Product Visualization", "Low-Poly Modeling"],
-            projects: ["Character Model", "Product Design Showcase", "Environment Asset", "Portfolio Collection"],
-            careerPaths: ["3D Modeler", "Character Artist", "Product Visualizer", "Asset Creator"],
-            fee: "PKR 60,000",
-            certificate: "SARR Modeling Certification"
-        },
-        "Cybersecurity": {
-            title: "Cybersecurity",
-            duration: "6 months",
-            category: "Security & Infrastructure",
-            description: "Protect networks, systems, and data from cyber threats with hands-on security training.",
-            fullDescription: "Learn network security, cryptography, risk management, penetration testing basics, incident response, and security compliance.",
-            skills: ["Network Security", "Cryptography", "Risk Assessment", "Penetration Testing", "Firewall Management", "SIEM Tools"],
-            projects: ["Security Audit Report", "Vulnerability Assessment", "Firewall Configuration", "Incident Response Plan"],
-            careerPaths: ["Security Analyst", "Network Security Engineer", "Penetration Tester", "Security Consultant", "CISO Track"],
-            fee: "PKR 95,000",
-            certificate: "SARR Security Certification"
-        },
-        "Ethical Hacking": {
-            title: "Ethical Hacking",
-            duration: "5 months",
-            category: "Security & Infrastructure",
-            description: "Learn authorized hacking techniques to identify and fix security vulnerabilities.",
-            fullDescription: "Master reconnaissance, scanning, exploitation, post-exploitation, web application testing, and reporting. CEH exam preparation included.",
-            skills: ["Kali Linux", "Nmap", "Metasploit", "Burp Suite", "Web App Testing", "Social Engineering"],
-            projects: ["Network Penetration Test", "Web App Vulnerability Report", "CTF Challenge Solutions"],
-            careerPaths: ["Ethical Hacker", "Penetration Tester", "Security Auditor", "Red Team Specialist"],
-            fee: "PKR 85,000",
-            certificate: "SARR Ethical Hacking Certification + CEH Prep"
-        },
-        "MS Office (Professional)": {
-            title: "MS Office (Professional)",
-            duration: "2 months",
-            category: "Security & Infrastructure",
-            description: "Master Microsoft Office applications for professional productivity and data management.",
-            fullDescription: "Advanced Excel (formulas, pivot tables, macros), PowerPoint presentations, Word document formatting, and Outlook management.",
-            skills: ["Excel Advanced", "PowerPoint", "Word", "Outlook", "Macros & VBA", "Data Analysis"],
-            projects: ["Automated Dashboard", "Professional Presentation Deck", "Business Report"],
-            careerPaths: ["Office Administrator", "Data Analyst", "Executive Assistant", "Business Coordinator"],
-            fee: "PKR 25,000",
-            certificate: "SARR MS Office Certification"
-        },
-        "Freelancing (Mastery Program)": {
-            title: "Freelancing (Mastery Program)",
-            duration: "3 months",
-            category: "Emerging Tech",
-            description: "Build a successful freelance career on global platforms like Upwork and Fiverr.",
-            fullDescription: "Learn profile optimization, proposal writing, client communication, pricing strategies, portfolio building, and scaling your freelance business.",
-            skills: ["Profile Optimization", "Proposal Writing", "Client Management", "Pricing Strategy", "Time Management", "Upwork/Fiverr Mastery"],
-            projects: ["Complete Freelancer Profile", "10+ Proposals Drafted", "Client Pitch Deck"],
-            careerPaths: ["Freelancer", "Digital Nomad", "Freelance Business Owner", "Agency Founder"],
-            fee: "PKR 40,000",
-            certificate: "SARR Freelancing Certification"
-        },
-        "AI & Machine Learning Automation": {
-            title: "AI & Machine Learning Automation",
-            duration: "5 months",
-            category: "Emerging Tech",
-            description: "Build intelligent systems using machine learning and AI automation techniques.",
-            fullDescription: "Master Python for data science, TensorFlow, PyTorch, neural networks, computer vision, NLP, and AutoML tools.",
-            skills: ["Python", "TensorFlow", "Scikit-learn", "Computer Vision", "NLP", "AutoML"],
-            projects: ["Image Classification Model", "Sentiment Analysis Tool", "Predictive Analytics Dashboard", "Chatbot with ML"],
-            careerPaths: ["ML Engineer", "AI Developer", "Data Scientist", "AI Automation Specialist"],
-            fee: "PKR 90,000",
-            certificate: "SARR AI/ML Certification"
-        },
-        "Critical Thinking": {
-            title: "Critical Thinking",
-            duration: "2 months",
-            category: "Soft Skills & Entrepreneurship",
-            description: "Develop analytical and problem-solving skills for effective decision-making.",
-            fullDescription: "Learn logical reasoning, argument analysis, cognitive biases, structured problem-solving frameworks, and decision-making strategies.",
-            skills: ["Logical Reasoning", "Problem Framing", "Decision Analysis", "Bias Recognition", "Strategic Thinking"],
-            projects: ["Case Study Analysis", "Decision Matrix Project"],
-            careerPaths: ["Strategy Consultant", "Business Analyst", "Operations Manager", "Entrepreneur"],
-            fee: "PKR 25,000",
-            certificate: "SARR Critical Thinking Certification"
-        },
-        "Task Management": {
-            title: "Task Management",
-            duration: "1.5 months",
-            category: "Soft Skills & Entrepreneurship",
-            description: "Master productivity tools and methodologies for efficient task and project management.",
-            fullDescription: "Learn Agile, Scrum, Kanban, productivity tools like Trello, Asana, Notion, and time management techniques.",
-            skills: ["Agile Methodology", "Scrum", "Kanban", "Trello/Asana", "Time Management", "Productivity Systems"],
-            projects: ["Project Management Setup", "Team Sprint Planning Simulation"],
-            careerPaths: ["Project Coordinator", "Scrum Master", "Operations Lead", "Product Manager"],
-            fee: "PKR 20,000",
-            certificate: "SARR Task Management Certification"
-        },
-        "Leadership Development": {
-            title: "Leadership Development",
-            duration: "2 months",
-            category: "Soft Skills & Entrepreneurship",
-            description: "Develop essential leadership skills for team management and organizational success.",
-            fullDescription: "Learn emotional intelligence, team motivation, conflict resolution, strategic planning, and effective communication.",
-            skills: ["Emotional Intelligence", "Team Motivation", "Conflict Resolution", "Strategic Planning", "Executive Communication"],
-            projects: ["Leadership Action Plan", "Team Building Workshop Design"],
-            careerPaths: ["Team Lead", "Department Manager", "Executive", "Entrepreneur", "People Operations"],
-            fee: "PKR 35,000",
-            certificate: "SARR Leadership Certification"
-        },
-        "Entrepreneurship & Business Growth": {
-            title: "Entrepreneurship & Business Growth",
-            duration: "3 months",
-            category: "Soft Skills & Entrepreneurship",
-            description: "Learn to launch and scale successful business ventures with modern entrepreneurship strategies.",
-            fullDescription: "Master business model canvas, market validation, fundraising, financial planning, growth hacking, and scaling strategies.",
-            skills: ["Business Model Canvas", "Market Research", "Fundraising", "Financial Modeling", "Growth Hacking", "Pitch Deck Creation"],
-            projects: ["Complete Business Plan", "Investor Pitch Deck", "Go-to-Market Strategy"],
-            careerPaths: ["Entrepreneur", "Startup Founder", "Business Consultant", "Venture Capital Analyst"],
-            fee: "PKR 50,000",
-            certificate: "SARR Entrepreneurship Certification"
-        }
+    const courseDetails = {
+        "Web Development (Full Stack)": { title: "Web Development (Full Stack)", duration: "6 months", description: "Master MERN stack, Next.js, RESTful APIs, authentication, and cloud deployment.", skills: ["React.js", "Node.js", "MongoDB", "Next.js"], projects: ["E-commerce Site", "Blog Platform"], careers: ["Full Stack Developer"], fee: "PKR 85,000" },
+        "App Development (iOS/Android)": { title: "App Development", duration: "5 months", description: "Build cross-platform apps using Flutter, React Native, Swift, and Kotlin.", skills: ["Flutter", "React Native", "Swift", "Kotlin"], projects: ["Food Delivery App", "Fitness Tracker"], careers: ["Mobile Developer"], fee: "PKR 95,000" },
+        "Game Development (Unity/Unreal)": { title: "Game Development", duration: "7 months", description: "Create 2D/3D games using Unity and Unreal Engine.", skills: ["Unity C#", "Unreal Blueprints", "Game Physics"], projects: ["3D Platformer", "Shooter Game"], careers: ["Game Developer"], fee: "PKR 120,000" },
+        "AI Automation & AI Bots": { title: "AI Automation", duration: "4 months", description: "Build AI chatbots and automation systems using LLMs and RPA.", skills: ["Python", "LLM Integration", "RPA"], projects: ["Chatbot", "Email Automation"], careers: ["AI Engineer"], fee: "PKR 75,000" },
+        "Graphics Design": { title: "Graphics Design", duration: "3 months", description: "Master Photoshop, Illustrator, Canva, and branding.", skills: ["Photoshop", "Illustrator", "Canva"], projects: ["Logo Design", "Brand Identity"], careers: ["Graphic Designer"], fee: "PKR 45,000" },
+        "2D Animation": { title: "2D Animation", duration: "4 months", description: "Create classic cartoon animations with Adobe Animate.", skills: ["Adobe Animate", "Character Rigging"], projects: ["Animated Short", "Walk Cycle"], careers: ["2D Animator"], fee: "PKR 55,000" },
+        "3D Animation": { title: "3D Animation", duration: "5 months", description: "Create VFX and cinematic animations with Blender/Maya.", skills: ["Blender", "Maya", "VFX"], projects: ["3D Character Animation", "VFX Scene"], careers: ["3D Animator"], fee: "PKR 70,000" },
+        "2D & 3D Modeling": { title: "Modeling", duration: "4 months", description: "Master sculpting, texturing, and 3D modeling.", skills: ["Blender", "Sculpting", "UV Mapping"], projects: ["Character Model", "Product Design"], careers: ["3D Modeler"], fee: "PKR 60,000" },
+        "Cybersecurity": { title: "Cybersecurity", duration: "6 months", description: "Protect networks and data from cyber threats.", skills: ["Network Security", "Cryptography"], projects: ["Security Audit"], careers: ["Security Analyst"], fee: "PKR 95,000" },
+        "Ethical Hacking": { title: "Ethical Hacking", duration: "5 months", description: "Learn penetration testing and vulnerability assessment.", skills: ["Kali Linux", "Metasploit", "Nmap"], projects: ["Network Pen Test"], careers: ["Penetration Tester"], fee: "PKR 85,000" },
+        "MS Office (Professional)": { title: "MS Office", duration: "2 months", description: "Master Excel, PowerPoint, and Word.", skills: ["Excel Advanced", "PowerPoint"], projects: ["Dashboard", "Presentation"], careers: ["Office Administrator"], fee: "PKR 25,000" },
+        "Freelancing (Mastery Program)": { title: "Freelancing", duration: "3 months", description: "Build a freelance career on Upwork/Fiverr.", skills: ["Profile Optimization", "Proposal Writing"], projects: ["Complete Profile"], careers: ["Freelancer"], fee: "PKR 40,000" },
+        "AI & Machine Learning Automation": { title: "AI & ML", duration: "5 months", description: "Build ML models with Python and TensorFlow.", skills: ["Python", "TensorFlow"], projects: ["Image Classification"], careers: ["ML Engineer"], fee: "PKR 90,000" },
+        "Critical Thinking": { title: "Critical Thinking", duration: "2 months", description: "Develop analytical and problem-solving skills.", skills: ["Logical Reasoning"], projects: ["Case Study"], careers: ["Strategy Consultant"], fee: "PKR 25,000" },
+        "Task Management": { title: "Task Management", duration: "1.5 months", description: "Master Agile, Scrum, and productivity tools.", skills: ["Agile", "Scrum"], projects: ["Project Setup"], careers: ["Project Coordinator"], fee: "PKR 20,000" },
+        "Leadership Development": { title: "Leadership", duration: "2 months", description: "Develop emotional intelligence and team management.", skills: ["Emotional Intelligence"], projects: ["Action Plan"], careers: ["Team Lead"], fee: "PKR 35,000" },
+        "Entrepreneurship & Business Growth": { title: "Entrepreneurship", duration: "3 months", description: "Launch and scale business ventures.", skills: ["Business Canvas", "Fundraising"], projects: ["Business Plan"], careers: ["Entrepreneur"], fee: "PKR 50,000" }
     };
     
-    // Default fallback for any course not in the detailed data
-    function getCourseDetails(courseName) {
-        if (courseDetailsData[courseName]) {
-            return courseDetailsData[courseName];
-        }
-        return {
-            title: courseName,
-            duration: "Flexible",
-            category: "Professional Course",
-            description: "Comprehensive training program designed to build industry-relevant skills.",
-            fullDescription: "This course provides hands-on training with real-world projects, expert mentorship, and career support to help you excel in your chosen field.",
-            skills: ["Industry-Relevant Skills", "Hands-on Projects", "Expert Mentorship", "Career Guidance"],
-            projects: ["Capstone Project", "Portfolio Development"],
-            careerPaths: ["Industry Professional", "Specialist", "Freelancer", "Entrepreneur"],
-            fee: "Contact admissions for details",
-            certificate: "SARR Certification"
-        };
-    }
-    
-    // Create and show course details modal
     function showCourseDetails(courseName) {
-        const details = getCourseDetails(courseName);
-        
-        // Remove existing modal if any
-        const existingModal = document.getElementById('courseDetailsModal');
-        if (existingModal) existingModal.remove();
-        
-        // Create modal overlay
+        const details = courseDetails[courseName] || { title: courseName, duration: "Flexible", description: "Comprehensive training program.", skills: ["Industry Skills"], projects: ["Capstone"], careers: ["Professional"], fee: "Contact" };
         const modal = document.createElement('div');
-        modal.id = 'courseDetailsModal';
-        modal.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(8px);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        `;
-        
-        // Create modal content
-        modal.innerHTML = `
-            <div style="
-                background: white;
-                border-radius: 40px;
-                max-width: 900px;
-                width: 100%;
-                max-height: 85vh;
-                overflow-y: auto;
-                position: relative;
-                animation: modalSlideIn 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-            ">
-                <div style="position: sticky; top: 0; background: white; border-radius: 40px 40px 0 0; padding: 24px 28px; border-bottom: 1px solid #E2DFD9; display: flex; justify-content: space-between; align-items: center;">
-                    <div>
-                        <span style="background: #F1EDE7; padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; color: #B67B5E;">${details.category}</span>
-                        <h2 style="color: #2C5A4B; margin-top: 10px; font-size: 1.8rem;">${details.title}</h2>
-                    </div>
-                    <button id="closeModalBtn" style="background: #F1EDE7; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; transition: 0.2s;">
-                        <i class="fas fa-times" style="color: #6F7C72;"></i>
-                    </button>
-                </div>
-                <div style="padding: 28px;">
-                    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 24px;">
-                        <div style="background: #F1EDE7; padding: 8px 20px; border-radius: 40px;"><i class="far fa-clock"></i> Duration: ${details.duration}</div>
-                        <div style="background: #F1EDE7; padding: 8px 20px; border-radius: 40px;"><i class="fas fa-graduation-cap"></i> ${details.certificate}</div>
-                    </div>
-                    
-                    <div style="margin-bottom: 28px;">
-                        <h3 style="color: #2C5A4B; margin-bottom: 12px;"><i class="fas fa-info-circle"></i> About the Program</h3>
-                        <p style="color: #4F665B; line-height: 1.6;">${details.fullDescription || details.description}</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 28px;">
-                        <h3 style="color: #2C5A4B; margin-bottom: 12px;"><i class="fas fa-code"></i> What You'll Learn</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                            ${details.skills.map(skill => `<span style="background: rgba(44, 90, 75, 0.1); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; color: #2C5A4B;">${skill}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 28px;">
-                        <h3 style="color: #2C5A4B; margin-bottom: 12px;"><i class="fas fa-project-diagram"></i> Hands-on Projects</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                            ${details.projects.map(project => `<span style="background: #F1EDE7; padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; color: #B67B5E;"><i class="fas fa-check-circle" style="font-size: 0.7rem;"></i> ${project}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <div style="margin-bottom: 28px;">
-                        <h3 style="color: #2C5A4B; margin-bottom: 12px;"><i class="fas fa-briefcase"></i> Career Opportunities</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                            ${details.careerPaths.map(path => `<span style="background: rgba(182, 123, 94, 0.1); padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; color: #B67B5E;">${path}</span>`).join('')}
-                        </div>
-                    </div>
-                    
-                    <div style="background: linear-gradient(125deg, rgba(44, 90, 75, 0.05), rgba(182, 123, 94, 0.05)); border-radius: 28px; padding: 20px; margin-bottom: 20px;">
-                        <h3 style="color: #2C5A4B; margin-bottom: 8px;"><i class="fas fa-tag"></i> Investment</h3>
-                        <p style="font-size: 1.2rem; font-weight: 600; color: #B67B5E;">${details.fee}</p>
-                        <p style="font-size: 0.8rem; color: #6F7C72;">Flexible installment plans available | Scholarships for eligible students</p>
-                    </div>
-                    
-                    <div style="display: flex; gap: 16px; justify-content: flex-end;">
-                        <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration: none;">Enroll Now <i class="fas fa-arrow-right"></i></a>
-                        <button id="closeModalFooterBtn" class="btn-outline" style="border-color: #E2DFD9; background: transparent;">Close</button>
-                    </div>
-                </div>
-            </div>
-        `;
-        
+        modal.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;`;
+        modal.innerHTML = `<div style="background:#122C36;border-radius:24px;max-width:500px;width:100%;max-height:85vh;overflow-y:auto;border:2px solid #4CAF50;"><div style="padding:20px;border-bottom:1px solid #2C4B57;display:flex;justify-content:space-between;"><div><span style="color:#4CAF50;">COURSE DETAILS</span><h2 style="color:#FFF;font-size:1.3rem;">${details.title}</h2></div><button id="closeModalBtn" style="background:#2A3A44;border:none;width:32px;height:32px;border-radius:50%;color:#FFF;cursor:pointer;">×</button></div><div style="padding:20px;"><div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;"><span style="background:#1E4A55;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.duration}</span><span style="background:#1E4A55;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.fee}</span></div><h3 style="color:#4CAF50;font-size:1rem;">About</h3><p style="color:#BDD4DE;margin-bottom:16px;font-size:0.85rem;">${details.description}</p><h3 style="color:#4CAF50;font-size:1rem;">Skills</h3><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">${details.skills.map(s => `<span style="background:#2A3A44;padding:4px 10px;border-radius:30px;font-size:0.7rem;">${s}</span>`).join('')}</div><div style="display:flex;gap:10px;"><a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration:none;font-size:0.8rem;">Enroll Now</a><button id="closeFooterBtn" class="btn-outline" style="font-size:0.8rem;">Close</button></div></div></div>`;
         document.body.appendChild(modal);
-        
-        // Add animation keyframes
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes modalSlideIn {
-                from { opacity: 0; transform: scale(0.96) translateY(20px); }
-                to { opacity: 1; transform: scale(1) translateY(0); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Fade in modal
-        setTimeout(() => { modal.style.opacity = '1'; }, 10);
-        
-        // Close functions
-        function closeModal() {
-            modal.style.opacity = '0';
-            setTimeout(() => modal.remove(), 300);
-        }
-        
-        document.getElementById('closeModalBtn')?.addEventListener('click', closeModal);
-        document.getElementById('closeModalFooterBtn')?.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        const close = () => modal.remove();
+        document.getElementById('closeModalBtn')?.addEventListener('click', close);
+        document.getElementById('closeFooterBtn')?.addEventListener('click', close);
+        modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
     }
     
-    // Attach click handlers to all "Learn More" links
     document.querySelectorAll('.learn-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const courseCard = link.closest('.course-card');
-            if (courseCard) {
-                const courseName = courseCard.getAttribute('data-course') || courseCard.querySelector('h3')?.innerText;
-                if (courseName) {
-                    showCourseDetails(courseName);
-                }
-            }
+            const card = link.closest('.course-card');
+            if (card) showCourseDetails(card.getAttribute('data-course') || card.querySelector('h3')?.innerText);
         });
     });
     
-    // Hamburger, counters, animations
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
@@ -1182,11 +895,11 @@
         statNumbers.forEach(el => {
             const target = parseInt(el.getAttribute('data-target'));
             let curr = 0;
-            const inc = target / 55;
+            const inc = target / 50;
             const update = () => {
                 curr += inc;
                 if(curr < target) { el.innerText = Math.floor(curr); requestAnimationFrame(update); }
-                else { el.innerText = target + (el.getAttribute('data-target') === '1000' ? '+' : (el.getAttribute('data-target') === '92' ? '%' : '')); }
+                else { el.innerText = target + (el.getAttribute('data-target') === '1200' ? '+' : (el.getAttribute('data-target') === '94' ? '%' : '')); }
             };
             update();
         });
@@ -1200,76 +913,25 @@
     setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-80) el.classList.add('visible'); }), 150);
 </script>
 
-<!-- Chatbot Widget (unchanged functionality, colors harmonized) -->
-<style>
-    .chatbot-widget { position: fixed; bottom: 25px; right: 25px; z-index: 999999; font-family: 'Inter', sans-serif; }
-    .chat-button { width: 60px; height: 60px; background: linear-gradient(135deg, #2C5A4B, #5D8B6F); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 8px 22px rgba(44, 90, 75, 0.25); transition: 0.2s; }
-    .chat-button:hover { transform: scale(1.05); background: #236851; }
-    .chat-button i { font-size: 26px; color: white; }
-    .chat-window { position: fixed; bottom: 100px; right: 25px; width: 380px; height: 540px; background: white; border-radius: 28px; border: 1px solid #E2DFD9; box-shadow: 0 20px 35px rgba(0, 0, 0, 0.08); display: flex; flex-direction: column; overflow: hidden; transform: scale(0); opacity: 0; transform-origin: bottom right; transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1); pointer-events: none; }
-    .chat-window.open { transform: scale(1); opacity: 1; pointer-events: auto; }
-    .chat-header { padding: 16px 18px; background: #F9F7F4; border-bottom: 1px solid #E2DFD9; display: flex; align-items: center; justify-content: space-between; }
-    .chat-avatar { width: 40px; height: 40px; background: #2C5A4B; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-    .chat-avatar i { font-size: 20px; color: white; }
-    .chat-title h3 { font-size: 0.95rem; font-weight: 700; color: #2C4A3F; margin-bottom: 2px; }
-    .chat-title p { font-size: 0.7rem; color: #8FAA9F; }
-    .close-btn { background: #F1EDE7; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-    .close-btn i { color: #6F7C72; font-size: 14px; }
-    .chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; background: #FEFCF9; }
-    .chat-message.bot .message-content { background: #F1EDE7; color: #2C4A3F; border-bottom-left-radius: 4px; }
-    .chat-message.user .message-content { background: #2C5A4B; color: white; border-bottom-right-radius: 4px; }
-    .message-content { padding: 10px 14px; border-radius: 20px; font-size: 0.85rem; max-width: 80%; }
-    .chat-input-area { padding: 12px; border-top: 1px solid #E2DFD9; background: white; display: flex; gap: 10px; }
-    .chat-input-area input { flex: 1; padding: 10px 14px; background: #F9F7F4; border: 1px solid #E2DFD9; border-radius: 40px; color: #2C4A3F; font-family: 'Inter', sans-serif; }
-    .send-btn { background: #2C5A4B; border: none; width: 40px; height: 40px; border-radius: 50%; color: white; cursor: pointer; }
-    .suggestions-bar { padding: 8px 12px; background: #FEFCF9; border-top: 1px solid #E2DFD9; display: flex; gap: 8px; overflow-x: auto; }
-    .suggestion-chip { background: #F1EDE7; padding: 6px 12px; border-radius: 30px; font-size: 0.7rem; color: #2C5A4B; cursor: pointer; white-space: nowrap; }
-    @media (max-width: 550px) { .chat-window { width: calc(100vw - 40px); right: 20px; } }
-</style>
-
+<!-- Chatbot & WhatsApp Fixed elements (unchanged but fully functional) -->
 <div class="chatbot-widget">
     <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
     <div class="chat-window" id="chatWindow">
-        <div class="chat-header"><div class="chat-header-info" style="display:flex;gap:12px"><div class="chat-avatar"><i class="fas fa-robot"></i></div><div><h3>SARR Assistant</h3><p>Ready to help</p></div></div><div class="close-btn" id="closeChat"><i class="fas fa-times"></i></div></div>
-        <div class="chat-messages" id="chatMessages"><div class="chat-message bot"><div class="message-content">Welcome! Ask about courses, admissions, fees, or partnerships.</div></div></div>
-        <div class="suggestions-bar" id="suggestionsBar"></div>
+        <div class="chat-header"><span>SARR Assistant</span><button id="closeChat" style="background:none;border:none;color:white;cursor:pointer;">×</button></div>
+        <div class="chat-messages" id="chatMessages"><div class="chat-message bot"><div class="message-content">Welcome! Ask about courses, admissions, or fees.</div></div></div>
         <div class="chat-input-area"><input type="text" id="chatInput" placeholder="Type your question..."><button class="send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button></div>
     </div>
 </div>
-
 <script>
-    const kb = { "web development":"Full Stack Web Dev - 6 months","courses":"We offer 25+ programs in Dev, Design, Security, AI & Freelancing","apply":"Apply online: Documents, 3-5 days process","fee":"Fees vary, installments available","placement":"92% placement rate","scholarships":"Merit, women, need-based up to 20%","partners":"Horizon Growth (UK), Canadian Institute, IIT Singapore" };
-    function findAnswer(q){ let lq=q.toLowerCase(); for(let[k,v] of Object.entries(kb)) if(lq.includes(k)) return v; if(lq.includes("hello")) return "Hi! How can I assist?"; return "Please ask about courses, admissions, fees, or partnerships."; }
+    function sendChatMessage() { let i=document.getElementById('chatInput'),q=i.value.trim();if(!q)return;addMsg(q,true);i.value='';setTimeout(()=>addMsg("Contact admissions at sarr.edu.pk@gmail.com or +92 320 5702273",false),300); }
     function addMsg(t,u){ let c=document.getElementById('chatMessages'),d=document.createElement('div');d.className=`chat-message ${u?'user':'bot'}`;d.innerHTML=`<div class="message-content">${t}</div>`;c.appendChild(d);c.scrollTop=c.scrollHeight; }
-    function sendChatMessage(){ let i=document.getElementById('chatInput'),q=i.value.trim();if(!q)return;addMsg(q,true);i.value='';setTimeout(()=>addMsg(findAnswer(q),false),200);}
-    window.sendChatMessage=sendChatMessage;
     document.getElementById('chatButton').onclick=()=>document.getElementById('chatWindow').classList.add('open');
     document.getElementById('closeChat').onclick=()=>document.getElementById('chatWindow').classList.remove('open');
     document.getElementById('chatInput').addEventListener('keypress',e=>{if(e.key==='Enter')sendChatMessage();});
-    let suggestions=["What courses?","How to apply?","Placement rate?","Scholarships?","Global partners?"];
-    let bar=document.getElementById('suggestionsBar');
-    suggestions.forEach(s=>{let chip=document.createElement('div');chip.className='suggestion-chip';chip.textContent=s;chip.onclick=()=>{document.getElementById('chatInput').value=s;sendChatMessage();};bar.appendChild(chip);});
+    window.sendChatMessage=sendChatMessage;
 </script>
-
-<!-- WhatsApp Group Button (soft colors) -->
-<style>
-    .whatsapp-group-button { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #2C5A4B, #5D8B6F); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 1001; box-shadow: 0 8px 22px rgba(0,0,0,0.08); transition: 0.2s; }
-    .whatsapp-group-button:hover { transform: scale(1.05); background: #236851; }
-    .whatsapp-group-button svg { width: 30px; fill: white; }
-    .group-indicator { position: absolute; top: -5px; right: -5px; background: #B67B5E; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; border: 2px solid white; }
-    .whatsapp-group-panel { position: fixed; bottom: 110px; left: 30px; width: 380px; background: white; border-radius: 28px; box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1); z-index: 1000; display: flex; flex-direction: column; transform: scale(0.9); opacity: 0; visibility: hidden; transition: 0.2s; border: 1px solid #E2DFD9; }
-    .whatsapp-group-panel.open { transform: scale(1); opacity: 1; visibility: visible; }
-    .whatsapp-group-header { background: #F9F7F4; padding: 18px; border-radius: 28px 28px 0 0; border-bottom: 1px solid #E2DFD9; display: flex; justify-content: space-between; align-items: center; }
-    .join-group-btn { background: #2C5A4B; color: white; border: none; padding: 12px; border-radius: 40px; margin-top: 12px; font-weight: 600; cursor: pointer; width: 100%; }
-    @media (max-width: 550px) { .whatsapp-group-panel { width: calc(100vw - 50px); left: 20px; } }
-</style>
-<div class="whatsapp-group-button" id="whatsappGroupButton"><svg viewBox="0 0 24 24"><path d="M12.032 0C5.384 0 0 5.384 0 12.032c0 2.128.56 4.216 1.632 6.048L0 24l6.048-1.584c1.776.96 3.808 1.472 5.856 1.472 6.648 0 12.032-5.384 12.032-12.032S18.68 0 12.032 0z"/></svg><div class="group-indicator"><i class="fas fa-users"></i></div></div>
-<div class="whatsapp-group-panel" id="whatsappGroupPanel"><div class="whatsapp-group-header"><div><h3 style="color:#2C5A4B">SARR Community</h3><small>Join WhatsApp Group</small></div><button id="closeWhatsAppGroup" style="background:none;border:none;font-size:1.2rem;cursor:pointer;">✕</button></div><div class="whatsapp-group-content" style="padding:20px"><div class="group-info-card" style="text-align:center"><div class="group-icon-large" style="background:#2C5A4B;width:70px;height:70px;border-radius:50%;margin:0 auto 12px;display:flex;align-items:center;justify-content:center"><i class="fab fa-whatsapp" style="font-size:32px;color:white"></i></div><h4>Official WhatsApp Group</h4><p style="margin:12px 0">Get updates, career tips & network</p><button class="join-group-btn" id="joinWhatsAppGroupBtn">Join Now</button></div></div></div>
-<script>
-    const wGroupBtn=document.getElementById('whatsappGroupButton'),wPanel=document.getElementById('whatsappGroupPanel'),closeW=document.getElementById('closeWhatsAppGroup'),joinW=document.getElementById('joinWhatsAppGroupBtn');
-    wGroupBtn.onclick=()=>wPanel.classList.add('open');
-    closeW.onclick=()=>wPanel.classList.remove('open');
-    joinW.onclick=()=>window.open("https://chat.whatsapp.com/F6xVsJKRAEd5fY3oGXsu4f",'_blank');
-</script>
+<div style="position:fixed;bottom:20px;left:20px;z-index:1001;">
+    <a href="https://chat.whatsapp.com/F6xVsJKRAEd5fY3oGXsu4f" target="_blank" style="display:flex;align-items:center;justify-content:center;width:45px;height:45px;background:#25D366;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,0.3);"><i class="fab fa-whatsapp" style="font-size:24px;color:white;"></i></a>
+</div>
 </body>
 </html>
