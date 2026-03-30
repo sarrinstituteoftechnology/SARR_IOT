@@ -280,92 +280,83 @@
             padding-bottom: 0.5rem;
         }
 
-        /* COURSES SECTION - UPDATED: NO GLASS, SHARP SOLID COLORS, BETTER MOBILE */
+        /* Courses Section - NO GLASS EFFECT, SHARP SOLID COLORS */
         .courses-section {
             background: #0A1922;
         }
         .course-category {
-            margin-bottom: 2.8rem;
+            margin-bottom: 3rem;
         }
         .category-title {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1.2rem;
             padding-left: 1rem;
-            border-left: 5px solid #4CAF50;
+            border-left: 4px solid #4CAF50;
             color: #FFFFFF;
-            font-weight: 700;
-            letter-spacing: -0.2px;
+            font-weight: 600;
         }
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
-        /* SOLID, SHARP COURSE CARDS - NO BLUR, NO GLASS, FULLY OPAQUE BACKGROUND */
         .course-card {
-            background: #122C36;  /* Deep solid teal background, no transparency */
-            border-radius: 20px;
-            padding: 1.3rem;
-            transition: all 0.3s ease-in-out;
-            border: 1px solid #2C4B57;
+            background: #0F212A;
+            border-radius: 16px;
+            padding: 1.2rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid #2A3A44;
             cursor: pointer;
-            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
         }
         .course-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
             border-color: #4CAF50;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
-            background: #14323E;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         .course-img {
             width: 100%;
             height: 170px;
             object-fit: cover;
-            border-radius: 14px;
+            border-radius: 12px;
             margin-bottom: 1rem;
             transition: transform 0.3s ease;
-            border: 1px solid #2C4B57;
         }
         .course-card:hover .course-img { transform: scale(1.02); }
         .course-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: #FFFFFF;
-            font-weight: 700;
         }
         .course-desc {
-            font-size: 0.85rem;
-            color: #BDD4DE;
+            font-size: 0.8rem;
+            color: #9AAEB9;
             margin: 0.5rem 0;
-            line-height: 1.45;
+            line-height: 1.4;
         }
         .duration-badge {
             display: inline-block;
-            background: #1E4A55;
-            padding: 0.25rem 0.9rem;
-            border-radius: 40px;
+            background: rgba(76, 175, 80, 0.2);
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
             font-size: 0.7rem;
-            margin: 0.7rem 0 0.9rem;
-            color: #B0E57C;
-            font-weight: 600;
-            letter-spacing: 0.3px;
+            margin: 0.8rem 0;
+            color: #4CAF50;
+            font-weight: 500;
         }
         .learn-link {
             color: #4CAF50;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: 600;
+            font-size: 0.8rem;
             display: inline-flex;
             align-items: center;
             gap: 5px;
             cursor: pointer;
-            transition: gap 0.25s ease;
-            border-bottom: 1px dashed #4CAF50;
-            padding-bottom: 2px;
+            transition: gap 0.3s ease;
         }
-        .learn-link:hover { gap: 10px; color: #6FBF6F; }
+        .learn-link:hover { gap: 8px; }
 
-        /* Collaborations - Glass Effect (kept as original) */
+        /* Collaborations - Glass Effect */
         .collaborations-section {
             background: rgba(10, 25, 34, 0.6);
             backdrop-filter: blur(12px);
@@ -577,7 +568,7 @@
             transform: translateY(0);
         }
 
-        /* Mobile Responsive — FULLY OPTIMIZED */
+        /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 position: fixed;
@@ -610,15 +601,12 @@
             .section-title { font-size: 1.5rem; }
             section { padding: 40px 4%; }
             
-            /* courses grid & cards: perfect mobile sizing */
-            .category-title { font-size: 1.3rem; margin-bottom: 1rem; }
-            .courses-grid { grid-template-columns: 1fr; gap: 1.3rem; }
-            .course-card { padding: 1rem; border-radius: 18px; }
-            .course-img { height: 150px; object-fit: cover; }
-            .course-card h3 { font-size: 1.1rem; }
-            .course-desc { font-size: 0.8rem; }
-            .duration-badge { font-size: 0.65rem; }
-            .learn-link { font-size: 0.8rem; }
+            .category-title { font-size: 1.2rem; margin-bottom: 1rem; }
+            .courses-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .course-card { padding: 1rem; }
+            .course-img { height: 140px; }
+            .course-card h3 { font-size: 1rem; }
+            .course-desc { font-size: 0.75rem; }
             
             .collaborations-section { padding: 30px 4%; }
             .partner-card { width: 100%; max-width: 280px; padding: 1rem; }
@@ -632,14 +620,6 @@
             .btn-secondary, .btn-download { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
             
             .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.2rem; }
-        }
-
-        /* additional very small devices (below 480px) fine-tune */
-        @media (max-width: 480px) {
-            .course-img { height: 130px; }
-            .category-title { font-size: 1.2rem; }
-            .course-card h3 { font-size: 1rem; }
-            .btn-primary, .btn-outline { padding: 0.5rem 1rem; font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -680,7 +660,7 @@
     <div class="stat-item"><div class="stat-number" data-target="94">0</div><div class="stat-label">Placement Rate</div></div>
 </div>
 
-<!-- Courses Section - NO GLASS, SOLID VIBRANT BACKGROUNDS, SHARP EDGES -->
+<!-- Courses Section - NO GLASS EFFECT, SHARP SOLID COLORS -->
 <section id="courses" class="courses-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Programs</h2></div>
     
@@ -732,7 +712,7 @@
     </div>
 </section>
 
-<!-- Collaborations - Glass Effect (unchanged) -->
+<!-- Collaborations - Glass Effect -->
 <section id="collaborations" class="collaborations-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Global Partners</h2></div>
     <div class="partners-grid fade-up">
@@ -775,7 +755,6 @@
     <div class="copyright">© 2025 SARR Institute of Technology | Established 2020 | Partner Institutes: Horizon Growth | Canadian Institute | International Institute of Technology</div>
 </footer>
 
-<!-- Three.js script remains same (unchanged) -->
 <script type="module">
     import * as THREE from 'three';
     const container = document.getElementById('canvas-container');
@@ -865,7 +844,7 @@
         const details = courseDetails[courseName] || { title: courseName, duration: "Flexible", description: "Comprehensive training program.", skills: ["Industry Skills"], projects: ["Capstone"], careers: ["Professional"], fee: "Contact" };
         const modal = document.createElement('div');
         modal.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;`;
-        modal.innerHTML = `<div style="background:#122C36;border-radius:24px;max-width:500px;width:100%;max-height:85vh;overflow-y:auto;border:2px solid #4CAF50;"><div style="padding:20px;border-bottom:1px solid #2C4B57;display:flex;justify-content:space-between;"><div><span style="color:#4CAF50;">COURSE DETAILS</span><h2 style="color:#FFF;font-size:1.3rem;">${details.title}</h2></div><button id="closeModalBtn" style="background:#2A3A44;border:none;width:32px;height:32px;border-radius:50%;color:#FFF;cursor:pointer;">×</button></div><div style="padding:20px;"><div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;"><span style="background:#1E4A55;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.duration}</span><span style="background:#1E4A55;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.fee}</span></div><h3 style="color:#4CAF50;font-size:1rem;">About</h3><p style="color:#BDD4DE;margin-bottom:16px;font-size:0.85rem;">${details.description}</p><h3 style="color:#4CAF50;font-size:1rem;">Skills</h3><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">${details.skills.map(s => `<span style="background:#2A3A44;padding:4px 10px;border-radius:30px;font-size:0.7rem;">${s}</span>`).join('')}</div><div style="display:flex;gap:10px;"><a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration:none;font-size:0.8rem;">Enroll Now</a><button id="closeFooterBtn" class="btn-outline" style="font-size:0.8rem;">Close</button></div></div></div>`;
+        modal.innerHTML = `<div style="background:#0F212A;border-radius:24px;max-width:500px;width:100%;max-height:85vh;overflow-y:auto;border:1px solid #4CAF50;"><div style="padding:20px;border-bottom:1px solid #2A3A44;display:flex;justify-content:space-between;"><div><span style="color:#4CAF50;">COURSE DETAILS</span><h2 style="color:#FFF;font-size:1.3rem;">${details.title}</h2></div><button id="closeModalBtn" style="background:#2A3A44;border:none;width:32px;height:32px;border-radius:50%;color:#FFF;cursor:pointer;">×</button></div><div style="padding:20px;"><div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;"><span style="background:#2A3A44;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.duration}</span><span style="background:#2A3A44;padding:4px 12px;border-radius:30px;font-size:0.75rem;">${details.fee}</span></div><h3 style="color:#4CAF50;font-size:1rem;">About</h3><p style="color:#9AAEB9;margin-bottom:16px;font-size:0.85rem;">${details.description}</p><h3 style="color:#4CAF50;font-size:1rem;">Skills</h3><div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">${details.skills.map(s => `<span style="background:#2A3A44;padding:4px 10px;border-radius:30px;font-size:0.7rem;">${s}</span>`).join('')}</div><div style="display:flex;gap:10px;"><a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration:none;font-size:0.8rem;">Enroll Now</a><button id="closeFooterBtn" class="btn-outline" style="font-size:0.8rem;">Close</button></div></div></div>`;
         document.body.appendChild(modal);
         const close = () => modal.remove();
         document.getElementById('closeModalBtn')?.addEventListener('click', close);
@@ -913,7 +892,23 @@
     setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-80) el.classList.add('visible'); }), 150);
 </script>
 
-<!-- Chatbot & WhatsApp Fixed elements (unchanged but fully functional) -->
+<style>
+    .chatbot-widget { position: fixed; bottom: 20px; right: 20px; z-index: 999999; }
+    .chat-button { width: 50px; height: 50px; background: #4CAF50; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: all 0.3s ease; }
+    .chat-button:hover { transform: scale(1.05); background: #45a049; }
+    .chat-button i { font-size: 22px; color: white; }
+    .chat-window { position: fixed; bottom: 80px; right: 20px; width: 320px; height: 450px; background: #0F212A; border-radius: 20px; border: 1px solid #4CAF50; display: flex; flex-direction: column; overflow: hidden; transform: scale(0); opacity: 0; transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); pointer-events: none; }
+    .chat-window.open { transform: scale(1); opacity: 1; pointer-events: auto; }
+    .chat-header { padding: 12px; background: #4CAF50; color: white; display: flex; justify-content: space-between; align-items: center; border-radius: 20px 20px 0 0; }
+    .chat-messages { flex: 1; overflow-y: auto; padding: 12px; background: #0F212A; }
+    .chat-message.bot .message-content { background: #2A3A44; color: #FFF; padding: 8px 12px; border-radius: 16px; display: inline-block; max-width: 80%; margin-bottom: 8px; font-size: 0.8rem; }
+    .chat-message.user { text-align: right; }
+    .chat-message.user .message-content { background: #4CAF50; color: white; padding: 8px 12px; border-radius: 16px; display: inline-block; max-width: 80%; margin-bottom: 8px; font-size: 0.8rem; }
+    .chat-input-area { padding: 10px; border-top: 1px solid #2A3A44; display: flex; gap: 8px; background: #0F212A; }
+    .chat-input-area input { flex: 1; padding: 8px 12px; background: #2A3A44; border: none; border-radius: 30px; color: white; outline: none; font-size: 0.8rem; }
+    .send-btn { background: #4CAF50; border: none; width: 36px; border-radius: 50%; color: white; cursor: pointer; }
+    @media (max-width: 550px) { .chat-window { width: calc(100vw - 40px); right: 20px; bottom: 70px; height: 400px; } .chat-button { width: 45px; height: 45px; } }
+</style>
 <div class="chatbot-widget">
     <div class="chat-button" id="chatButton"><i class="fas fa-comment-dots"></i></div>
     <div class="chat-window" id="chatWindow">
