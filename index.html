@@ -638,161 +638,590 @@
         });
     });
     
-    // ========== TRAINED CHATBOT WITH COMPREHENSIVE KNOWLEDGE ==========
-    const chatKnowledge = {
-        // General
-        "hello|hi|hey|greetings": "Hello! Welcome to SARR Institute of Technology. How can I assist you today?",
-        "who are you|what is sarr|about sarr": "SARR Institute of Technology is a premier educational institution established in 2020, offering industry-aligned programs in Development, Design, Security, AI, and Business. We have 55+ expert faculty members and a 94% placement rate.",
-        "location|address|where": "Our main campus is located at Salah ud-din Ayubi Road STP SARR Incorporation, Dadyal, Azad Jammu and Kashmir, Pakistan.",
-        "contact|phone|email|call": "You can contact us at +92 320 5702273 or email us at sarr.edu.pk@gmail.com. Our office hours are Monday-Friday 9 AM to 6 PM.",
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SARR Institute AI Assistant | Chatbot</title>
+    <style>
+        /* -------------------------------
+            CHATBOT WIDGET STYLES (self-contained, no site interference)
+        ------------------------------- */
+        .sarr-chatbot * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        /* Floating button */
+        .sarr-chatbot-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0f2b3d, #1b4a6e);
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.25s ease;
+            z-index: 99999;
+            border: none;
+            outline: none;
+            animation: gentlePulse 2s infinite;
+        }
+
+        .sarr-chatbot-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #0a1f2e, #123a55);
+        }
+
+        .sarr-chatbot-btn svg {
+            width: 34px;
+            height: 34px;
+            fill: white;
+        }
+
+        @keyframes gentlePulse {
+            0% { box-shadow: 0 8px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(27,74,110,0.4); }
+            70% { box-shadow: 0 8px 20px rgba(0,0,0,0.25), 0 0 0 10px rgba(27,74,110,0); }
+            100% { box-shadow: 0 8px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(27,74,110,0); }
+        }
+
+        /* Chat window */
+        .sarr-chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 24px;
+            width: 400px;
+            height: 600px;
+            max-width: calc(100vw - 48px);
+            max-height: calc(100vh - 120px);
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 100000;
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .sarr-chat-window.open {
+            opacity: 1;
+            transform: scale(1);
+            pointer-events: auto;
+        }
+
+        /* Header with SARR branding */
+        .sarr-chat-header {
+            background: linear-gradient(135deg, #0f2b3d, #1b4a6e);
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sarr-chat-header h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sarr-chat-header h3 svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        .close-chat {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 40px;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+
+        .close-chat:hover {
+            background: rgba(255, 255, 255, 0.35);
+        }
+
+        /* Messages area */
+        .sarr-chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px 14px;
+            background: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .message {
+            display: flex;
+            flex-direction: column;
+            max-width: 85%;
+            animation: fadeSlide 0.2s ease;
+        }
+
+        .user-message {
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+        }
+
+        .message-bubble {
+            padding: 10px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .user-message .message-bubble {
+            background: #1b4a6e;
+            color: white;
+            border-bottom-right-radius: 4px;
+        }
+
+        .bot-message .message-bubble {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+            border-bottom-left-radius: 4px;
+        }
+
+        .timestamp {
+            font-size: 0.65rem;
+            margin-top: 4px;
+            margin-left: 12px;
+            color: #94a3b8;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 8px 14px;
+            background: white;
+            border-radius: 20px;
+            width: fit-content;
+            border: 1px solid #e2e8f0;
+        }
+
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            background: #94a3b8;
+            border-radius: 50%;
+            animation: typingAnim 1.4s infinite ease-in-out both;
+        }
+
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes typingAnim {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Input area */
+        .sarr-input-area {
+            background: white;
+            border-top: 1px solid #eef2f6;
+            padding: 12px 16px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .sarr-input-area textarea {
+            flex: 1;
+            border: 1px solid #dce3ec;
+            border-radius: 28px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            resize: none;
+            font-family: inherit;
+            outline: none;
+            max-height: 100px;
+        }
+
+        .sarr-input-area textarea:focus {
+            border-color: #1b4a6e;
+            box-shadow: 0 0 0 2px rgba(27, 74, 110, 0.2);
+        }
+
+        .send-btn {
+            background: #1b4a6e;
+            border: none;
+            border-radius: 40px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: white;
+        }
+
+        .send-btn:hover {
+            background: #0f2b3d;
+        }
+
+        .send-btn:disabled {
+            background: #b9c2d4;
+            cursor: not-allowed;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            color: #b91c1c;
+            font-size: 0.75rem;
+            padding: 6px 12px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 0 12px 8px 12px;
+        }
+
+        .contact-note {
+            background: #e6f0fa;
+            color: #0f2b3d;
+            font-size: 0.7rem;
+            padding: 8px 12px;
+            text-align: center;
+            border-top: 1px solid #cbdde9;
+        }
+
+        .contact-note a {
+            color: #1b4a6e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sarr-chat-messages::-webkit-scrollbar {
+            width: 5px;
+        }
+        .sarr-chat-messages::-webkit-scrollbar-track {
+            background: #eef2f6;
+        }
+        .sarr-chat-messages::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 500px) {
+            .sarr-chat-window {
+                width: calc(100vw - 32px);
+                right: 16px;
+                bottom: 85px;
+            }
+            .sarr-chatbot-btn {
+                width: 56px;
+                height: 56px;
+                bottom: 18px;
+                right: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SARR Institute Chatbot Widget - Fully Self-Contained -->
+    <div class="sarr-chatbot">
+        <button class="sarr-chatbot-btn" id="sarrToggleBtn" aria-label="Chat with SARR Assistant">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+            </svg>
+        </button>
+
+        <div class="sarr-chat-window" id="sarrChatWindow">
+            <div class="sarr-chat-header">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                    </svg>
+                    SARR Institute Assistant
+                </h3>
+                <button class="close-chat" id="sarrCloseBtn">✕</button>
+            </div>
+            <div class="sarr-chat-messages" id="sarrMessages">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        👋 Welcome to SARR Institute of Technology!<br><br>
+                        I'm here to help you explore our courses, career paths, and training approach. 
+                        Whether you're a beginner or looking to advance your skills, let me guide you!<br><br>
+                        <strong>What would you like to know?</strong> (Courses, career support, freelancing, or anything else!)
+                    </div>
+                    <div class="timestamp">Just now</div>
+                </div>
+            </div>
+            <div class="sarr-input-area">
+                <textarea id="sarrUserInput" placeholder="Type your question..." rows="1"></textarea>
+                <button class="send-btn" id="sarrSendBtn">➤</button>
+            </div>
+            <div class="contact-note">
+                📞 Need more help? Contact team: <a href="mailto:sarr.edu.pk@gmail.com">sarr.edu.pk@gmail.com</a> | 03205702273
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // SARR INSTITUTE KNOWLEDGE BASE (from provided DeepSeek shared link)
+        // ============================================================
         
-        // Courses
-        "courses|programs|offerings": "We offer 18+ comprehensive programs across 5 categories: Development & Programming, Design & Creative, Security & Infrastructure, Emerging Tech, and Soft Skills & Entrepreneurship. Which area interests you?",
-        "web development|full stack|web dev": "Full Stack Web Development is a 6-month program covering MERN stack, Next.js, responsive design, REST APIs, and cloud deployment. Fee: PKR 85,000. You'll build e-commerce sites, blog platforms, and real-time chat applications.",
-        "app development|mobile app|flutter|react native": "App Development is a 5-month program covering Flutter, React Native, Swift, and Kotlin. Fee: PKR 95,000. Build food delivery apps, fitness trackers, and e-commerce mobile apps.",
-        "game development|unity|unreal": "Game Development is a 7-month program covering Unity C#, Unreal Blueprints, game physics, and multiplayer networking. Fee: PKR 120,000. Create 3D platformers, shooters, and racing games.",
-        "ai automation|ai bots|automation": "AI Automation is a 4-month program covering LLMs, RPA tools, and intelligent agents. Fee: PKR 75,000. Build customer support chatbots, email automation, and data extraction bots.",
-        "graphics design|graphic design": "Graphics Design is a 3-month program covering Photoshop, Illustrator, Canva, CorelDraw, and branding. Fee: PKR 45,000. Create logos, brand identities, and social media campaigns.",
-        "2d animation|2d anim": "2D Animation is a 4-month program covering Adobe Animate, character rigging, and motion graphics. Fee: PKR 55,000. Create animated short films, character walk cycles, and explainer videos.",
-        "3d animation|3d anim|vfx": "3D Animation is a 5-month program covering Blender, Maya, and VFX. Fee: PKR 70,000. Create 3D character animations, VFX scenes, and cinematic trailers.",
-        "modeling|3d modeling": "2D & 3D Modeling is a 4-month program covering Blender, sculpting, texturing, and product visualization. Fee: PKR 60,000. Create character models, product designs, and environment assets.",
-        "cybersecurity|cyber security": "Cybersecurity is a 6-month program covering network defense, cryptography, risk management, and incident response. Fee: PKR 95,000. Build security audits, vulnerability assessments, and incident response plans.",
-        "ethical hacking|hacking|penetration testing": "Ethical Hacking is a 5-month program covering Kali Linux, Metasploit, Burp Suite, and web app testing. Fee: PKR 85,000. CEH exam preparation included. Build network penetration tests and vulnerability reports.",
-        "ms office|excel|powerpoint": "MS Office Professional is a 2-month program covering Advanced Excel, PowerPoint, Word, and macros. Fee: PKR 25,000. Create automated dashboards and professional presentations.",
-        "freelancing|freelance|upwork|fiverr": "Freelancing Mastery is a 3-month program covering profile optimization, proposal writing, client management, and pricing strategies. Fee: PKR 40,000. Build a complete freelancer profile and proposal portfolio.",
-        "ai ml|machine learning|ai & machine": "AI & Machine Learning Automation is a 5-month program covering Python, TensorFlow, neural networks, computer vision, and NLP. Fee: PKR 90,000. Build image classification models, sentiment analysis tools, and predictive dashboards.",
-        "critical thinking|thinking": "Critical Thinking is a 2-month program covering logical reasoning, problem framing, decision analysis, and strategic thinking. Fee: PKR 25,000. Perfect for aspiring strategy consultants and business analysts.",
-        "task management|task|agile|scrum": "Task Management is a 1.5-month program covering Agile, Scrum, Kanban, and productivity tools like Trello and Asana. Fee: PKR 20,000. Ideal for project coordinators and scrum masters.",
-        "leadership|leadership development": "Leadership Development is a 2-month program covering emotional intelligence, team motivation, conflict resolution, and strategic planning. Fee: PKR 35,000. Prepare for team lead and management roles.",
-        "entrepreneurship|business growth|startup": "Entrepreneurship & Business Growth is a 3-month program covering business canvas, fundraising, financial modeling, and growth hacking. Fee: PKR 50,000. Create complete business plans and investor pitch decks.",
-        
-        // Admissions
-        "admission|apply|enroll|application": "To apply, visit our Enroll Now page. Required documents: CNIC copy, recent photographs, educational certificates. Application processing takes 3-5 business days.",
-        "fee|fees|cost|price|payment": "Course fees vary by program from PKR 20,000 to PKR 120,000. We offer installment plans: 50% at enrollment, 25% mid-term, 25% before exams. Scholarships available for eligible students.",
-        "scholarship|financial aid|discount": "We offer Women in Tech Scholarship (20%), Merit-based (85%+ grades, 20%), Need-based (up to 30%), Alumni Referral (15%), Family Discount (10%), and Referral Program (5%).",
-        "documents|required documents": "Required documents: CNIC/B-Form copy, 2 recent passport-size photographs, educational certificates (Matric, Intermediate, Bachelor). No certificates required for foundation courses.",
-        "deadline|last date|intake": "Fall 2025 intake is now open. Limited seats available. Early application is recommended for scholarship consideration.",
-        
-        // Career
-        "placement|job|career|employment": "We have a 94% placement rate. Students are placed within 3 months on average. Top recruiters include Google, Microsoft, Amazon, and leading local companies.",
-        "salary|income|earning": "Local placement salary: PKR 50,000-150,000 monthly. International remote opportunities: $2,000-5,000 monthly. Freelancers earn $500-2,000 monthly on average.",
-        "internship|intern": "Yes, we offer 2-3 month internships with our partner companies. Many internships are paid and can lead to full-time positions.",
-        
-        // Partnerships
-        "partners|collaborations|global partners": "We are proud partners with Horizon Growth Institute (UK), Canadian Institute of Technology (Toronto), and International Institute of Technology (Singapore). We offer joint certifications and exchange programs.",
-        "exchange|international": "Yes, eligible students can participate in 1-3 month exchange programs with our international partner institutes. Exchange programs include cultural immersion and academic collaboration.",
-        
-        // Facilities
-        "facilities|lab|campus": "Our campus features modern classrooms, 4 computer labs with high-performance PCs, digital library with 10,000+ e-books, AI lab, cybersecurity lab, design lab, innovation hub, cafeteria, prayer room, and high-speed Wi-Fi.",
-        "library|books": "Our digital library provides access to 10,000+ e-books, journals, research papers, and industry reports. Students can access resources 24/7 from anywhere.",
-        "wifi|internet": "Campus-wide high-speed fiber optic Wi-Fi is available. Each student can connect up to 3 devices simultaneously.",
-        
-        // Dates
-        "duration|how long|course duration": "Course durations vary: 1.5 months for short courses, up to 7-8 months for comprehensive programs like Game Development and Cybersecurity.",
-        "start date|when|batch": "New batches start every month. Contact admissions for specific start dates and availability.",
-        
-        // Support
-        "help|support|assistance": "I'm here to help! You can ask me about courses, admissions, fees, scholarships, career support, or any other questions about SARR Institute."
-    };
-    
-    function getChatResponse(userMessage) {
-        const lowerMsg = userMessage.toLowerCase().trim();
-        
-        // Check for exact matches or keyword patterns
-        for (const [pattern, response] of Object.entries(chatKnowledge)) {
-            const keywords = pattern.split('|');
-            for (const keyword of keywords) {
-                if (lowerMsg.includes(keyword)) {
-                    return response;
+        const SARR_KNOWLEDGE = {
+            overview: {
+                name: "SARR Institute of Technology",
+                parent: "SARR Incorporation Pvt Ltd",
+                established: 2020,
+                studentsTrained: "1200+",
+                mission: "Empower students with real-world knowledge, hands-on experience, and career support",
+                features: [
+                    "Practical, hands-on training",
+                    "Real-world projects and assignments",
+                    "Industry-relevant curriculum",
+                    "Experienced mentors",
+                    "Interactive classes and doubt sessions",
+                    "Certification after course completion",
+                    "Career guidance and mentorship",
+                    "Job placement support after course completion"
+                ]
+            },
+            courses: {
+                development: ["Web Development (HTML, CSS, JavaScript, frameworks)", "App Development (Android, iOS, Flutter, React Native)", "Game Development (Unity, Unreal Engine)", "Computer Hardware & Software"],
+                ai: ["Artificial Intelligence (AI)", "Machine Learning", "AI Automation", "AI Bots Development"],
+                marketing: ["Digital Marketing", "Social Media Marketing (SMM)", "Lead Generation", "YouTube Growth & Monetization", "Business Growth"],
+                creative: ["Graphic Design (Photoshop, Illustrator)", "Video Editing (Premiere Pro, After Effects)", "Design Psychology", "Editing Psychology"],
+                cybersecurity: ["Cybersecurity", "Ethical Hacking"],
+                freelancing: ["Freelancing (Fiverr, Upwork)", "Virtual Assistant", "Personal Branding", "Business Branding", "MS Office"],
+                personalDev: ["Leadership", "Entrepreneurship", "Critical Thinking", "Task Management", "Career Growth"]
+            },
+            qa: [
+                { q: "what is sarr institute", a: "SARR Institute of Technology is a professional training institute under SARR Incorporation Pvt Ltd, providing job-oriented digital and technical courses since 2020." },
+                { q: "when established", a: "SARR Institute of Technology was established in 2020." },
+                { q: "how many students trained", a: "SARR Institute has successfully trained over 1200+ students." },
+                { q: "what courses offered", a: "SARR offers courses in Web Development, App Development, AI, Machine Learning, Digital Marketing, Graphic Design, Cybersecurity, Freelancing, and more. Would you like details on a specific area?" },
+                { q: "web development", a: "Yes! Our Web Development course covers HTML, CSS, JavaScript, and modern frameworks. You'll build real websites with hands-on projects — perfect for beginners and aspiring developers." },
+                { q: "beginners", a: "Absolutely! SARR Institute is beginner-friendly. We recommend starting with Web Development, Digital Marketing, or Graphic Design — all have step-by-step mentoring and high job demand." },
+                { q: "job placement", a: "Yes, SARR provides job placement support along with practical skills training and career guidance. We help you become job-ready with real-world experience and mentorship." },
+                { q: "digital marketing", a: "Our Digital Marketing course includes SEO, social media marketing, paid ads, content marketing, and lead generation — with live projects to build your portfolio." },
+                { q: "freelancing", a: "Yes! We teach freelancing including Fiverr, Upwork strategies, client acquisition, and personal branding. Many of our students earn online after completing this course." },
+                { q: "ai course", a: "The AI course covers artificial intelligence, machine learning basics, automation, and AI tools — designed to give you practical, industry-relevant skills." },
+                { q: "certification", a: "Yes, you receive a certification after course completion, validating your practical skills and training." },
+                { q: "career outcomes", a: "Our students gain job-ready skills and can pursue jobs, freelancing, or start their own businesses. We also provide career guidance and mentorship." },
+                { q: "beginner course", a: "If you're a beginner, you can start with Web Development, Digital Marketing, or Graphic Design. These courses are easy to understand and have high market demand." }
+            ],
+            contact: {
+                email: "sarr.edu.pk@gmail.com",
+                phone: "03205702273"
+            }
+        };
+
+        // Helper: find best matching answer from knowledge base
+        function findAnswer(userQuery) {
+            const query = userQuery.toLowerCase().trim();
+            
+            // Check for exact or partial matches in Q&A
+            for (let item of SARR_KNOWLEDGE.qa) {
+                if (query.includes(item.q.toLowerCase()) || item.q.toLowerCase().includes(query.split(' ')[0])) {
+                    return item.a;
                 }
+            }
+            
+            // Course category detection
+            if (query.includes('web') || query.includes('html') || query.includes('css')) {
+                return "Our Web Development course covers HTML, CSS, JavaScript, and frameworks. You'll build responsive websites and gain practical coding skills. It's great for beginners and those aiming for developer roles!";
+            }
+            if (query.includes('app') || query.includes('android') || query.includes('ios') || query.includes('flutter')) {
+                return "We offer App Development (Android, iOS, Flutter, React Native). You'll learn to build mobile apps with hands-on projects — a highly in-demand skill!";
+            }
+            if (query.includes('game')) {
+                return "Game Development at SARR covers Unity and Unreal Engine — ideal if you're passionate about creating games and interactive experiences.";
+            }
+            if (query.includes('ai') || query.includes('artificial intelligence') || query.includes('machine learning')) {
+                return "Our AI & Machine Learning courses teach you automation, AI tools, and real-world applications. Perfect for future-focused tech careers!";
+            }
+            if (query.includes('graphic design') || query.includes('photoshop')) {
+                return "Graphic Design course includes Photoshop, Illustrator, design psychology — you'll create logos, posters, and branding materials with expert guidance.";
+            }
+            if (query.includes('video editing') || query.includes('premiere')) {
+                return "Video Editing course covers Premiere Pro, After Effects, and editing psychology — build skills for content creation, film, and marketing industries.";
+            }
+            if (query.includes('cyber') || query.includes('ethical hacking')) {
+                return "Cybersecurity & Ethical Hacking: Learn to protect systems, networks, and data — a high-demand field with excellent career growth.";
+            }
+            if (query.includes('youtube') || query.includes('monetization')) {
+                return "YouTube Growth & Monetization is part of our marketing track — learn to build channels, grow audiences, and earn revenue.";
+            }
+            if (query.includes('leadership') || query.includes('entrepreneurship')) {
+                return "We offer Personal & Professional Development including Leadership, Entrepreneurship, Critical Thinking — to build confidence and business mindset.";
+            }
+            if (query.includes('fees') || query.includes('cost') || query.includes('price') || query.includes('timing') || query.includes('schedule')) {
+                return "For detailed information about fees, class timings, and enrollment dates, please contact our team directly at sarr.edu.pk@gmail.com or call 03205702273. They'll be happy to assist you!";
+            }
+            
+            return null; // no match found
+        }
+
+        // Generate response with friendly tone + contact if needed
+        function generateResponse(userMessage) {
+            let answer = findAnswer(userMessage);
+            
+            if (answer) {
+                return answer + " 😊 Would you like to know more about any specific course?";
+            } else {
+                // If not found in knowledge, provide contact info
+                return "That's a great question! I don't have that specific detail at the moment, but our team would be happy to help you personally.\n\n📧 Email: sarr.edu.pk@gmail.com\n📞 Phone: 03205702273\n\nFeel free to reach out for complete guidance on courses, fees, and admissions!";
+            }
+        }
+
+        // ========== UI & CHAT LOGIC ==========
+        const toggleBtn = document.getElementById('sarrToggleBtn');
+        const chatWindow = document.getElementById('sarrChatWindow');
+        const closeBtn = document.getElementById('sarrCloseBtn');
+        const messagesDiv = document.getElementById('sarrMessages');
+        const userInput = document.getElementById('sarrUserInput');
+        const sendBtn = document.getElementById('sarrSendBtn');
+        
+        let isOpen = false;
+        let isLoading = false;
+        
+        function getTime() {
+            return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        
+        function addMessage(text, sender = 'bot') {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble';
+            bubble.innerText = text;
+            const timeSpan = document.createElement('div');
+            timeSpan.className = 'timestamp';
+            timeSpan.innerText = getTime();
+            msgDiv.appendChild(bubble);
+            msgDiv.appendChild(timeSpan);
+            messagesDiv.appendChild(msgDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            return msgDiv;
+        }
+        
+        let typingIndicator = null;
+        function showTyping() {
+            if (typingIndicator) typingIndicator.remove();
+            const indicatorDiv = document.createElement('div');
+            indicatorDiv.className = 'message bot-message';
+            indicatorDiv.id = 'typingInd';
+            const bubble = document.createElement('div');
+            bubble.className = 'message-bubble';
+            bubble.style.padding = '8px 16px';
+            const dots = document.createElement('div');
+            dots.className = 'typing-indicator';
+            dots.innerHTML = '<span></span><span></span><span></span>';
+            bubble.appendChild(dots);
+            indicatorDiv.appendChild(bubble);
+            messagesDiv.appendChild(indicatorDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            typingIndicator = indicatorDiv;
+        }
+        
+        function hideTyping() {
+            if (typingIndicator) {
+                typingIndicator.remove();
+                typingIndicator = null;
             }
         }
         
-        // Default response
-        return "Thank you for your question. I'd be happy to help! Please ask about our courses (Web Development, App Development, Game Development, AI, Graphics Design, Animation, Cybersecurity, Ethical Hacking, Freelancing), admissions process, fees, scholarships, or career support. You can also contact our admissions team at +92 320 5702273 or sarr.edu.pk@gmail.com for personalized assistance.";
-    }
-    
-    function sendChatMessage() {
-        const input = document.getElementById('chatInput');
-        const message = input.value.trim();
-        if (!message) return;
+        async function handleSend() {
+            const userMsg = userInput.value.trim();
+            if (!userMsg || isLoading) return;
+            
+            isLoading = true;
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+            
+            addMessage(userMsg, 'user');
+            userInput.value = '';
+            userInput.style.height = 'auto';
+            
+            showTyping();
+            
+            // Simulate slight delay for realistic typing feel
+            await new Promise(resolve => setTimeout(resolve, 600));
+            
+            const botReply = generateResponse(userMsg);
+            hideTyping();
+            addMessage(botReply, 'bot');
+            
+            isLoading = false;
+            userInput.disabled = false;
+            sendBtn.disabled = false;
+            userInput.focus();
+        }
         
-        addMessage(message, true);
-        input.value = '';
+        function autoResize() {
+            userInput.style.height = 'auto';
+            userInput.style.height = Math.min(userInput.scrollHeight, 100) + 'px';
+        }
         
-        setTimeout(() => {
-            const response = getChatResponse(message);
-            addMessage(response, false);
-        }, 300);
-    }
-    
-    function addMessage(text, isUser) {
-        const container = document.getElementById('chatMessages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `chat-message ${isUser ? 'user' : 'bot'}`;
-        messageDiv.innerHTML = `<div class="message-content">${text}</div>`;
-        container.appendChild(messageDiv);
-        container.scrollTop = container.scrollHeight;
-    }
-    
-    function handleChatKeyPress(event) {
-        if (event.key === 'Enter') sendChatMessage();
-    }
-    
-    // Navigation and animations
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
-    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
-    document.getElementById('scrollDown').addEventListener('click', () => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' }));
-    
-    const statNumbers = document.querySelectorAll('.stat-number');
-    let counted = false;
-    function startCounters() {
-        if(counted) return;
-        counted = true;
-        statNumbers.forEach(el => {
-            const target = parseInt(el.getAttribute('data-target'));
-            let curr = 0;
-            const inc = target / 50;
-            const update = () => {
-                curr += inc;
-                if(curr < target) { el.innerText = Math.floor(curr); requestAnimationFrame(update); }
-                else { el.innerText = target + (el.getAttribute('data-target') === '1200' ? '+' : (el.getAttribute('data-target') === '94' ? '%' : '')); }
-            };
-            update();
+        toggleBtn.addEventListener('click', () => {
+            isOpen = true;
+            chatWindow.classList.add('open');
+            userInput.focus();
         });
-    }
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); if(e.target.id === 'statsSection') startCounters(); } });
-    }, { threshold: 0.2 });
-    fadeElements.forEach(el => observer.observe(el));
-    observer.observe(document.getElementById('statsSection'));
-    setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-80) el.classList.add('visible'); }), 150);
-    
-    // Initialize chat suggestions
-    const suggestions = ["What courses do you offer?", "How much is the fee for Web Development?", "Tell me about scholarships", "What is the placement rate?", "How do I apply?"];
-    const suggestionsBar = document.getElementById('suggestionsBar');
-    if (suggestionsBar) {
-        suggestions.forEach(s => {
-            const chip = document.createElement('div');
-            chip.className = 'suggestion-chip';
-            chip.textContent = s;
-            chip.onclick = () => {
-                document.getElementById('chatInput').value = s;
-                sendChatMessage();
-            };
-            suggestionsBar.appendChild(chip);
+        
+        closeBtn.addEventListener('click', () => {
+            isOpen = false;
+            chatWindow.classList.remove('open');
         });
-    }
-    
-    // Chat window controls
-    document.getElementById('chatButton').onclick = () => document.getElementById('chatWindow').classList.add('open');
-    document.getElementById('closeChat').onclick = () => document.getElementById('chatWindow').classList.remove('open');
-    window.sendChatMessage = sendChatMessage;
-    window.handleChatKeyPress = handleChatKeyPress;
-</script>
+        
+        sendBtn.addEventListener('click', handleSend);
+        userInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (!isLoading && userInput.value.trim()) handleSend();
+            }
+        });
+        userInput.addEventListener('input', autoResize);
+        
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isOpen) {
+                chatWindow.classList.remove('open');
+                isOpen = false;
+            }
+        });
+        
+        console.log("SARR Institute Chatbot ready — using knowledge from DeepSeek shared conversation.");
+    </script>
+</body>
+</html>
 
 <style>
     .chatbot-widget { position: fixed; bottom: 20px; right: 20px; z-index: 999999; }
