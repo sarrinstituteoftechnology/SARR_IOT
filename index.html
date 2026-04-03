@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>SARR Institute of Technology | Excellence Since 2020</title>
+    <title>SARR Institute of Technology | Digital Freelance Starter Program</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -129,14 +129,30 @@
         .course-category { margin-bottom: 3rem; }
         .category-title { font-size: 1.4rem; margin-bottom: 1.2rem; padding-left: 1rem; border-left: 4px solid #4CAF50; color: #FFFFFF; font-weight: 600; }
         .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        .course-card { background: #0F212A; border-radius: 16px; padding: 1.2rem; transition: all 0.3s ease; border: 1px solid #2A3A44; cursor: pointer; }
+        .course-card { background: #0F212A; border-radius: 16px; padding: 1.2rem; transition: all 0.3s ease; border: 1px solid #2A3A44; cursor: pointer; position: relative; }
         .course-card:hover { transform: translateY(-4px); border-color: #4CAF50; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
         .course-img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; }
         .course-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #FFFFFF; }
         .course-desc { font-size: 0.8rem; color: #9AAEB9; margin: 0.5rem 0; line-height: 1.4; }
         .duration-badge { display: inline-block; background: rgba(76, 175, 80, 0.2); padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: #4CAF50; }
+        .price-badge { display: inline-block; background: #4CAF50; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: white; font-weight: 600; margin-left: 8px; }
+        .installment-info { font-size: 0.7rem; color: #4CAF50; margin-top: 4px; }
+        .original-price { text-decoration: line-through; color: #8AAEBF; font-size: 0.7rem; margin-right: 6px; }
+        .offer-price { color: #4CAF50; font-weight: 700; font-size: 0.85rem; }
         .learn-link { color: #4CAF50; text-decoration: none; font-weight: 600; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
         .learn-link:hover { gap: 8px; }
+        .offer-badge {
+            background: #FF5722;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
 
         .collaborations-section { background: rgba(10, 25, 34, 0.6); backdrop-filter: blur(12px); border-radius: 28px; margin: 20px auto; padding: 40px 5%; }
         .partners-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
@@ -226,45 +242,66 @@
 <section id="courses" class="courses-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Programs</h2></div>
     
+    <!-- Featured Course: Digital Freelance Starter Program / AI Natives -->
+    <div class="course-category fade-up">
+        <div class="category-title">🔥 Limited Time Offer - Admissions Open Now!</div>
+        <div class="courses-grid">
+            <div class="course-card" data-course="Digital Freelance Starter Program / AI Natives" style="border: 2px solid #4CAF50;">
+                <div class="offer-badge"><i class="fas fa-fire"></i> Limited Discount</div>
+                <img src="https://iauro.com/wp-content/uploads/2025/05/WEB-POV.webp" alt="AI Natives - Digital Freelance Starter Program" class="course-img">
+                <h3>Digital Freelance Starter Program / AI Natives</h3>
+                <div class="course-desc">Learn computer fundamentals + AI basics to start earning online. Become an AI-Native freelancer.</div>
+                <div class="duration-badge">3 months</div>
+                <div class="price-badge">
+                    <span class="original-price">PKR 15,000</span> 
+                    <span class="offer-price">PKR 8,500 (Discounted)</span>
+                </div>
+                <div class="installment-info"><i class="fas fa-wallet"></i> Easy Installments: PKR 3,500 first month (incl. PKR 1,000 registration) + PKR 2,500/month</div>
+                <a class="learn-link">Learn More →</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Development & Programming -->
     <div class="course-category fade-up"><div class="category-title">Development & Programming</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Web Development (Full Stack)"><img src="https://digitalnotebook.in/up/2023/06/Website-design.jpg" alt="Web Dev" class="course-img"><h3>Web Development (Full Stack)</h3><div class="course-desc">MERN, Next.js, responsive design & deployment.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="App Development (iOS/Android)"><img src="https://europeanit-inst.com/wp-content/uploads/2022/03/App-Development-scaled.jpg" alt="App Dev" class="course-img"><h3>App Development (iOS/Android)</h3><div class="course-desc">Flutter, React Native, Swift, Kotlin.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Game Development (Unity/Unreal)"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFTTN9ODF81bg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1699118462130?e=2147483647&v=beta&t=eVbG5COqamAAumPJFMAWYQCmYpgOwkTk84iMA_-ISEg" alt="Game Dev" class="course-img"><h3>Game Development (Unity/Unreal)</h3><div class="course-desc">C#, Blueprints, 3D game design.</div><div class="duration-badge">7 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="AI Automation & AI Bots"><img src="https://assets.new.siemens.com/siemens/assets/api/uuid:403d8f70-6597-4fcc-a169-e97ef77666aa/Agents.png" alt="AI" class="course-img"><h3>AI Automation & AI Bots</h3><div class="course-desc">LLMs, RPA, intelligent agents.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Web Development (Full Stack)"><img src="https://digitalnotebook.in/up/2023/06/Website-design.jpg" alt="Web Dev" class="course-img"><h3>Web Development (Full Stack)</h3><div class="course-desc">MERN, Next.js, responsive design & deployment.</div><div class="duration-badge">6 months</div><div class="price-badge">PKR 85,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="App Development (iOS/Android)"><img src="https://europeanit-inst.com/wp-content/uploads/2022/03/App-Development-scaled.jpg" alt="App Dev" class="course-img"><h3>App Development (iOS/Android)</h3><div class="course-desc">Flutter, React Native, Swift, Kotlin.</div><div class="duration-badge">5 months</div><div class="price-badge">PKR 95,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Game Development (Unity/Unreal)"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFTTN9ODF81bg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1699118462130?e=2147483647&v=beta&t=eVbG5COqamAAumPJFMAWYQCmYpgOwkTk84iMA_-ISEg" alt="Game Dev" class="course-img"><h3>Game Development (Unity/Unreal)</h3><div class="course-desc">C#, Blueprints, 3D game design.</div><div class="duration-badge">7 months</div><div class="price-badge">PKR 120,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="AI Automation & AI Bots"><img src="https://assets.new.siemens.com/siemens/assets/api/uuid:403d8f70-6597-4fcc-a169-e97ef77666aa/Agents.png" alt="AI" class="course-img"><h3>AI Automation & AI Bots</h3><div class="course-desc">LLMs, RPA, intelligent agents.</div><div class="duration-badge">4 months</div><div class="price-badge">PKR 75,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
     <div class="course-category fade-up"><div class="category-title">Design & Creative</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Graphics Design"><img src="https://digitaltribe.ae/wp-content/uploads/2021/05/Graphic-designing.jpg" alt="Graphics" class="course-img"><h3>Graphics Design</h3><div class="course-desc">Photoshop, Illustrator, Canva, CorelDraw.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="2D Animation"><img src="https://www.cgspectrum.com/hubfs/what-is-2d-anim-bianka-f-feat.jpg" alt="2D" class="course-img"><h3>2D Animation</h3><div class="course-desc">Adobe Animate, character rigging.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="3D Animation"><img src="https://www.veetildigital.com.au/wp-content/uploads/2016/06/Why-we-love-3D-animation-and-you-should-to.jpg" alt="3D" class="course-img"><h3>3D Animation</h3><div class="course-desc">Blender, Maya, VFX, motion graphics.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="2D & 3D Modeling"><img src="https://dreamfarmstudios.com/wp-content/uploads/2021/04/2d-vs-3d-graphics-800x450.jpg" alt="Modeling" class="course-img"><h3>2D & 3D Modeling</h3><div class="course-desc">Sculpting, texturing, product viz.</div><div class="duration-badge">4 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Graphics Design"><img src="https://digitaltribe.ae/wp-content/uploads/2021/05/Graphic-designing.jpg" alt="Graphics" class="course-img"><h3>Graphics Design</h3><div class="course-desc">Photoshop, Illustrator, Canva, CorelDraw.</div><div class="duration-badge">3 months</div><div class="price-badge">PKR 45,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="2D Animation"><img src="https://www.cgspectrum.com/hubfs/what-is-2d-anim-bianka-f-feat.jpg" alt="2D" class="course-img"><h3>2D Animation</h3><div class="course-desc">Adobe Animate, character rigging.</div><div class="duration-badge">4 months</div><div class="price-badge">PKR 55,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="3D Animation"><img src="https://www.veetildigital.com.au/wp-content/uploads/2016/06/Why-we-love-3D-animation-and-you-should-to.jpg" alt="3D" class="course-img"><h3>3D Animation</h3><div class="course-desc">Blender, Maya, VFX, motion graphics.</div><div class="duration-badge">5 months</div><div class="price-badge">PKR 70,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="2D & 3D Modeling"><img src="https://dreamfarmstudios.com/wp-content/uploads/2021/04/2d-vs-3d-graphics-800x450.jpg" alt="Modeling" class="course-img"><h3>2D & 3D Modeling</h3><div class="course-desc">Sculpting, texturing, product viz.</div><div class="duration-badge">4 months</div><div class="price-badge">PKR 60,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
     <div class="course-category fade-up"><div class="category-title">Security & Infrastructure</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Cybersecurity"><img src="https://bairesdev.mo.cloudinary.net/blog/2023/09/Hire-Cybersecurity-Experts-in-2023.jpg?tx=w_1920,q_auto" alt="Cyber" class="course-img"><h3>Cybersecurity</h3><div class="course-desc">Network defense, risk management.</div><div class="duration-badge">6 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Ethical Hacking"><img src="https://imageio.forbes.com/specials-images/imageserve/67ec0025d8854be78bc70986/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="Hacking" class="course-img"><h3>Ethical Hacking</h3><div class="course-desc">Penetration testing, CEH prep.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="MS Office (Professional)"><img src="https://krgroup.com/wp-content/uploads/2022/02/Untitled-design-16.png" alt="Office" class="course-img"><h3>MS Office (Professional)</h3><div class="course-desc">Excel, PowerPoint, productivity master.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Cybersecurity"><img src="https://bairesdev.mo.cloudinary.net/blog/2023/09/Hire-Cybersecurity-Experts-in-2023.jpg?tx=w_1920,q_auto" alt="Cyber" class="course-img"><h3>Cybersecurity</h3><div class="course-desc">Network defense, risk management.</div><div class="duration-badge">6 months</div><div class="price-badge">PKR 95,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Ethical Hacking"><img src="https://imageio.forbes.com/specials-images/imageserve/67ec0025d8854be78bc70986/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" alt="Hacking" class="course-img"><h3>Ethical Hacking</h3><div class="course-desc">Penetration testing, CEH prep.</div><div class="duration-badge">5 months</div><div class="price-badge">PKR 85,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="MS Office (Professional)"><img src="https://krgroup.com/wp-content/uploads/2022/02/Untitled-design-16.png" alt="Office" class="course-img"><h3>MS Office (Professional)</h3><div class="course-desc">Excel, PowerPoint, productivity master.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 25,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
     <div class="course-category fade-up"><div class="category-title">Emerging Tech</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Freelancing (Mastery Program)"><img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Freelance" class="course-img"><h3>Freelancing (Mastery Program)</h3><div class="course-desc">Upwork, Fiverr, client acquisition.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="AI & Machine Learning Automation"><img src="https://cdn.prod.website-files.com/65d8ee5f025f02594c614c17/65d8ee5f025f02594c615306_preview.jpg" alt="AI ML" class="course-img"><h3>AI & Machine Learning Automation</h3><div class="course-desc">Python, TensorFlow, AutoML.</div><div class="duration-badge">5 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Freelancing (Mastery Program)"><img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Freelance" class="course-img"><h3>Freelancing (Mastery Program)</h3><div class="course-desc">Upwork, Fiverr, client acquisition.</div><div class="duration-badge">3 months</div><div class="price-badge">PKR 40,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="AI & Machine Learning Automation"><img src="https://cdn.prod.website-files.com/65d8ee5f025f02594c614c17/65d8ee5f025f02594c615306_preview.jpg" alt="AI ML" class="course-img"><h3>AI & Machine Learning Automation</h3><div class="course-desc">Python, TensorFlow, AutoML.</div><div class="duration-badge">5 months</div><div class="price-badge">PKR 90,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
     
     <div class="course-category fade-up"><div class="category-title">Soft Skills & Entrepreneurship</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Critical Thinking"><img src="https://safety4sea.com/wp-content/uploads/2025/05/shutterstock_2415825655-scaled-e1748601402387.jpg" alt="Critical" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Task Management"><img src="https://assets.plan.io/images/blog/what-is-task-management.png" alt="Task" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools.</div><div class="duration-badge">1.5 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Leadership Development"><img src="https://sophiacollege.ac.in/wp-content/uploads/2023/04/develop-leadership-skills-employees-852x550.jpg" alt="Leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team mgmt.</div><div class="duration-badge">2 months</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Business" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling.</div><div class="duration-badge">3 months</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Critical Thinking"><img src="https://safety4sea.com/wp-content/uploads/2025/05/shutterstock_2415825655-scaled-e1748601402387.jpg" alt="Critical" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 25,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Task Management"><img src="https://assets.plan.io/images/blog/what-is-task-management.png" alt="Task" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools.</div><div class="duration-badge">1.5 months</div><div class="price-badge">PKR 20,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Leadership Development"><img src="https://sophiacollege.ac.in/wp-content/uploads/2023/04/develop-leadership-skills-employees-852x550.jpg" alt="Leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team mgmt.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 35,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Business" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling.</div><div class="duration-badge">3 months</div><div class="price-badge">PKR 50,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
 </section>
@@ -272,9 +309,9 @@
 <section id="collaborations" class="collaborations-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Global Partners</h2></div>
     <div class="partners-grid fade-up">
-        <div class="partner-card"><img src="https://www.vidyavision.com/CollegeUploads/Photos/2019-14-8-11-53-15_Horizon%20Institute%20of%20Technology%20Keesara_Campus-View.png" alt="Horizon" class="partner-img"><h3>Horizon Growth Institute</h3><p>United Kingdom</p><small>Academic Partner</small></div>
-        <div class="partner-card"><img src="https://rjcca.b-cdn.net/uploads/projects/1817/resized/1920x1080/VAN_035615_BEFORE_N8.jpg" alt="Canadian" class="partner-img"><h3>Canadian Institute of Tech</h3><p>Toronto, Canada</p><small>Exchange Programs</small></div>
-        <div class="partner-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlSeW_LBgHp9-HlKCOonuF31n5-NSOu2ybg&s" alt="International" class="partner-img"><h3>International Institute of Tech</h3><p>Singapore</p><small>Global Recognition</small></div>
+        <div class="partner-card"><img src="https://thearchitectsdiary.com/wp-content/uploads/2021/05/Akshar-Arbol-KSM-1_1256x800-1024x652.jpg" alt="Horizon Growth Institute - Modern Campus Building" class="partner-img"><h3>Horizon Growth Institute</h3><p>United Kingdom</p><small>Academic Partner</small></div>
+        <div class="partner-card"><img src="https://rjcca.b-cdn.net/uploads/projects/1817/resized/1920x1080/VAN_035615_BEFORE_N8.jpg" alt="Canadian Institute of Technology - Vancouver Campus" class="partner-img"><h3>Canadian Institute of Tech</h3><p>Toronto, Canada</p><small>Exchange Programs</small></div>
+        <div class="partner-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlSeW_LBgHp9-HlKCOonuF31n5-NSOu2ybg&s" alt="International Institute of Technology - Singapore Campus" class="partner-img"><h3>International Institute of Tech</h3><p>Singapore</p><small>Global Recognition</small></div>
     </div>
     <div class="collab-statement fade-up">Joint Certifications | Exchange Programs | Global Recognition</div>
 </section>
@@ -291,8 +328,8 @@
 
 <section id="admissions" class="admissions-section">
     <div class="admission-banner fade-up">
-        <h2>Ready to Start Your Journey?</h2>
-        <p>Limited Seats Available for Fall 2025 Intake</p>
+        <h2>Admissions Open for Digital Freelance Starter Program!</h2>
+        <p>Limited seats available. Easy Installments: PKR 3,500 first month (incl. PKR 1,000 registration) + PKR 2,500/month</p>
         <div class="banner-buttons">
             <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-secondary" target="_blank">Enroll Now</a>
             <a href="https://sarrinstituteoftechnology.github.io/Official-Brochure/" class="btn-download" target="_blank">Download Brochure</a>
@@ -374,8 +411,9 @@
 </script>
 
 <script>
-    // Course Details Modal
+    // Extended Course Details including the new AI Natives course
     const courseCatalog = [
+        { name: "Digital Freelance Starter Program / AI Natives", duration: "3 months", fee: "PKR 8,500 (Discounted) | Installments: PKR 3,500 first month + PKR 2,500/month", category: "Featured", description: "🎯 What You'll Learn:\n\n• Computer & Internet Fundamentals\n• Introduction to Artificial Intelligence\n• AI Tools & Prompt Engineering\n• ChatGPT, Midjourney, Canva AI\n• Freelancing Platforms (Fiverr, Upwork)\n• Client Communication & Proposal Writing\n• Building Your Portfolio\n• Earning Strategies with AI\n\n💼 Career Opportunities:\n• AI Content Creator\n• Virtual Assistant\n• Social Media Manager\n• Data Entry Specialist\n• Freelance AI Specialist\n\n🎓 Course Includes:\n• 3 Months of Live Training\n• Hands-on Projects\n• Certificate of Completion\n• Job Placement Support\n• Lifetime Access to Materials\n\n💰 Payment Plan:\n• First Month: PKR 3,500 (includes PKR 1,000 registration fee)\n• Second Month: PKR 2,500\n• Third Month: PKR 2,500\nTotal: PKR 8,500 (Discounted from PKR 15,000)" },
         { name: "Web Development (Full Stack)", duration: "6 months", fee: "PKR 85,000", category: "Development", description: "Master MERN stack, Next.js, responsive design, and cloud deployment." },
         { name: "App Development (iOS/Android)", duration: "5 months", fee: "PKR 95,000", category: "Development", description: "Build cross-platform apps with Flutter, React Native, Swift, and Kotlin." },
         { name: "Game Development (Unity/Unreal)", duration: "7 months", fee: "PKR 120,000", category: "Development", description: "Create 2D/3D games with Unity C# and Unreal Blueprints." },
@@ -395,7 +433,8 @@
         const course = courseCatalog.find(c => c.name === courseName) || courseCatalog[0];
         const modal = document.createElement('div');
         modal.style.cssText = `position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;`;
-        modal.innerHTML = `<div style="background:#0F212A;border-radius:24px;max-width:500px;width:100%;max-height:85vh;overflow-y:auto;border:1px solid #4CAF50;"><div style="padding:20px;border-bottom:1px solid #2A3A44;display:flex;justify-content:space-between;"><div><span style="color:#4CAF50;">COURSE DETAILS</span><h2 style="color:#FFF;">${course.name}</h2></div><button id="closeModalBtn" style="background:#2A3A44;border:none;width:32px;height:32px;border-radius:50%;color:#FFF;cursor:pointer;">×</button></div><div style="padding:20px;"><div style="display:flex;gap:10px;margin-bottom:20px;"><span style="background:#2A3A44;padding:5px 12px;border-radius:30px;">Duration: ${course.duration}</span><span style="background:#2A3A44;padding:5px 12px;border-radius:30px;">Fee: ${course.fee}</span></div><h3 style="color:#4CAF50;">About</h3><p style="color:#9AAEB9;margin-bottom:20px;">${course.description}</p><div style="display:flex;gap:12px;"><a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration:none;">Enroll Now</a><button id="closeFooterBtn" class="btn-outline">Close</button></div></div></div>`;
+        
+        modal.innerHTML = `<div style="background:#0F212A;border-radius:24px;max-width:550px;width:100%;max-height:85vh;overflow-y:auto;border:1px solid #4CAF50;"><div style="padding:20px;border-bottom:1px solid #2A3A44;display:flex;justify-content:space-between;"><div><span style="color:#4CAF50;">COURSE DETAILS</span><h2 style="color:#FFF;">${course.name}</h2></div><button id="closeModalBtn" style="background:#2A3A44;border:none;width:32px;height:32px;border-radius:50%;color:#FFF;cursor:pointer;">×</button></div><div style="padding:20px;"><div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;"><span style="background:#2A3A44;padding:5px 12px;border-radius:30px;">Duration: ${course.duration}</span><span style="background:#2A3A44;padding:5px 12px;border-radius:30px;">Fee: ${course.fee}</span></div><h3 style="color:#4CAF50;">About</h3><p style="color:#9AAEB9;margin-bottom:20px;white-space:pre-line;">${course.description}</p><div style="display:flex;gap:12px;"><a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-primary" style="text-decoration:none;">Enroll Now</a><button id="closeFooterBtn" class="btn-outline">Close</button></div></div></div>`;
         document.body.appendChild(modal);
         const close = () => modal.remove();
         document.getElementById('closeModalBtn')?.addEventListener('click', close);
@@ -445,9 +484,8 @@
     setTimeout(() => fadeElements.forEach(el => { if(el.getBoundingClientRect().top < window.innerHeight-80) el.classList.add('visible'); }), 150);
 </script>
 
-<!-- ========== SARR INSTITUTE CHATBOT WIDGET (FULLY INTEGRATED) ========== -->
+<!-- Chatbot Widget -->
 <style>
-    /* Chatbot Widget Styles - Integrated with Site */
     .sarr-chatbot {
         position: fixed;
         bottom: 24px;
@@ -469,15 +507,8 @@
         outline: none;
         animation: gentlePulse 2s infinite;
     }
-    .sarr-chatbot-btn:hover {
-        transform: scale(1.08);
-        background: linear-gradient(135deg, #45a049, #2c6e2f);
-    }
-    .sarr-chatbot-btn svg {
-        width: 32px;
-        height: 32px;
-        fill: white;
-    }
+    .sarr-chatbot-btn:hover { transform: scale(1.08); background: linear-gradient(135deg, #45a049, #2c6e2f); }
+    .sarr-chatbot-btn svg { width: 32px; height: 32px; fill: white; }
     @keyframes gentlePulse {
         0% { box-shadow: 0 8px 20px rgba(76,175,80,0.4); }
         70% { box-shadow: 0 8px 30px rgba(76,175,80,0.7); }
@@ -504,11 +535,7 @@
         border: 1px solid #4CAF50;
         z-index: 100000;
     }
-    .sarr-chat-window.open {
-        opacity: 1;
-        transform: scale(1);
-        pointer-events: auto;
-    }
+    .sarr-chat-window.open { opacity: 1; transform: scale(1); pointer-events: auto; }
     .sarr-chat-header {
         background: linear-gradient(135deg, #4CAF50, #2E7D32);
         color: white;
@@ -516,18 +543,6 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-    .sarr-chat-header h3 {
-        font-size: 1rem;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .sarr-chat-header h3 svg {
-        width: 22px;
-        height: 22px;
-        fill: white;
     }
     .close-chat {
         background: rgba(255,255,255,0.2);
@@ -543,10 +558,7 @@
         color: white;
         transition: all 0.2s;
     }
-    .close-chat:hover {
-        background: rgba(255,255,255,0.35);
-        transform: rotate(90deg);
-    }
+    .close-chat:hover { background: rgba(255,255,255,0.35); transform: rotate(90deg); }
     .sarr-chat-messages {
         flex: 1;
         overflow-y: auto;
@@ -570,49 +582,14 @@
         font-size: 0.85rem;
         line-height: 1.45;
         white-space: pre-wrap;
-        word-break: break-word;
     }
-    .user-message .message-bubble {
-        background: #4CAF50;
-        color: white;
-        border-bottom-right-radius: 4px;
-    }
-    .bot-message .message-bubble {
-        background: #2A3A44;
-        color: #E8F0F2;
-        border-bottom-left-radius: 4px;
-    }
-    .timestamp {
-        font-size: 0.65rem;
-        margin-top: 4px;
-        margin-left: 12px;
-        color: #8AAEBF;
-    }
-    .typing-indicator {
-        display: flex;
-        gap: 4px;
-        padding: 10px 14px;
-        background: #2A3A44;
-        border-radius: 20px;
-        width: fit-content;
-    }
-    .typing-indicator span {
-        width: 8px;
-        height: 8px;
-        background: #8AAEBF;
-        border-radius: 50%;
-        animation: typingAnim 1.4s infinite ease-in-out both;
-    }
-    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-    @keyframes typingAnim {
-        0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
-        40% { transform: scale(1); opacity: 1; }
-    }
-    @keyframes fadeSlide {
-        from { opacity: 0; transform: translateY(8px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+    .user-message .message-bubble { background: #4CAF50; color: white; border-bottom-right-radius: 4px; }
+    .bot-message .message-bubble { background: #2A3A44; color: #E8F0F2; border-bottom-left-radius: 4px; }
+    .timestamp { font-size: 0.65rem; margin-top: 4px; margin-left: 12px; color: #8AAEBF; }
+    .typing-indicator { display: flex; gap: 4px; padding: 10px 14px; background: #2A3A44; border-radius: 20px; width: fit-content; }
+    .typing-indicator span { width: 8px; height: 8px; background: #8AAEBF; border-radius: 50%; animation: typingAnim 1.4s infinite ease-in-out both; }
+    @keyframes typingAnim { 0%,80%,100% { transform: scale(0.6); opacity: 0.5; } 40% { transform: scale(1); opacity: 1; } }
+    @keyframes fadeSlide { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     .sarr-input-area {
         background: #0F212A;
         border-top: 1px solid #2A3A44;
@@ -634,13 +611,8 @@
         color: white;
         max-height: 100px;
     }
-    .sarr-input-area textarea:focus {
-        border-color: #4CAF50;
-        box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-    }
-    .sarr-input-area textarea::placeholder {
-        color: #8AAEBF;
-    }
+    .sarr-input-area textarea:focus { border-color: #4CAF50; box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2); }
+    .sarr-input-area textarea::placeholder { color: #8AAEBF; }
     .send-btn {
         background: #4CAF50;
         border: none;
@@ -654,66 +626,36 @@
         color: white;
         transition: all 0.2s;
     }
-    .send-btn:hover {
-        background: #45a049;
-        transform: scale(1.05);
-    }
-    .contact-note {
-        background: #1F3A44;
-        color: #8AAEBF;
-        font-size: 0.7rem;
-        padding: 8px 12px;
-        text-align: center;
-        border-top: 1px solid #2A3A44;
-    }
-    .contact-note a {
-        color: #4CAF50;
-        text-decoration: none;
-    }
-    .sarr-chat-messages::-webkit-scrollbar { width: 5px; }
-    .sarr-chat-messages::-webkit-scrollbar-track { background: #2A3A44; }
-    .sarr-chat-messages::-webkit-scrollbar-thumb { background: #4CAF50; border-radius: 10px; }
-    
+    .send-btn:hover { background: #45a049; transform: scale(1.05); }
+    .contact-note { background: #1F3A44; color: #8AAEBF; font-size: 0.7rem; padding: 8px 12px; text-align: center; border-top: 1px solid #2A3A44; }
+    .contact-note a { color: #4CAF50; text-decoration: none; }
     @media (max-width: 550px) {
-        .sarr-chat-window {
-            width: calc(100vw - 40px);
-            right: 20px;
-            bottom: 85px;
-            height: 520px;
-        }
-        .sarr-chatbot-btn {
-            width: 52px;
-            height: 52px;
-            bottom: 18px;
-            right: 18px;
-        }
-        .sarr-chatbot-btn svg { width: 28px; height: 28px; }
+        .sarr-chat-window { width: calc(100vw - 40px); right: 20px; bottom: 85px; height: 520px; }
+        .sarr-chatbot-btn { width: 52px; height: 52px; bottom: 18px; right: 18px; }
     }
 </style>
 
 <div class="sarr-chatbot">
-    <button class="sarr-chatbot-btn" id="sarrToggleBtn" aria-label="Chat with SARR Assistant">
-        <svg viewBox="0 0 24 24">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
-        </svg>
+    <button class="sarr-chatbot-btn" id="sarrToggleBtn">
+        <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
     </button>
-
     <div class="sarr-chat-window" id="sarrChatWindow">
         <div class="sarr-chat-header">
-            <h3>
-                <svg viewBox="0 0 24 24" fill="white">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-                </svg>
-                SARR Institute Assistant
-            </h3>
+            <h3><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg> SARR Assistant</h3>
             <button class="close-chat" id="sarrCloseBtn">✕</button>
         </div>
         <div class="sarr-chat-messages" id="sarrMessages">
             <div class="message bot-message">
                 <div class="message-bubble">
-                    👋 Welcome to SARR Institute of Technology!<br><br>
-                    I'm here to help you explore our courses, career paths, and training approach.<br><br>
-                    <strong>What would you like to know?</strong> (Courses, fees, duration, admissions, freelancing, or career support!)
+                    👋 Welcome to SARR Institute!<br><br>
+                    🔥 <strong>Limited Offer!</strong> Digital Freelance Starter Program / AI Natives<br>
+                    📍 Duration: 3 months<br>
+                    💰 Easy Installments:<br>
+                    • First Month: PKR 3,500 (includes PKR 1,000 registration fee)<br>
+                    • Second Month: PKR 2,500<br>
+                    • Third Month: PKR 2,500<br>
+                    Total: PKR 8,500 (Discounted from PKR 15,000)<br><br>
+                    Ask me about courses, fees, or admissions!
                 </div>
                 <div class="timestamp">Just now</div>
             </div>
@@ -723,143 +665,93 @@
             <button class="send-btn" id="sarrSendBtn">➤</button>
         </div>
         <div class="contact-note">
-            📞 Need more help? <a href="mailto:sarr.edu.pk@gmail.com">sarr.edu.pk@gmail.com</a> | 03205702273
+            📞 Need help? <a href="mailto:sarr.edu.pk@gmail.com">sarr.edu.pk@gmail.com</a> | 03205702273
         </div>
     </div>
 </div>
 
 <script>
-    // ========== CHATBOT KNOWLEDGE BASE ==========
     const chatbotKnowledge = [
-        { keywords: ["hello", "hi", "hey", "greetings"], response: "Hello! Welcome to SARR Institute of Technology. How can I help you today? You can ask about courses, fees, admissions, or career support." },
-        { keywords: ["what courses", "programs", "offerings", "courses offered"], response: "We offer courses in: Web Development, App Development, Game Development, AI & Machine Learning, Graphics Design, 2D/3D Animation, Cybersecurity, Ethical Hacking, Digital Marketing, Freelancing, MS Office, Leadership, and Entrepreneurship. Which one interests you?" },
-        { keywords: ["web development", "web dev"], response: "Web Development (Full Stack) is a 6-month course covering MERN stack, Next.js, and cloud deployment. Fee: PKR 85,000. You'll build e-commerce sites, blogs, and real-world projects." },
-        { keywords: ["app development", "mobile app"], response: "App Development is a 5-month course covering Flutter, React Native, Swift, and Kotlin. Fee: PKR 95,000. Build food delivery apps, fitness trackers, and e-commerce apps." },
-        { keywords: ["game development", "unity", "unreal"], response: "Game Development is a 7-month course covering Unity C# and Unreal Blueprints. Fee: PKR 120,000. Create 3D platformers, shooters, and racing games." },
-        { keywords: ["ai automation", "ai bots"], response: "AI Automation is a 4-month course covering LLMs, RPA, and intelligent agents. Fee: PKR 75,000. Build chatbots, email automation, and data extraction bots." },
-        { keywords: ["graphics design", "graphic design"], response: "Graphics Design is a 3-month course covering Photoshop, Illustrator, Canva, and CorelDraw. Fee: PKR 45,000. Create logos, brand identities, and social media campaigns." },
-        { keywords: ["2d animation"], response: "2D Animation is a 4-month course covering Adobe Animate and character rigging. Fee: PKR 55,000. Create animated shorts, walk cycles, and explainer videos." },
-        { keywords: ["3d animation", "vfx"], response: "3D Animation is a 5-month course covering Blender, Maya, and VFX. Fee: PKR 70,000. Create 3D character animations and cinematic scenes." },
-        { keywords: ["modeling", "3d modeling"], response: "2D & 3D Modeling is a 4-month course covering Blender, sculpting, and texturing. Fee: PKR 60,000. Create character models and product designs." },
-        { keywords: ["cybersecurity", "cyber security"], response: "Cybersecurity is a 6-month course covering network defense and risk management. Fee: PKR 95,000. Build security audits and incident response plans." },
-        { keywords: ["ethical hacking", "hacking"], response: "Ethical Hacking is a 5-month course covering Kali Linux, Metasploit, and CEH prep. Fee: PKR 85,000. Learn penetration testing and vulnerability assessment." },
-        { keywords: ["ms office", "excel", "powerpoint"], response: "MS Office Professional is a 2-month course covering Advanced Excel, PowerPoint, and Word. Fee: PKR 25,000. Create automated dashboards and professional presentations." },
-        { keywords: ["freelancing", "freelance", "upwork", "fiverr"], response: "Freelancing Mastery is a 3-month course covering Upwork, Fiverr, client acquisition, and portfolio building. Fee: PKR 40,000. Build a successful freelance career." },
-        { keywords: ["ai ml", "machine learning"], response: "AI & Machine Learning Automation is a 5-month course covering Python, TensorFlow, and AutoML. Fee: PKR 90,000. Build image classifiers and predictive models." },
-        { keywords: ["admission", "apply", "enroll", "how to join"], response: "To apply for admission: 1. Visit our Enroll Now page, 2. Fill the application form, 3. Submit required documents (CNIC, photographs, certificates). Processing takes 3-5 business days. Scholarships available!" },
-        { keywords: ["fee", "fees", "cost", "price", "payment"], response: "Course fees range from PKR 20,000 to PKR 120,000. Installment plans available: 50% at enrollment, 25% mid-term, 25% before exams. Scholarships available for eligible students." },
-        { keywords: ["scholarship", "financial aid", "discount"], response: "We offer: Women in Tech Scholarship (20%), Merit-based (20% for 85%+ grades), Need-based (up to 30%), Alumni Referral (15%), Family Discount (10%), and Referral Program (5%)." },
-        { keywords: ["placement", "job", "career", "employment"], response: "We have a 94% placement rate. Students placed within 3 months. Top recruiters: Google, Microsoft, Amazon. Average salary: PKR 50,000-150,000 monthly. Freelancers earn $500-2,000 monthly." },
-        { keywords: ["duration", "how long"], response: "Course durations vary: MS Office (2 months), Graphics Design (3 months), Web Development (6 months), Game Development (7 months). Which course are you interested in?" },
-        { keywords: ["contact", "phone", "email"], response: "Contact us: 📧 sarr.edu.pk@gmail.com | 📞 +92 320 5702273 | 📍 Dadyal, AJK. Office hours: Monday-Friday 9 AM - 6 PM." },
-        { keywords: ["help", "support", "commands"], response: "I can help with: • Course listings • Fees & duration • Admissions • Scholarships • Placement • Contact info. Just ask me anything about SARR Institute!" }
+        { keywords: ["hello", "hi", "hey"], response: "Hello! Welcome to SARR Institute. 🔥 Our Digital Freelance Starter Program / AI Natives is now available! Easy installments: PKR 3,500 first month + PKR 2,500/month. Total PKR 8,500 only! Ask me anything!" },
+        { keywords: ["digital freelance", "ai natives", "starter program", "new course", "installment", "payment plan"], response: "The Digital Freelance Starter Program / AI Natives is our special limited-time offer! Learn computer basics + AI fundamentals to start earning online.\n\n💰 Payment Plan:\n• First Month: PKR 3,500 (includes PKR 1,000 registration fee)\n• Second Month: PKR 2,500\n• Third Month: PKR 2,500\nTotal: PKR 8,500 (Discounted from PKR 15,000)\n\nAdmissions are open now!" },
+        { keywords: ["fee", "cost", "price", "how much"], response: "The Digital Freelance Starter Program is available with easy installments: PKR 3,500 first month (incl. registration) + PKR 2,500/month. Total PKR 8,500. Other courses range from PKR 20,000 to PKR 120,000." },
+        { keywords: ["admission", "apply", "enroll"], response: "Admissions are open for the Digital Freelance Starter Program / AI Natives! Limited seats available. First month payment is PKR 3,500 (includes PKR 1,000 registration). Visit our Enroll Now page to apply." },
+        { keywords: ["duration", "how long"], response: "The Digital Freelance Starter Program is 3 months long. Other courses range from 1.5 to 7 months." },
+        { keywords: ["placement", "job"], response: "We have a 94% placement rate! Our Digital Freelance Starter Program also includes freelancing guidance to help you earn online." },
+        { keywords: ["scholarship", "discount", "registration"], response: "We have a limited-time discount on the Digital Freelance Starter Program: total PKR 8,500 with easy monthly installments. First month includes PKR 1,000 registration fee." }
     ];
     
-    function getChatbotResponse(userMessage) {
-        const lowerMsg = userMessage.toLowerCase();
+    function getChatbotResponse(msg) {
+        const lowerMsg = msg.toLowerCase();
         for (let item of chatbotKnowledge) {
-            for (let keyword of item.keywords) {
-                if (lowerMsg.includes(keyword)) {
-                    return item.response;
-                }
+            for (let kw of item.keywords) {
+                if (lowerMsg.includes(kw)) return item.response;
             }
         }
-        return "Thank you for your question! I'm here to help. Please ask about our courses (Web Development, App Development, AI, Graphics Design, etc.), fees, admissions, scholarships, or placement. You can also contact our team at sarr.edu.pk@gmail.com or +92 320 5702273 for personalized assistance.";
+        return "Thank you for your question! I'm here to help. Ask about our Digital Freelance Starter Program (PKR 3,500 first month + PKR 2,500/month), other courses, fees, admissions, or scholarships. Contact us at sarr.edu.pk@gmail.com or +92 320 5702273.";
     }
     
-    // Chat UI Functions
     function addChatMessage(text, isUser) {
         const container = document.getElementById('sarrMessages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+        const div = document.createElement('div');
+        div.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
         const bubble = document.createElement('div');
         bubble.className = 'message-bubble';
         bubble.innerText = text;
-        const timeSpan = document.createElement('div');
-        timeSpan.className = 'timestamp';
-        timeSpan.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        messageDiv.appendChild(bubble);
-        messageDiv.appendChild(timeSpan);
-        container.appendChild(messageDiv);
+        const time = document.createElement('div');
+        time.className = 'timestamp';
+        time.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        div.appendChild(bubble);
+        div.appendChild(time);
+        container.appendChild(div);
         container.scrollTop = container.scrollHeight;
     }
     
-    let typingIndicator = null;
+    let typing = null;
     function showTyping() {
-        if (typingIndicator) typingIndicator.remove();
+        if (typing) typing.remove();
         const container = document.getElementById('sarrMessages');
         const typingDiv = document.createElement('div');
         typingDiv.className = 'message bot-message';
-        typingDiv.id = 'typingIndicator';
+        typingDiv.id = 'typingInd';
         const bubble = document.createElement('div');
         bubble.className = 'message-bubble';
         bubble.style.padding = '8px 16px';
-        const dots = document.createElement('div');
-        dots.className = 'typing-indicator';
-        dots.innerHTML = '<span></span><span></span><span></span>';
-        bubble.appendChild(dots);
+        bubble.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
         typingDiv.appendChild(bubble);
         container.appendChild(typingDiv);
         container.scrollTop = container.scrollHeight;
-        typingIndicator = typingDiv;
+        typing = typingDiv;
     }
-    
-    function hideTyping() {
-        if (typingIndicator) {
-            typingIndicator.remove();
-            typingIndicator = null;
-        }
-    }
+    function hideTyping() { if (typing) { typing.remove(); typing = null; } }
     
     let isLoading = false;
     async function sendChatMessage() {
         const input = document.getElementById('sarrUserInput');
-        const message = input.value.trim();
-        if (!message || isLoading) return;
+        const msg = input.value.trim();
+        if (!msg || isLoading) return;
         isLoading = true;
-        addChatMessage(message, true);
+        addChatMessage(msg, true);
         input.value = '';
-        input.style.height = 'auto';
         showTyping();
-        await new Promise(resolve => setTimeout(resolve, 500));
-        const response = getChatbotResponse(message);
+        await new Promise(r => setTimeout(r, 500));
+        const response = getChatbotResponse(msg);
         hideTyping();
         addChatMessage(response, false);
         isLoading = false;
         input.focus();
     }
     
-    function autoResize() {
-        const input = document.getElementById('sarrUserInput');
-        input.style.height = 'auto';
-        input.style.height = Math.min(input.scrollHeight, 100) + 'px';
-    }
-    
-    // Chat Controls
     const toggleBtn = document.getElementById('sarrToggleBtn');
     const chatWindow = document.getElementById('sarrChatWindow');
     const closeBtn = document.getElementById('sarrCloseBtn');
     const sendBtn = document.getElementById('sarrSendBtn');
     const userInput = document.getElementById('sarrUserInput');
-    
-    if (toggleBtn && chatWindow) {
-        toggleBtn.onclick = () => chatWindow.classList.add('open');
-        closeBtn.onclick = () => chatWindow.classList.remove('open');
-        sendBtn.onclick = sendChatMessage;
-        userInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendChatMessage();
-            }
-        });
-        userInput.addEventListener('input', autoResize);
-    }
-    
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && chatWindow.classList.contains('open')) {
-            chatWindow.classList.remove('open');
-        }
-    });
+    if (toggleBtn) toggleBtn.onclick = () => chatWindow.classList.toggle('open');
+    if (closeBtn) closeBtn.onclick = () => chatWindow.classList.remove('open');
+    if (sendBtn) sendBtn.onclick = sendChatMessage;
+    if (userInput) userInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendChatMessage(); } });
+    window.sendChatMessage = sendChatMessage;
 </script>
 
 <div style="position:fixed;bottom:20px;left:20px;z-index:1001;">
