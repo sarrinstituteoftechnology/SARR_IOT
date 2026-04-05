@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>SARR Institute of Technology | Digital Freelance Starter Program</title>
+    <title>SARR Institute of Technology | Digital Freelance Starter Program - FREE</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -136,6 +136,7 @@
         .course-desc { font-size: 0.8rem; color: #9AAEB9; margin: 0.5rem 0; line-height: 1.4; }
         .duration-badge { display: inline-block; background: rgba(76, 175, 80, 0.2); padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: #4CAF50; }
         .price-badge { display: inline-block; background: #4CAF50; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: white; font-weight: 600; margin-left: 8px; }
+        .free-badge { display: inline-block; background: #FF5722; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: white; font-weight: 600; margin-left: 8px; }
         .installment-info { font-size: 0.7rem; color: #4CAF50; margin-top: 4px; }
         .original-price { text-decoration: line-through; color: #8AAEBF; font-size: 0.7rem; margin-right: 6px; }
         .offer-price { color: #4CAF50; font-weight: 700; font-size: 0.85rem; }
@@ -152,6 +153,23 @@
             top: 10px;
             right: 10px;
             z-index: 10;
+        }
+        .free-offer-badge {
+            background: #4CAF50;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 30px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; transform: scale(1.02); }
         }
 
         .collaborations-section { background: rgba(10, 25, 34, 0.6); backdrop-filter: blur(12px); border-radius: 28px; margin: 20px auto; padding: 40px 5%; }
@@ -242,21 +260,18 @@
 <section id="courses" class="courses-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Programs</h2></div>
     
-    <!-- Featured Course: Digital Freelance Starter Program / AI Natives -->
+    <!-- Featured Course: Digital Freelance Starter Program / AI Natives - TOTALLY FREE -->
     <div class="course-category fade-up">
-        <div class="category-title">🔥 Limited Time Offer - Admissions Open Now!</div>
+        <div class="category-title">🎓 COMPLETELY FREE - Limited Seats!</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Digital Freelance Starter Program / AI Natives" style="border: 2px solid #4CAF50;">
-                <div class="offer-badge"><i class="fas fa-fire"></i> Limited Discount</div>
+            <div class="course-card" data-course="Digital Freelance Starter Program / AI Natives" style="border: 2px solid #FF5722;">
+                <div class="free-offer-badge"><i class="fas fa-gift"></i> 100% FREE</div>
                 <img src="https://iauro.com/wp-content/uploads/2025/05/WEB-POV.webp" alt="AI Natives - Digital Freelance Starter Program" class="course-img">
                 <h3>Digital Freelance Starter Program / AI Natives</h3>
                 <div class="course-desc">Learn computer fundamentals + AI basics to start earning online. Become an AI-Native freelancer.</div>
                 <div class="duration-badge">3 months</div>
-                <div class="price-badge">
-                    <span class="original-price">PKR 15,000</span> 
-                    <span class="offer-price">PKR 8,500 (Discounted)</span>
-                </div>
-                <div class="installment-info"><i class="fas fa-wallet"></i> Easy Installments: PKR 3,500 first month (incl. PKR 1,000 registration) + PKR 2,500/month</div>
+                <div class="free-badge"><i class="fas fa-tag"></i> PKR 0 - FREE</div>
+                <div class="installment-info"><i class="fas fa-users"></i> First 3 Batches | 30 Seats Each | No Registration Fee | No Tuition Fee</div>
                 <a class="learn-link">Learn More →</a>
             </div>
         </div>
@@ -296,12 +311,13 @@
         </div>
     </div>
     
+    <!-- Soft Skills & Entrepreneurship - Updated Pricing -->
     <div class="course-category fade-up"><div class="category-title">Soft Skills & Entrepreneurship</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Critical Thinking"><img src="https://safety4sea.com/wp-content/uploads/2025/05/shutterstock_2415825655-scaled-e1748601402387.jpg" alt="Critical" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 25,000</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Task Management"><img src="https://assets.plan.io/images/blog/what-is-task-management.png" alt="Task" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools.</div><div class="duration-badge">1.5 months</div><div class="price-badge">PKR 20,000</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Leadership Development"><img src="https://sophiacollege.ac.in/wp-content/uploads/2023/04/develop-leadership-skills-employees-852x550.jpg" alt="Leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team mgmt.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 35,000</div><a class="learn-link">Learn More →</a></div>
-            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Business" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling.</div><div class="duration-badge">3 months</div><div class="price-badge">PKR 50,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Critical Thinking"><img src="https://safety4sea.com/wp-content/uploads/2025/05/shutterstock_2415825655-scaled-e1748601402387.jpg" alt="Critical" class="course-img"><h3>Critical Thinking</h3><div class="course-desc">Problem solving, decision frameworks, analytical reasoning.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 18,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Task Management"><img src="https://assets.plan.io/images/blog/what-is-task-management.png" alt="Task" class="course-img"><h3>Task Management</h3><div class="course-desc">Agile, Scrum, productivity tools, project planning.</div><div class="duration-badge">1.5 months</div><div class="price-badge">PKR 15,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Leadership Development"><img src="https://sophiacollege.ac.in/wp-content/uploads/2023/04/develop-leadership-skills-employees-852x550.jpg" alt="Leadership" class="course-img"><h3>Leadership Development</h3><div class="course-desc">Emotional intelligence, team management, strategic planning.</div><div class="duration-badge">2 months</div><div class="price-badge">PKR 25,000</div><a class="learn-link">Learn More →</a></div>
+            <div class="course-card" data-course="Entrepreneurship & Business Growth"><img src="https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Business" class="course-img"><h3>Entrepreneurship & Business Growth</h3><div class="course-desc">Startup strategy, funding, scaling, business model.</div><div class="duration-badge">3 months</div><div class="price-badge">PKR 35,000</div><a class="learn-link">Learn More →</a></div>
         </div>
     </div>
 </section>
@@ -309,9 +325,9 @@
 <section id="collaborations" class="collaborations-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Global Partners</h2></div>
     <div class="partners-grid fade-up">
-        <div class="partner-card"><img src="https://thearchitectsdiary.com/wp-content/uploads/2021/05/Akshar-Arbol-KSM-1_1256x800-1024x652.jpg" alt="Horizon Growth Institute - Modern Campus Building" class="partner-img"><h3>Horizon Growth Institute</h3><p>United Kingdom</p><small>Academic Partner</small></div>
-        <div class="partner-card"><img src="https://rjcca.b-cdn.net/uploads/projects/1817/resized/1920x1080/VAN_035615_BEFORE_N8.jpg" alt="Canadian Institute of Technology - Vancouver Campus" class="partner-img"><h3>Canadian Institute of Tech</h3><p>Toronto, Canada</p><small>Exchange Programs</small></div>
-        <div class="partner-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlSeW_LBgHp9-HlKCOonuF31n5-NSOu2ybg&s" alt="International Institute of Technology - Singapore Campus" class="partner-img"><h3>International Institute of Tech</h3><p>Singapore</p><small>Global Recognition</small></div>
+        <div class="partner-card"><img src="https://thearchitectsdiary.com/wp-content/uploads/2021/05/Akshar-Arbol-KSM-1_1256x800-1024x652.jpg" alt="Horizon Growth Institute" class="partner-img"><h3>Horizon Growth Institute</h3><p>United Kingdom</p><small>Academic Partner</small></div>
+        <div class="partner-card"><img src="https://rjcca.b-cdn.net/uploads/projects/1817/resized/1920x1080/VAN_035615_BEFORE_N8.jpg" alt="Canadian Institute" class="partner-img"><h3>Canadian Institute of Tech</h3><p>Toronto, Canada</p><small>Exchange Programs</small></div>
+        <div class="partner-card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNlSeW_LBgHp9-HlKCOonuF31n5-NSOu2ybg&s" alt="International Institute" class="partner-img"><h3>International Institute of Tech</h3><p>Singapore</p><small>Global Recognition</small></div>
     </div>
     <div class="collab-statement fade-up">Joint Certifications | Exchange Programs | Global Recognition</div>
 </section>
@@ -328,10 +344,10 @@
 
 <section id="admissions" class="admissions-section">
     <div class="admission-banner fade-up">
-        <h2>Admissions Open for Digital Freelance Starter Program!</h2>
-        <p>Limited seats available. Easy Installments: PKR 3,500 first month (incl. PKR 1,000 registration) + PKR 2,500/month</p>
+        <h2>🎓 Digital Freelance Starter Program - COMPLETELY FREE!</h2>
+        <p>First 3 batches | 30 seats each | No registration fee | No tuition fee</p>
         <div class="banner-buttons">
-            <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-secondary" target="_blank">Enroll Now</a>
+            <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-secondary" target="_blank">Claim FREE Seat Now</a>
             <a href="https://sarrinstituteoftechnology.github.io/Official-Brochure/" class="btn-download" target="_blank">Download Brochure</a>
         </div>
     </div>
@@ -411,22 +427,26 @@
 </script>
 
 <script>
-    // Extended Course Details including the new AI Natives course
+    // Extended Course Details
     const courseCatalog = [
-        { name: "Digital Freelance Starter Program / AI Natives", duration: "3 months", fee: "PKR 8,500 (Discounted) | Installments: PKR 3,500 first month + PKR 2,500/month", category: "Featured", description: "🎯 What You'll Learn:\n\n• Computer & Internet Fundamentals\n• Introduction to Artificial Intelligence\n• AI Tools & Prompt Engineering\n• ChatGPT, Midjourney, Canva AI\n• Freelancing Platforms (Fiverr, Upwork)\n• Client Communication & Proposal Writing\n• Building Your Portfolio\n• Earning Strategies with AI\n\n💼 Career Opportunities:\n• AI Content Creator\n• Virtual Assistant\n• Social Media Manager\n• Data Entry Specialist\n• Freelance AI Specialist\n\n🎓 Course Includes:\n• 3 Months of Live Training\n• Hands-on Projects\n• Certificate of Completion\n• Job Placement Support\n• Lifetime Access to Materials\n\n💰 Payment Plan:\n• First Month: PKR 3,500 (includes PKR 1,000 registration fee)\n• Second Month: PKR 2,500\n• Third Month: PKR 2,500\nTotal: PKR 8,500 (Discounted from PKR 15,000)" },
-        { name: "Web Development (Full Stack)", duration: "6 months", fee: "PKR 85,000", category: "Development", description: "Master MERN stack, Next.js, responsive design, and cloud deployment." },
-        { name: "App Development (iOS/Android)", duration: "5 months", fee: "PKR 95,000", category: "Development", description: "Build cross-platform apps with Flutter, React Native, Swift, and Kotlin." },
-        { name: "Game Development (Unity/Unreal)", duration: "7 months", fee: "PKR 120,000", category: "Development", description: "Create 2D/3D games with Unity C# and Unreal Blueprints." },
-        { name: "AI Automation & AI Bots", duration: "4 months", fee: "PKR 75,000", category: "AI", description: "Build intelligent chatbots and automation systems with LLMs and RPA." },
-        { name: "Graphics Design", duration: "3 months", fee: "PKR 45,000", category: "Design", description: "Master Photoshop, Illustrator, Canva, and brand identity design." },
-        { name: "2D Animation", duration: "4 months", fee: "PKR 55,000", category: "Design", description: "Create classic animations with Adobe Animate and character rigging." },
-        { name: "3D Animation", duration: "5 months", fee: "PKR 70,000", category: "Design", description: "Cinematic 3D animations with Blender, Maya, and VFX." },
-        { name: "2D & 3D Modeling", duration: "4 months", fee: "PKR 60,000", category: "Design", description: "Sculpting, texturing, and product visualization." },
-        { name: "Cybersecurity", duration: "6 months", fee: "PKR 95,000", category: "Security", description: "Network defense, cryptography, and risk management." },
-        { name: "Ethical Hacking", duration: "5 months", fee: "PKR 85,000", category: "Security", description: "Penetration testing, Kali Linux, and CEH preparation." },
-        { name: "MS Office (Professional)", duration: "2 months", fee: "PKR 25,000", category: "Productivity", description: "Advanced Excel, PowerPoint, and business productivity." },
-        { name: "Freelancing (Mastery Program)", duration: "3 months", fee: "PKR 40,000", category: "Business", description: "Upwork, Fiverr, client acquisition, and portfolio building." },
-        { name: "AI & Machine Learning Automation", duration: "5 months", fee: "PKR 90,000", category: "AI", description: "Python, TensorFlow, neural networks, and AutoML." }
+        { name: "Digital Freelance Starter Program / AI Natives", duration: "3 months", fee: "PKR 0 - COMPLETELY FREE", category: "Featured", description: "🎯 What You'll Learn:\n\n• Computer & Internet Fundamentals\n• Introduction to Artificial Intelligence\n• AI Tools & Prompt Engineering\n• ChatGPT, Midjourney, Canva AI\n• Freelancing Platforms (Fiverr, Upwork)\n• Client Communication & Proposal Writing\n• Building Your Portfolio\n• Earning Strategies with AI\n\n💼 Career Opportunities:\n• AI Content Creator\n• Virtual Assistant\n• Social Media Manager\n• Data Entry Specialist\n• Freelance AI Specialist\n\n🎓 Course Includes:\n• 3 Months of Live Training\n• Hands-on Projects\n• Certificate of Completion\n• Job Placement Support\n• Lifetime Access to Materials\n\n🎉 SPECIAL OFFER: First 3 batches (30 seats each) are COMPLETELY FREE! No registration fee, no tuition fee." },
+        { name: "Web Development (Full Stack)", duration: "6 months", fee: "PKR 85,000", category: "Development", description: "Master MERN stack, Next.js, responsive design, and cloud deployment. Build e-commerce platforms, blogs, and real-time applications." },
+        { name: "App Development (iOS/Android)", duration: "5 months", fee: "PKR 95,000", category: "Development", description: "Build cross-platform apps with Flutter, React Native, Swift, and Kotlin. Master state management, Firebase, and app store deployment." },
+        { name: "Game Development (Unity/Unreal)", duration: "7 months", fee: "PKR 120,000", category: "Development", description: "Create 2D/3D games with Unity C# and Unreal Blueprints. Learn game physics, AI, and multiplayer networking." },
+        { name: "AI Automation & AI Bots", duration: "4 months", fee: "PKR 75,000", category: "AI", description: "Build intelligent chatbots and automation systems with LLMs and RPA. Master API integration and workflow automation." },
+        { name: "Graphics Design", duration: "3 months", fee: "PKR 45,000", category: "Design", description: "Master Photoshop, Illustrator, Canva, and brand identity design. Create logos, social media campaigns, and branding packages." },
+        { name: "2D Animation", duration: "4 months", fee: "PKR 55,000", category: "Design", description: "Create classic animations with Adobe Animate and character rigging. Learn storyboarding, motion graphics, and frame-by-frame animation." },
+        { name: "3D Animation", duration: "5 months", fee: "PKR 70,000", category: "Design", description: "Cinematic 3D animations with Blender, Maya, and VFX. Master modeling, rigging, lighting, and rendering." },
+        { name: "2D & 3D Modeling", duration: "4 months", fee: "PKR 60,000", category: "Design", description: "Sculpting, texturing, and product visualization. Learn UV mapping, low-poly modeling, and environment creation." },
+        { name: "Cybersecurity", duration: "6 months", fee: "PKR 95,000", category: "Security", description: "Network defense, cryptography, and risk management. Learn penetration testing, incident response, and security compliance." },
+        { name: "Ethical Hacking", duration: "5 months", fee: "PKR 85,000", category: "Security", description: "Penetration testing, Kali Linux, and CEH preparation. Master reconnaissance, exploitation, and reporting." },
+        { name: "MS Office (Professional)", duration: "2 months", fee: "PKR 25,000", category: "Productivity", description: "Advanced Excel, PowerPoint, and business productivity. Learn formulas, pivot tables, macros, and professional presentations." },
+        { name: "Freelancing (Mastery Program)", duration: "3 months", fee: "PKR 40,000", category: "Business", description: "Upwork, Fiverr, client acquisition, and portfolio building. Master proposal writing, pricing strategies, and client management." },
+        { name: "AI & Machine Learning Automation", duration: "5 months", fee: "PKR 90,000", category: "AI", description: "Python, TensorFlow, neural networks, and AutoML. Build predictive models, image classifiers, and NLP applications." },
+        { name: "Critical Thinking", duration: "2 months", fee: "PKR 18,000", category: "Soft Skills", description: "🎯 What You'll Learn:\n\n• Logical Reasoning & Argument Analysis\n• Problem-Solving Frameworks\n• Decision-Making Strategies\n• Cognitive Bias Recognition\n• Root Cause Analysis\n• Strategic Thinking\n\n💼 Career Opportunities:\n• Strategy Consultant\n• Business Analyst\n• Operations Manager\n• Project Manager\n\n🎓 Includes: Certificate of Completion, Real-world case studies, Interactive workshops." },
+        { name: "Task Management", duration: "1.5 months", fee: "PKR 15,000", category: "Soft Skills", description: "🎯 What You'll Learn:\n\n• Agile & Scrum Methodologies\n• Kanban & Productivity Tools\n• Trello, Asana, Jira Basics\n• Time Management Techniques\n• Prioritization Frameworks\n• Team Coordination Strategies\n\n💼 Career Opportunities:\n• Project Coordinator\n• Scrum Master\n• Operations Lead\n• Product Manager\n\n🎓 Includes: Certificate of Completion, Hands-on project management simulation." },
+        { name: "Leadership Development", duration: "2 months", fee: "PKR 25,000", category: "Soft Skills", description: "🎯 What You'll Learn:\n\n• Emotional Intelligence\n• Team Motivation & Engagement\n• Conflict Resolution\n• Strategic Planning & Execution\n• Executive Communication\n• Performance Management\n\n💼 Career Opportunities:\n• Team Lead\n• Department Manager\n• Executive\n• People Operations Director\n\n🎓 Includes: Certificate of Completion, Leadership action plan, Team building workshop design." },
+        { name: "Entrepreneurship & Business Growth", duration: "3 months", fee: "PKR 35,000", category: "Soft Skills", description: "🎯 What You'll Learn:\n\n• Business Model Canvas\n• Market Research & Validation\n• Fundraising & Investor Pitching\n• Financial Modeling\n• Growth Hacking Strategies\n• Scaling Operations\n\n💼 Career Opportunities:\n• Entrepreneur\n• Startup Founder\n• Business Consultant\n• Venture Capital Analyst\n\n🎓 Includes: Certificate of Completion, Complete business plan, Investor pitch deck." }
     ];
     
     function showCourseDetails(courseName) {
@@ -648,13 +668,10 @@
             <div class="message bot-message">
                 <div class="message-bubble">
                     👋 Welcome to SARR Institute!<br><br>
-                    🔥 <strong>Limited Offer!</strong> Digital Freelance Starter Program / AI Natives<br>
+                    🎉 <strong>SPECIAL OFFER!</strong> Digital Freelance Starter Program / AI Natives is <strong>COMPLETELY FREE</strong> for the first 3 batches!<br>
                     📍 Duration: 3 months<br>
-                    💰 Easy Installments:<br>
-                    • First Month: PKR 3,500 (includes PKR 1,000 registration fee)<br>
-                    • Second Month: PKR 2,500<br>
-                    • Third Month: PKR 2,500<br>
-                    Total: PKR 8,500 (Discounted from PKR 15,000)<br><br>
+                    💰 Fee: PKR 0 (No registration fee, no tuition fee)<br>
+                    👥 Limited Seats: 30 students per batch<br><br>
                     Ask me about courses, fees, or admissions!
                 </div>
                 <div class="timestamp">Just now</div>
@@ -672,13 +689,12 @@
 
 <script>
     const chatbotKnowledge = [
-        { keywords: ["hello", "hi", "hey"], response: "Hello! Welcome to SARR Institute. 🔥 Our Digital Freelance Starter Program / AI Natives is now available! Easy installments: PKR 3,500 first month + PKR 2,500/month. Total PKR 8,500 only! Ask me anything!" },
-        { keywords: ["digital freelance", "ai natives", "starter program", "new course", "installment", "payment plan"], response: "The Digital Freelance Starter Program / AI Natives is our special limited-time offer! Learn computer basics + AI fundamentals to start earning online.\n\n💰 Payment Plan:\n• First Month: PKR 3,500 (includes PKR 1,000 registration fee)\n• Second Month: PKR 2,500\n• Third Month: PKR 2,500\nTotal: PKR 8,500 (Discounted from PKR 15,000)\n\nAdmissions are open now!" },
-        { keywords: ["fee", "cost", "price", "how much"], response: "The Digital Freelance Starter Program is available with easy installments: PKR 3,500 first month (incl. registration) + PKR 2,500/month. Total PKR 8,500. Other courses range from PKR 20,000 to PKR 120,000." },
-        { keywords: ["admission", "apply", "enroll"], response: "Admissions are open for the Digital Freelance Starter Program / AI Natives! Limited seats available. First month payment is PKR 3,500 (includes PKR 1,000 registration). Visit our Enroll Now page to apply." },
-        { keywords: ["duration", "how long"], response: "The Digital Freelance Starter Program is 3 months long. Other courses range from 1.5 to 7 months." },
-        { keywords: ["placement", "job"], response: "We have a 94% placement rate! Our Digital Freelance Starter Program also includes freelancing guidance to help you earn online." },
-        { keywords: ["scholarship", "discount", "registration"], response: "We have a limited-time discount on the Digital Freelance Starter Program: total PKR 8,500 with easy monthly installments. First month includes PKR 1,000 registration fee." }
+        { keywords: ["hello", "hi", "hey"], response: "Hello! Welcome to SARR Institute. 🎉 Our Digital Freelance Starter Program is COMPLETELY FREE for first 3 batches! Ask me anything!" },
+        { keywords: ["digital freelance", "ai natives", "starter program", "free"], response: "The Digital Freelance Starter Program / AI Natives is COMPLETELY FREE for the first 3 batches! 30 seats per batch. No registration fee, no tuition fee. Learn computer basics + AI fundamentals to start earning online. Admissions are open now!" },
+        { keywords: ["critical thinking", "task management", "leadership", "entrepreneurship"], response: "Our Soft Skills courses: Critical Thinking (PKR 18,000, 2 months), Task Management (PKR 15,000, 1.5 months), Leadership Development (PKR 25,000, 2 months), Entrepreneurship (PKR 35,000, 3 months). Click Learn More for details!" },
+        { keywords: ["fee", "cost", "price"], response: "The Digital Freelance Starter Program is FREE! Other courses range from PKR 15,000 to PKR 120,000." },
+        { keywords: ["admission", "apply", "enroll"], response: "Admissions are open for the FREE Digital Freelance Starter Program! Limited seats - first 3 batches of 30 students each. Visit our Enroll Now page to apply." },
+        { keywords: ["duration", "how long"], response: "The Digital Freelance Starter Program is 3 months. Other courses range from 1.5 to 7 months." }
     ];
     
     function getChatbotResponse(msg) {
@@ -688,7 +704,7 @@
                 if (lowerMsg.includes(kw)) return item.response;
             }
         }
-        return "Thank you for your question! I'm here to help. Ask about our Digital Freelance Starter Program (PKR 3,500 first month + PKR 2,500/month), other courses, fees, admissions, or scholarships. Contact us at sarr.edu.pk@gmail.com or +92 320 5702273.";
+        return "Thank you for your question! I'm here to help. Ask about our FREE Digital Freelance Starter Program, other courses, fees, admissions, or scholarships. Contact us at sarr.edu.pk@gmail.com or +92 320 5702273.";
     }
     
     function addChatMessage(text, isUser) {
