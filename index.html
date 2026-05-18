@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>SARR Institute of Technology | Digital Freelance Starter Program - FREE</title>
+    <title>SARR Institute of Technology | Digital Freelance Starter Program</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 -->
@@ -131,30 +131,19 @@
         .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
         .course-card { background: #0F212A; border-radius: 16px; padding: 1.2rem; transition: all 0.3s ease; border: 1px solid #2A3A44; cursor: pointer; position: relative; }
         .course-card:hover { transform: translateY(-4px); border-color: #4CAF50; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+        .course-card.featured-program { border: 2px solid #4CAF50; background: #0F212A; }
+        .course-card.featured-program:hover { border-color: #45a049; box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2); }
         .course-img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; }
         .course-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #FFFFFF; }
         .course-desc { font-size: 0.8rem; color: #9AAEB9; margin: 0.5rem 0; line-height: 1.4; }
         .duration-badge { display: inline-block; background: rgba(76, 175, 80, 0.2); padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: #4CAF50; }
         .price-badge { display: inline-block; background: #4CAF50; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: white; font-weight: 600; margin-left: 8px; }
-        .free-badge { display: inline-block; background: #FF5722; padding: 0.2rem 0.8rem; border-radius: 30px; font-size: 0.7rem; margin: 0.8rem 0; color: white; font-weight: 600; margin-left: 8px; }
-        .installment-info { font-size: 0.7rem; color: #4CAF50; margin-top: 4px; }
-        .original-price { text-decoration: line-through; color: #8AAEBF; font-size: 0.7rem; margin-right: 6px; }
-        .offer-price { color: #4CAF50; font-weight: 700; font-size: 0.85rem; }
+        .featured-price { display: inline-block; background: #4CAF50; padding: 0.25rem 1rem; border-radius: 30px; font-size: 0.75rem; margin: 0.8rem 0; color: white; font-weight: 700; margin-left: 8px; }
+        .fee-breakdown { font-size: 0.7rem; color: #8AAEBF; margin-top: 6px; line-height: 1.5; }
+        .fee-breakdown i { color: #4CAF50; margin-right: 4px; }
         .learn-link { color: #4CAF50; text-decoration: none; font-weight: 600; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
         .learn-link:hover { gap: 8px; }
-        .offer-badge {
-            background: #FF5722;
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 30px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
-        }
-        .free-offer-badge {
+        .online-badge {
             background: #4CAF50;
             color: white;
             font-size: 0.7rem;
@@ -165,11 +154,12 @@
             top: 10px;
             right: 10px;
             z-index: 10;
-            animation: pulse 1.5s infinite;
+            letter-spacing: 0.5px;
+            animation: gentleGlow 2s infinite;
         }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; transform: scale(1.02); }
+        @keyframes gentleGlow {
+            0%, 100% { box-shadow: 0 0 5px rgba(76, 175, 80, 0.4); }
+            50% { box-shadow: 0 0 12px rgba(76, 175, 80, 0.7); }
         }
 
         .collaborations-section { background: rgba(10, 25, 34, 0.6); backdrop-filter: blur(12px); border-radius: 28px; margin: 20px auto; padding: 40px 5%; }
@@ -260,18 +250,23 @@
 <section id="courses" class="courses-section">
     <div class="section-title-wrapper"><h2 class="section-title fade-up">Our Programs</h2></div>
     
-    <!-- Featured Course: Digital Freelance Starter Program / AI Natives - TOTALLY FREE -->
+    <!-- Featured Course: Digital Freelance Starter Program / AI Natives -->
     <div class="course-category fade-up">
-        <div class="category-title"> Limited Seats!</div>
+        <div class="category-title">🎓 Featured Program — Limited Seats</div>
         <div class="courses-grid">
-            <div class="course-card" data-course="Digital Freelance Starter Program / AI Natives" style="border: 2px solid #FF5722;">
-                <div class="free-offer-badge"><i class="fas fa-gift"></i> Online</div>
+            <div class="course-card featured-program" data-course="Digital Freelance Starter Program / AI Natives">
+                <div class="online-badge"><i class="fas fa-laptop"></i> Online</div>
                 <img src="https://iauro.com/wp-content/uploads/2025/05/WEB-POV.webp" alt="AI Natives - Digital Freelance Starter Program" class="course-img">
                 <h3>Digital Freelance Starter Program / AI Natives</h3>
-                <div class="course-desc">Learn computer fundamentals + AI basics to start earning online. Become an AI-Native freelancer.</div>
+                <div class="course-desc">Learn computer fundamentals + AI basics to start earning online. Become an AI-Native freelancer with hands-on training.</div>
                 <div class="duration-badge">3 months</div>
-                <div class="free-badge"><i class="fas fa-tag"></i> PKR 16000 Rs</div>
-                <div class="installment-info"><i class="fas fa-users"></i> 2500 Rs Certificate Fee | Addmissions Open | 1000 Rs Registration Fee | 12500 Rs Tuition Fee</div>
+                <div class="featured-price"><i class="fas fa-tag"></i> PKR 16,000</div>
+                <div class="fee-breakdown">
+                    <i class="fas fa-file-alt"></i> Registration Fee: 1,000 Rs<br>
+                    <i class="fas fa-graduation-cap"></i> Tuition Fee: 12,500 Rs<br>
+                    <i class="fas fa-certificate"></i> Certificate Fee: 2,500 Rs<br>
+                    <i class="fas fa-check-circle"></i> Admissions Open
+                </div>
                 <a class="learn-link">Learn More →</a>
             </div>
         </div>
@@ -281,7 +276,6 @@
     <div class="course-category fade-up"><div class="category-title">Development & Programming</div>
         <div class="courses-grid">
             <div class="course-card" data-course="Web Development (Full Stack)"><img src="https://digitalnotebook.in/up/2023/06/Website-design.jpg" alt="Web Dev" class="course-img"><h3>Web Development (Full Stack)</h3><div class="course-desc">MERN, Next.js, responsive design & deployment.</div><div class="duration-badge">6 months</div><div class="price-badge">PKR 85,000</div><a class="learn-link">Learn More →</a></div>
-            <!-- UPDATED: App Development image as requested -->
             <div class="course-card" data-course="App Development (iOS/Android)"><img src="https://www.addevice.io/storage/ckeditor/uploads/images/65f840d316353_mobile.app.development.1920.1080.png" alt="App Dev" class="course-img"><h3>App Development (iOS/Android)</h3><div class="course-desc">Flutter, React Native, Swift, Kotlin.</div><div class="duration-badge">5 months</div><div class="price-badge">PKR 95,000</div><a class="learn-link">Learn More →</a></div>
             <div class="course-card" data-course="Game Development (Unity/Unreal)"><img src="https://media.licdn.com/dms/image/v2/D4D12AQFTTN9ODF81bg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1699118462130?e=2147483647&v=beta&t=eVbG5COqamAAumPJFMAWYQCmYpgOwkTk84iMA_-ISEg" alt="Game Dev" class="course-img"><h3>Game Development (Unity/Unreal)</h3><div class="course-desc">C#, Blueprints, 3D game design.</div><div class="duration-badge">7 months</div><div class="price-badge">PKR 120,000</div><a class="learn-link">Learn More →</a></div>
             <div class="course-card" data-course="AI Automation & AI Bots"><img src="https://assets.new.siemens.com/siemens/assets/api/uuid:403d8f70-6597-4fcc-a169-e97ef77666aa/Agents.png" alt="AI" class="course-img"><h3>AI Automation & AI Bots</h3><div class="course-desc">LLMs, RPA, intelligent agents.</div><div class="duration-badge">4 months</div><div class="price-badge">PKR 75,000</div><a class="learn-link">Learn More →</a></div>
@@ -345,10 +339,10 @@
 
 <section id="admissions" class="admissions-section">
     <div class="admission-banner fade-up">
-        <h2> Digital Freelance Starter Program!</h2>
-        <p>AI Natives and AI Fundamentals Join Now to Begin you Tech Journey</p>
+        <h2>🚀 Digital Freelance Starter Program</h2>
+        <p>AI Natives & AI Fundamentals — Join Now to Begin Your Tech Journey</p>
         <div class="banner-buttons">
-            <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-secondary" target="_blank">Claim FREE Seat Now</a>
+            <a href="https://sarrinstituteoftechnology.github.io/Enroll-Now" class="btn-secondary" target="_blank">Enroll Now</a>
             <a href="https://sarrinstituteoftechnology.github.io/Official-Brochure/" class="btn-download" target="_blank">Download Brochure</a>
         </div>
     </div>
@@ -430,7 +424,7 @@
 <script>
     // Extended Course Details
     const courseCatalog = [
-        { name: "Digital Freelance Starter Program / AI Natives", duration: "3 months", fee: "PKR 16000 , category: "Featured", description: "🎯 What You'll Learn:\n\n• Computer & Internet Fundamentals\n• Introduction to Artificial Intelligence\n• AI Tools & Prompt Engineering\n• ChatGPT, Midjourney, Canva AI\n• Freelancing Platforms (Fiverr, Upwork)\n• Client Communication & Proposal Writing\n• Building Your Portfolio\n• Earning Strategies with AI\n\n💼 Career Opportunities:\n• AI Content Creator\n• Virtual Assistant\n• Social Media Manager\n• Data Entry Specialist\n• Freelance AI Specialist\n\n🎓 Course Includes:\n• 3 Months of Live Training\n• Hands-on Projects\n• Certificate of Completion\n• Job Placement Support\n• Lifetime Access to Materials" },
+        { name: "Digital Freelance Starter Program / AI Natives", duration: "3 months", fee: "PKR 16,000", category: "Featured", description: "🎯 What You'll Learn:\n\n• Computer & Internet Fundamentals\n• Introduction to Artificial Intelligence\n• AI Tools & Prompt Engineering\n• ChatGPT, Midjourney, Canva AI\n• Freelancing Platforms (Fiverr, Upwork)\n• Client Communication & Proposal Writing\n• Building Your Portfolio\n• Earning Strategies with AI\n\n💼 Career Opportunities:\n• AI Content Creator\n• Virtual Assistant\n• Social Media Manager\n• Data Entry Specialist\n• Freelance AI Specialist\n\n🎓 Course Includes:\n• 3 Months of Live Online Training\n• Hands-on Projects\n• Certificate of Completion (PKR 2,500)\n• Job Placement Support\n• Lifetime Access to Materials\n\n💰 Fee Breakdown:\n• Registration Fee: 1,000 Rs\n• Tuition Fee: 12,500 Rs\n• Certificate Fee: 2,500 Rs\n• Total: 16,000 Rs" },
         { name: "Web Development (Full Stack)", duration: "6 months", fee: "PKR 85,000", category: "Development", description: "Master MERN stack, Next.js, responsive design, and cloud deployment. Build e-commerce platforms, blogs, and real-time applications." },
         { name: "App Development (iOS/Android)", duration: "5 months", fee: "PKR 95,000", category: "Development", description: "Build cross-platform apps with Flutter, React Native, Swift, and Kotlin. Master state management, Firebase, and app store deployment." },
         { name: "Game Development (Unity/Unreal)", duration: "7 months", fee: "PKR 120,000", category: "Development", description: "Create 2D/3D games with Unity C# and Unreal Blueprints. Learn game physics, AI, and multiplayer networking." },
@@ -669,10 +663,10 @@
             <div class="message bot-message">
                 <div class="message-bubble">
                     👋 Welcome to SARR Institute!<br><br>
-                    🎉 <strong>SPECIAL OFFER!</strong> Digital Freelance Starter Program / AI Natives is <strong>COMPLETELY FREE</strong> for the first 3 batches!<br>
-                    📍 Duration: 3 months<br>
-                    💰 Fee: PKR 0 (No registration fee, no tuition fee)<br>
-                    👥 Limited Seats: 30 students per batch<br><br>
+                    🎓 <strong>Digital Freelance Starter Program</strong> is now <strong>PKR 16,000</strong> (all inclusive)!<br>
+                    📍 Duration: 3 months (Online)<br>
+                    💰 Fee Breakdown: Registration 1,000 + Tuition 12,500 + Certificate 2,500<br>
+                    👥 Admissions are open — limited seats!<br><br>
                     Ask me about courses, fees, or admissions!
                 </div>
                 <div class="timestamp">Just now</div>
@@ -690,12 +684,12 @@
 
 <script>
     const chatbotKnowledge = [
-        { keywords: ["hello", "hi", "hey"], response: "Hello! Welcome to SARR Institute. 🎉 Our Digital Freelance Starter Program is COMPLETELY FREE for first 3 batches! Ask me anything!" },
-        { keywords: ["digital freelance", "ai natives", "starter program", "free"], response: "The Digital Freelance Starter Program / AI Natives is COMPLETELY FREE for the first 3 batches! 30 seats per batch. No registration fee, no tuition fee. Learn computer basics + AI fundamentals to start earning online. Admissions are open now!" },
-        { keywords: ["critical thinking", "task management", "leadership", "entrepreneurship"], response: "Our Soft Skills courses: Critical Thinking (PKR 18,000, 2 months), Task Management (PKR 15,000, 1.5 months), Leadership Development (PKR 25,000, 2 months), Entrepreneurship (PKR 35,000, 3 months). Click Learn More for details!" },
-        { keywords: ["fee", "cost", "price"], response: "The Digital Freelance Starter Program is FREE! Other courses range from PKR 15,000 to PKR 120,000." },
-        { keywords: ["admission", "apply", "enroll"], response: "Admissions are open for the FREE Digital Freelance Starter Program! Limited seats - first 3 batches of 30 students each. Visit our Enroll Now page to apply." },
-        { keywords: ["duration", "how long"], response: "The Digital Freelance Starter Program is 3 months. Other courses range from 1.5 to 7 months." }
+        { keywords: ["hello", "hi", "hey"], response: "Hello! Welcome to SARR Institute. Our Digital Freelance Starter Program is PKR 16,000 (all inclusive). Admissions are open! How can I help?" },
+        { keywords: ["digital freelance", "ai natives", "starter program"], response: "The Digital Freelance Starter Program / AI Natives is a 3-month online program at PKR 16,000 total. Fee breakdown: Registration 1,000 Rs, Tuition 12,500 Rs, Certificate 2,500 Rs. Learn AI fundamentals + freelancing skills!" },
+        { keywords: ["critical thinking", "task management", "leadership", "entrepreneurship"], response: "Our Soft Skills courses: Critical Thinking (PKR 18,000, 2 months), Task Management (PKR 15,000, 1.5 months), Leadership Development (PKR 25,000, 2 months), Entrepreneurship (PKR 35,000, 3 months)." },
+        { keywords: ["fee", "cost", "price"], response: "The Digital Freelance Starter Program is PKR 16,000 total. Other courses range from PKR 15,000 to PKR 120,000. All fees include certification." },
+        { keywords: ["admission", "apply", "enroll"], response: "Admissions are open! Visit our Enroll Now page to join the Digital Freelance Starter Program (PKR 16,000). Limited seats available per batch." },
+        { keywords: ["duration", "how long"], response: "The Digital Freelance Starter Program is 3 months. Other courses range from 1.5 to 7 months depending on the program." }
     ];
     
     function getChatbotResponse(msg) {
@@ -705,7 +699,7 @@
                 if (lowerMsg.includes(kw)) return item.response;
             }
         }
-        return "Thank you for your question! I'm here to help. Ask about our FREE Digital Freelance Starter Program, other courses, fees, admissions, or scholarships. Contact us at sarr.edu.pk@gmail.com or +92 320 5702273.";
+        return "Thank you for your question! Ask about our Digital Freelance Starter Program (PKR 16,000), other courses, fees, or admissions. Contact us at sarr.edu.pk@gmail.com or +92 320 5702273.";
     }
     
     function addChatMessage(text, isUser) {
